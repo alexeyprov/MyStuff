@@ -1,0 +1,735 @@
+<html DIR="LTR" xmlns:MSHelp="http://msdn.microsoft.com/mshelp" xmlns:ddue="http://ddue.schemas.microsoft.com/authoring/2003/5" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:tool="http://www.microsoft.com/tooltip"><head><META HTTP-EQUIV="Content-Type" CONTENT="text/html; CHARSET=Windows-1252"></META><META NAME="save" CONTENT="history"></META><title>Using Dynamic Send Ports with the WCF Adapters</title><STYLE TYPE="text/css">
+    body
+    {
+        background:    #FFFFFF;
+        color: #000000;
+        font-family:    Verdana;
+        font-size: medium;
+        font-style: normal;
+        font-weight: normal;
+        margin-top:    0;
+        margin-bottom:    0;
+        margin-left:    0;
+        margin-right:    0;
+        width:    100%;
+    }
+    
+    a
+    {
+        color:    #0000FF;
+    }
+    
+    a:visited
+    {
+        color:    #0000FF;
+    }
+    
+    a:link
+    {
+        color:    #0000FF;
+    }
+    
+    a:hover
+    {
+        color:    #FF0000;
+        cursor: hand;
+    }
+    
+    a:active
+    {
+        color:    #FF0000;
+        cursor: hand;
+    }
+    
+    div#mainSection
+    {
+        font-size: 70%;
+        width: 100%;
+    }
+    
+    div#mainBody
+    {
+        font-size: 90%;
+        margin-left:    5;
+        margin-top: 10;
+        padding-bottom: 20;
+    }
+    
+    div#header
+    {
+        background-color: #D4DFFF;
+        padding-top:    0;
+        padding-bottom:    0;
+        padding-left:    0;
+        padding-right:    0;
+        width:    100%;
+    }
+    
+    div#header table
+    {
+        border-bottom-color: #C8CDDE;
+        border-bottom-style: solid;
+        border-bottom-width: 1;
+        width:    100%;
+    }
+    
+    span#runningHeaderText
+    {
+        color: #003399;
+        font-size: 90%;
+    }
+    
+    span#nsrTitle
+    {
+        color: #003399;
+        font-size: 125%;
+        font-weight: 600;
+    }
+    
+    div#header table td
+    {
+        color: #0000FF;
+        font-size: 70%;
+        margin-top:    0;
+        margin-bottom:    0;
+        padding-right: 20;
+    }
+    
+    div#header table tr#headerTableRow3 td
+    {
+        padding-bottom: 2;
+        padding-top: 5;
+    }
+    
+    div#header table#bottomTable
+    {
+        border-top-color: #FFFFFF;
+        border-top-style: solid;
+        border-top-width: 1;
+        text-align: left;
+    }
+    
+    div#footer
+    {
+        font-size: 90%;
+        margin-top:    0;
+        margin-bottom:    0;
+        margin-left:    0;
+        margin-right:    0;
+        padding-top:    2;
+        padding-bottom:    2;
+        padding-left:    2;
+        padding-right:    2;
+        width:    100%;
+    }
+    
+    hr#footerHR
+    {
+        border-bottom-color: #EEEEFF;
+        border-bottom-style: solid;
+        border-bottom-width: 1;
+        border-top-color: C8CDDE;
+        border-top-style: solid;
+        border-top-width: 1;
+        height: 3;
+        color: #D4DFFF;
+    }
+    
+    div.section
+    {
+        padding-top:    2;
+        padding-bottom:    2;
+        padding-left:    16;
+        padding-right:    15;
+        width:    100%;
+    }
+    
+    .heading
+    {
+        font-weight:    bold;
+        margin-top:        18;
+        margin-bottom:    8;
+    }
+    
+    h1.heading
+    {
+        color: #003399;
+        font-size:    125%;
+    }
+    
+    .subHeading
+    {
+        font-weight:    bold;
+        margin-bottom:    4;
+    }
+    
+    h3.subHeading
+    {
+        color:  #003399;
+        font-size: 115%;
+        font-weight: bold;
+    }
+    
+    h4.subHeading
+    {
+        color: #003399;
+        font-size: 105%;
+    }
+    
+    h5.subHeading
+    {
+        color: #003399;
+        font-size: 100%;
+    }
+    
+    img.toggle
+    {
+    	border: 0;
+	margin-right: 5;
+    }
+
+    img.copyCodeImage
+    {
+	border: 0;
+	margin-right: 3;
+    }
+
+    img.downloadCodeImage
+    {
+	border: 0;
+	margin-right: 3;
+    }
+
+    img.viewCodeImage
+    {
+	border: 0;
+	margin-right: 3;
+    }
+
+    img.note
+    {
+	border: 0;
+	margin-right: 3;
+    }
+
+    img#languageFilterImage
+    {
+	border: 0;
+	margin-left: 10;
+	vertical-align: middle;
+    }
+
+    img#membersOptionsFilterImage
+    {
+	border: 0;
+	margin-left: 10;
+	vertical-align: middle;
+    }
+
+    img#toggleAllImage
+    {
+	margin-left: 4;
+	vertical-align: middle;
+    }
+    
+    div#mainSection table
+    {
+        border: 0;
+        font-size: 100%;
+        width:    100%;
+    }
+    
+    div#mainSection table th
+    {
+        background:    #EFEFF7;
+        border-bottom-color: #C8CDDE;
+        border-bottom-style: solid;
+        border-bottom-width: 1;
+        color: #000066;
+        padding-left: 5;
+        padding-right: 5;
+    }
+    
+    div#mainSection table td
+    {
+        background:    #F7F7FF;
+        border-top-color: #FFFFFF;
+        border-top-style: solid;
+        border-top-width: 1;
+        padding-left: 5;
+        padding-right: 5;
+    }
+    
+    div#mainSection table td.imageCell
+    {
+        white-space: nowrap;
+    }
+    
+    div.code table
+    {
+        border: 0;
+        font-size: 95%;
+        margin-bottom: 5;
+        width: 100%
+    }
+    
+    div.code table th
+    {    
+        background:    #EFEFF7;
+        border-bottom-color: #C8CDDE;
+        border-bottom-style: solid;
+        border-bottom-width: 1;
+        color: #000066;
+        font-weight: bold;
+        padding-left: 5;
+        padding-right: 5;
+    }
+    
+    div.code table td
+    {
+        background:    #F7F7FF;
+        border-top-color: #FFFFFF;
+        border-top-style: solid;
+        border-top-width: 1;
+        padding-left: 5;
+        padding-right: 5;
+        padding-top: 5;
+    }
+    
+    div.alert table
+    {
+        border: 0;
+        font-size: 100%;
+        width:    100%;
+    }
+    
+    div.alert table th
+    {
+        background:    #EFEFF7;
+        border-bottom-width: 0;
+        color: #000066;
+        padding-left: 5;
+        padding-right: 5;
+    }
+    
+    div.alert table td
+    {
+        background:    #F7F7FF;
+        border-top-color: #FFFFFF;
+        border-top-style: solid;
+        border-top-width: 1;
+        padding-left: 5;
+        padding-right: 5;
+    }
+    
+    .copyCode
+    {
+        color: #0000ff;
+        font-size: 90%;
+        font-weight: normal;
+    }
+    
+    .downloadCode
+    {
+        color: #0000ff;
+        font-size: 90%;
+        font-weight: normal;
+    }
+    
+    .viewCode
+    {
+        color: #0000ff;
+        font-size: 90%;
+        font-weight: normal;
+    }
+    
+    div.code pre
+    {
+        font-family:    Monospace, Courier New, Courier;
+        font-size: 105%;
+        color:    #000066;
+        word-wrap:    break-word;
+    }
+    
+    code
+    {
+        font-family:    Monospace, Courier New, Courier;
+        font-size: 105%;
+        color:    #000066;
+    }
+    
+    dl
+    {
+        margin-top:    0;
+        padding-left:    1;
+    }
+    
+    dt
+    {
+        font-style:    italic;
+    }
+    
+    dd
+    {
+        margin-bottom:    0;
+        margin-left:    0;
+    }
+    
+    ul
+    {
+        margin-left: 17;
+        list-style-type: disc;
+    }
+    
+    ul ul
+    {
+        margin-bottom: 4;
+        margin-left: 17;
+        margin-top: 3;
+        list-style-type: disc;
+    }
+    
+    ol
+    {
+        margin-left: 24;
+        list-style-type: decimal;
+    }
+    
+    ol ol
+    {
+        margin-bottom: 4;
+        margin-left: 24;
+        margin-top: 3;
+        list-style-type: lower-alpha;
+    }
+    
+    li
+    {
+        margin-bottom: 3;
+    }
+    
+    p
+    {
+        margin-top: 0;
+        margin-bottom: 15;
+    }
+    
+    .tip
+    {
+        color:    #0000FF;
+        font-style: italic;
+        cursor:hand;
+        text-decoration:underline;
+    }
+    
+    .languageFilter
+    {
+        color:    #0000FF;
+        cursor:hand;
+        text-decoration:underline;
+        padding-bottom:4;
+    }
+    
+    .math
+    {
+        font-family: Times New Roman;
+        font-size: 125%
+    }
+    
+    .sourceCodeList
+    {
+        font-family: Verdana;
+        font-size: 90%;    
+    }
+    
+    pre.viewCode
+    {
+        width: 100%;
+        overflow: auto;
+    }
+    
+    MSHelp\:link
+    {
+        text-decoration: underline;
+        color: #0000ff; 
+        hoverColor: #3366ff;
+        filterString: ;
+    }
+</STYLE>
+</head>
+<body><input type="hidden" id="userDataCache" class="userDataStyle"></input><input type="hidden" id="hiddenScrollOffset"></input><img id="dropDownImage" style="display:none; height:0; width:0;" src="../local/drpdown.gif"><img id="dropDownHoverImage" style="display:none; height:0; width:0;" src="../local/drpdown_orange.gif"><img id="copyImage" style="display:none; height:0; width:0;" src="../local/copycode.gif"><img id="copyHoverImage" style="display:none; height:0; width:0;" src="../local/copycodeHighlight.gif"><div id="header"><table width="100%" id="topTable"><tr id="headerTableRow1"><td align="left"><span id="runningHeaderText"></span></td></tr><tr id="headerTableRow2"><td align="left"><span id="nsrTitle">Using Dynamic Send Ports with the WCF Adapters</span></td></tr><tr id="headerTableRow3"></tr></table></div><div id="mainSection"><div id="mainBody"><div id="allHistory" class="saveHistory"></div><p><b>Documentation Feedback</b></p><p>Microsoft values your feedback. To send feedback and comments about this topic to the documentation team, <a href="mailto:btsdf@microsoft.com?subject=Using Dynamic Send Ports with the WCF Adapters" alt=""><linkText xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">click here</linkText></a>. For assistance with support issues, refer to the technical support information included with the product.</p><div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left">Note </th></tr><tr><td>
+For more information about adapters, go to the <a href="http://go.microsoft.com/fwlink/?LinkID=144767" target="_blank" alt=""><linkText xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">Adapters Server in BizTalk </linkText></a> page on MSDN.<p></p>
+</td></tr></table><p></p></div><h1 class="heading">Introduction</h1><div id="sectionSection0" class="section"><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+<p xmlns="">Unlike a static send port, whose destination and method of transport for a message is fixed before the time of execution, a dynamic send port does not contain a fixed destination address. How and where the message will be routed is determined at run time from the value of the promoted message context properties <b>OutboundTransportLocation</b> and <b>OutboundTransportType</b>. <b>OutboundTransportLocation</b> determines the destination address of the message while <b>OutboundTransportType</b> specifies the type of transport (or send adapter) used to transfer the message. Together these properties allow BizTalk Server to dynamically route messages at run time based upon dynamic values.</p>
+
+<p xmlns="">Dynamic send ports can be used for Windows Communication Foundation (WCF) send adapters, but they do not use the same message context properties listed above. Rather, the URI, action, and binding can be determined directly by checking the value of a specific property in an incoming message, derived from the result of calculations on elements in an incoming message, or arrived at by the execution of business rules. These are some of the approaches to dynamically determine where a message is to be routed and how. These various types of operations can all occur within an orchestration's Expression shape.</p>
+
+<p xmlns="">This sample demonstrates how to configure dynamic send ports by using WCF adapter context properties for the WCF-NetTcp adapter using the <b>NetTcpBinding</b>, and for the WCF-Custom adapter using a custom binding. When configuring a static send port on its property page, you can select an adapter in the <b>Type</b> option under <b>Transport</b>. With a dynamic send port, the option to select an adapter through this interface is not available. Rather, this value must be provided as a result of the orchestration's processing decisions at run time.</p>
+</content></div><h1 class="heading">What This Sample Does</h1><div id="sectionSection1" class="section"><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+<p xmlns="">There are two orchestrations in the BizTalk project, demonstrating two different approaches to configuring dynamic send ports for WCF adapters. The first orchestration, DynamicSendSimpleNetTcp.odx, demonstrates how to configure the dynamic send port by using the WCF-NetTcp transport, which inherently uses the <b>NetTcpBinding</b> binding. The second orchestration, DynamicSendCustomNetTcp.odx, demonstrates how to configure the dynamic send port by using the WCF-Custom transport with the chosen <b>NetTcpBinding</b> binding. With the WCF-Custom adapter you can use a custom binding or any of the predefined bindings, such as <b>NetTcpBinding</b>.</p>
+
+<p xmlns="">The following is the scenario flow for both of the orchestrations:</p>
+
+<ol class="ordered" xmlns=""><li>
+Purchase orders are picked up by the FILE adapter from a receive location.<br /><br />
+</li><li>
+The orchestrations are bound to <b>DynReceivePort</b> and receive the purchase orders.<br /><br />
+</li><li>
+The orchestrations set the WCF message properties and set the dynamic send port properties.<br /><br />
+</li><li>
+The orchestrations calls out and consume the WCF service. Specifically they invoke the remote <b>ReceiveMessage</b> method passing in a purchase order message, each using the adapters they dynamically selected.<br /><br />
+</li><li>
+The WCF service outputs the received purchase order message to the console window.<br /><br />
+</li></ol>
+</content></div><h1 class="heading">How This Sample Was Created and Why</h1><div id="sectionSection2" class="section"><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+<p xmlns=""><b>The DynamicSendNetTcp.odx orchestration was created by performing the following steps:</b></p>
+
+<ol class="ordered" xmlns=""><li>
+Create a message of type <b>System.Xml.XmlDocument</b> to receive the purchase orders.<br /><br />
+</li><li>
+Use the following code in the <b>Message Assignment</b> shape of the DynamicSendNetTcp.odx orchestration to set the WCF message context properties for received purchase order messages:<br /><br />
+
+<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"></th><th align="right"><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" style="cursor:default;" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"></span></th></tr><tr><td colspan="2"><pre>MessageOut = MessageIn;
+MessageOut(WCF.Action) = "http://tempuri.org/IReceiveMessage/ReceiveMessage";
+MessageOut(WCF.SecurityMode) = "Transport";
+MessageOut(WCF.TransportClientCredentialType) = "Windows";</pre></td></tr></table></span></div>
+
+Create a new outgoing message MessageOut by making a copy of incoming message MessageIn. <br /><br />
+
+You do not need to specify a binding type because the WS-NetTcp adapter is used and it inherently uses the <b>NetTcpBinding</b> binding.<br /><br />
+
+The outbound WCF messages will use the SOAP action specified in the <b>WCF.Action</b> context property of any outgoing WCF message. This property specifies a call to the <b>ReceiveMessage</b> method on the remote service, and is used by the remote service dispatcher to accomplish this call. The <b>ReceiveMessage</b> method writes the message sent to it out to the system console and returns. <br /><br />
+
+The <b>SecurityMode</b> property is set to <b>Transport</b>. Transport security mode uses a transport-level protocol, such as HTTPS, to achieve transfer security. Transport mode has the advantage of being widely adopted, available on many platforms, and less computationally complex, making it a fast transfer mechanism. However, it has the disadvantage of securing messages only from point-to-point and thus is not protocol-independent or very extensible.<br /><br />
+
+The <b>TransportClientCredentialType</b> is set to use <b>Windows</b> authentication, which is the authentication mechanism used for the remote call.<br /><br />
+</li><li>
+Create a dynamic send port with a pass-through pipeline.<br /><br />
+</li><li>
+Use the following code in an <b>Expression</b> shape within the DynamicSendNetTcp.odx orchestration to set the dynamic send port properties. This is how the adapter will decide to route the message.<br /><br />
+
+<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"></th><th align="right"><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" style="cursor:default;" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"></span></th></tr><tr><td colspan="2"><pre>DynamicPortOut(Microsoft.XLANGs.BaseTypes.Address) = "net.tcp://localhost:8001/NetTcp";
+DynamicPortOut(Microsoft.XLANGs.BaseTypes.TransportType) = "WCF-NetTcp";</pre></td></tr></table></span></div>
+
+The WCF service endpoint address <b>net.tcp://localhost:8001/NetTcp</b> is associated with the send port using the <b>Microsoft.XLANGs.BaseTypes.Address</b> property.<br /><br />
+
+<ul><li class="unordered">
+<b>//localhost:8001/NetTcp</b> is the URI of the remote WCF service.<br /><br />
+</li><li class="unordered">
+The <b>net.tcp</b> defines the WCF-NetTcp transport used in the transmission.<br /><br />
+</li></ul>
+
+In the <b>DynamicPortOut</b> property, you specify that the dynamic send port will use the WCF-NetTcp adapter as the transport mechanism.<br /><br />
+</li><li>
+Send the purchase order messages to the WCF service for consuming.<br /><br />
+</li></ol>
+
+<p xmlns=""><b>The DynamicSendCustomNetTcp.odx orchestration was created by performing the following steps:</b></p>
+
+<ol class="ordered" xmlns=""><li>
+Create a message of type <b>System.Xml.XmlDocument</b> to receive the purchase orders.<br /><br />
+</li><li>
+Use the following code in the <b>Message Assignment</b> shape within the DynamicSendCustomNetTcp.odx orchestration to set the WCF message context properties for purchase order messages:<br /><br />
+
+<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"></th><th align="right"><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" style="cursor:default;" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"></span></th></tr><tr><td colspan="2"><pre>MessageOut = MessageIn;
+MessageOut(WCF.BindingType) = "customBinding";
+MessageOut(WCF.Action) = "http://tempuri.org/IReceiveMessage/ReceiveMessage";
+MessageOut(WCF.BindingConfiguration) = @"&lt;binding name=""customBinding""&gt;&lt;binaryMessageEncoding /&gt;&lt;tcpTransport /&gt;&lt;/binding&gt;";</pre></td></tr></table></span></div>
+
+In this code you create a new outgoing message MessageOut by making a copy of incoming message MessageIn. <br /><br />
+
+You need to specify a <b>BindingType</b> value because the WS-Custom adapter is used and it has no inherent binding type. Here you specify to use the  <b>WCF CustomBinding</b> as the specified binding.<br /><br />
+
+The outbound WCF messages will use the SOAP action specified in the <b>WCF.Action</b> context property of any outgoing WCF message. This property specifies a call to the <b>ReceiveMessage</b> method on the remote service, and is used by the remote service dispatcher to accomplish this call. The <b>ReceiveMessage</b> method writes the message sent to it out to the system console and returns. <br /><br />
+
+The <b>WCF.BindingConfiguration</b> context property specifices the whole binding configuration of the send port. It uses a <b>customBinding</b> with <b>binaryMessageEncoding</b> and the <b>tcpTransport</b> binding elements<br /><br />
+</li><li>
+Create a dynamic send port with a pass-through pipeline.<br /><br />
+</li><li>
+Use the following code in an <b>Expression</b> shape within the DynamicSendCustomNetTcp.odx orchestration to set the dynamic send port properties. This is how the adapter and the URI are determined for message routing.<br /><br />
+
+<div class="code"><span codeLanguage="other"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left"></th><th align="right"><span class="copyCode" onclick="CopyCode(this)" onkeypress="CopyCode_CheckKey(this)" style="cursor:default;" onmouseover="ChangeCopyCodeIcon(this)" onfocusin="ChangeCopyCodeIcon(this)" onmouseout="ChangeCopyCodeIcon(this)" onfocusout="ChangeCopyCodeIcon(this)" tabindex="0"></span></th></tr><tr><td colspan="2"><pre>DynamicPortOut_Custom(Microsoft.XLANGs.BaseTypes.Address) = "net.tcp://localhost:8002/customNetTcp";
+DynamicPortOut_Custom(Microsoft.XLANGs.BaseTypes.TransportType) = "WCF-Custom"; </pre></td></tr></table></span></div>
+
+The dynamic send port will use the WCF-Custom transport.<br /><br />
+
+The WCF service endpoint address <b>net.tcp://localhost:8002/customNetTcp</b> is associated with the send port using the <b>Microsoft.XLANGs.BaseTypes.Address</b> property.<br /><br />
+
+<ul><li class="unordered">
+<b>//localhost:8002/customNetTcp</b> is the URI of the remote WCF service.<br /><br />
+</li><li class="unordered">
+The <b>net.tcp</b> defines the TCP transport used in the transmission.<br /><br />
+</li></ul>
+</li></ol>
+</content></div><h1 class="heading">Where to Find This Sample</h1><div id="sectionSection3" class="section"><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+<p xmlns="">You must download the sample code and extract it to your computer.  You can do this by using the individual self-extracting file <b>WCFDynamicSendPorts.exe</b>.  Alternatively, you can download this sample as a part of the entire BizTalk Server 2009 Samples package by using the file <b>BizTalk Server 2009 Samples.exe</b>.  Both of these files are available for download from the BizTalk Server Developer Center at <a href="http://go.microsoft.com/fwlink/?LinkID=145373" target="_blank" alt=""><linkText xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">http://go.microsoft.com/fwlink/?LinkID=145373</linkText></a>. </p>
+
+<p xmlns="">The sample consists of the files described in the following table. </p>
+
+<h3 class="subHeading" xmlns=""></h3><table xmlns=""><tr>
+<td colspan="1">
+<p><b>File\Folder</b></p>
+</td>
+<td colspan="1">
+<p><b>Description</b></p>
+</td></tr><tr>
+<td colspan="1">
+<p>WCF Dynamic Send Port folder</p>
+</td>
+<td colspan="1">
+<p>Folder that contains the BizTalk project.</p>
+</td></tr><tr>
+<td colspan="1">
+<p>WCF Dynamic Send Port.sln, WCF Dynamic Send Port.btproj.user, WCF Dynamic Send Port.suo</p>
+</td>
+<td colspan="1">
+<p>Solution files for the sample.</p>
+</td></tr><tr>
+<td colspan="1">
+<p>DynamicSendPort.snk</p>
+</td>
+<td colspan="1">
+<p>Strong name key file for the sample.</p>
+</td></tr><tr>
+<td colspan="1">
+<p>Input folder</p>
+</td>
+<td colspan="1">
+<p>Folder for receiving inbound messages.</p>
+</td></tr><tr>
+<td colspan="1">
+<p>DynamicSendNetTcp.odx</p>
+</td>
+<td colspan="1">
+<p>Orchestration for dynamically sending messages to a WCF service using the WCF-NetTcp transport.</p>
+</td></tr><tr>
+<td colspan="1">
+<p>DynamicSendCustomNetTcp.odx</p>
+</td>
+<td colspan="1">
+<p>Orchestration for dynamically sending messages to a WCF service using the WCF-Custom transport.</p>
+</td></tr><tr>
+<td colspan="1">
+<p>WcfService folder</p>
+</td>
+<td colspan="1">
+<p>Folder that contains the WCF service C# console application project.</p>
+</td></tr><tr>
+<td colspan="1">
+<p>WcfService.sln, WcfService.suo, WcfService.csproj</p>
+</td>
+<td colspan="1">
+<p>C# project files for the WCF service.</p>
+</td></tr><tr>
+<td colspan="1">
+<p>Program.cs</p>
+</td>
+<td colspan="1">
+<p>WCF service that receives the messages from BizTalk orchestrations.</p>
+</td></tr><tr>
+<td colspan="1">
+<p>App.config</p>
+</td>
+<td colspan="1">
+<p>Application configuration file for the WCF service.</p>
+</td></tr></table>
+</content></div><h1 class="heading">Prerequisites</h1><div id="sectionSection4" class="section"><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5"><p xmlns="">To perform the steps in this sample ensure that your environment installs the following prerequisites:</p>
+<ul xmlns=""><li class="unordered">Both the computer that builds the assemblies and runs the deployment process, and the computer that runs the sample, require Microsoft Windows Server 2008, Microsoft .NET Framework 3.5, and Microsoft BizTalk Server 2009.  
+<br /><br /></li></ul>
+<ul xmlns=""><li class="unordered">The computer used to build the assemblies and run the deployment process requires Microsoft Visual Studio 2008.
+<br /><br /></li></ul>
+<ul xmlns=""><li class="unordered">The computer that runs the sample requires the WCF Adapters and the WCF Administration Tools. These are options to install during setup of Microsoft BizTalk Server 2009.
+<br /><br /></li></ul>
+<ul xmlns=""><li class="unordered">On the computers that you use to perform administrative tasks, you must run as a user account that is a member of the BizTalk Server Administrators group to configure the BizTalk Server application settings within the BizTalk Server Administration console. This user account must also be a member of the local Administrators group for application deployment, managing host instances, and other tasks that may be required. 
+<br /><br /></li></ul>
+<ul xmlns=""><li class="unordered">On any computer that requires WCF capability, complete the one-time setup procedure for the WCF samples at <a href="http://go.microsoft.com/fwlink/?LinkId=135510" target="_blank" alt=""><linkText xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">http://go.microsoft.com/fwlink/?LinkID=135510</linkText></a>.
+<br /><br /></li></ul>
+<ul xmlns=""><li class="unordered">On the computer that runs the sample and imports a binding or an .msi file into BizTalk Server, ensure the host is not a trusted host or the import will fail.
+<br /><br /></li></ul>
+</content></div><h1 class="heading">Configuring and Deploying This Sample</h1><div id="sectionSection5" class="section"><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+
+<h3 class="subHeading" xmlns="">To deploy the BizTalk orchestrations</h3><table xmlns=""><tr>
+<td colspan="1">
+<ol class="ordered"><li>
+Extract the sample to the <b>C:\WCF Dynamic Send Ports</b> folder.<br /><br />
+</li><li>
+Click <b>Start</b>, click <b>All Programs</b>, point to <b>Microsoft Visual Studio 2008</b>, and then click <b>Microsoft Visual Studio 2008</b>.<br /><br />
+</li><li>
+In Visual Studio 2008, open the <b>WCF Dynamic Send Ports.sln</b> solution file.<br /><br />
+</li><li>Because the <b>WCF Dynamic Send Port</b> assembly must be installed in the GAC, it will need a strong name key file to complete the build process.  Right click on the <b>WCF Dynamic Send Port</b> project and then click <b>Properties</b>.  On the <b>Properties</b> page click <b>Signing</b>, and select <b>Sign the assembly</b>. Click the down arrow in the <b>Choose a strong name key file</b> drop-down list, click <b>&lt;New&gt;</b>, and enter <b>keyfile.snk</b> in the <b>key file name</b> textbox.  Uncheck <b>Protect my key file with a password</b>, and then click <b>OK</b>.<br /><br /></li><li>Right-click the <b>WCF Dynamic Send Ports </b> solution, and then click <b>Build Solution</b>.<br /><br /></li><li>
+Right-click the <b>WCF Dynamic Send Port</b> project, and then click <b>Deploy</b>.  A BizTalk application named <b> WCFDynamicSendPorts</b> will be created in BizTalk Server, and the <b>WCF Dynamic Send Port</b> assembly is installed into the GAC.<br /><br />
+
+</li></ol>
+</td></tr></table>
+
+<h3 class="subHeading" xmlns="">To configure the receive port and the receive location</h3><table xmlns=""><tr>
+<td colspan="1">
+<ol class="ordered"><li>
+Click <b>Start</b>, point to <b>Microsoft </b><b>BizTalk Server 2009</b>, and then click <b>BizTalk Server Administration</b>.<br /><br />
+</li><li>
+In the BizTalk Server Administration console, expand <b>BizTalk Server 2009</b><b> Administration</b>, expand <b>BizTalk Group</b>, expand <b>Applications</b>, and then expand <b>WCFDynamicSendPorts</b>.<br /><br />
+</li><li>
+Right-click on <b>WCFDynamicSendPorts</b>, and select <b>Import</b>, and then select <b>MSI file</b>. Select <b>C:\WCF Dynamic Send Ports\WCFDynamicSendPorts.msi</b> and import that file.<br /><br /></li></ol>
+</td></tr></table>
+
+<h3 class="subHeading" xmlns="">To bind and start the orchestrations</h3><table xmlns=""><tr>
+<td colspan="1">
+<ol class="ordered"><li>
+Click <b>Start</b>, point to <b>Microsoft </b><b>BizTalk Server 2009</b>, and then click <b>BizTalk Server Administration</b>.<br /><br />
+</li><li>
+In the BizTalk Server Administration console, expand <b>BizTalk Server 2009</b><b> Administration</b>, expand <b>BizTalk Group</b>, expand <b>Applications</b>, and then expand <b>WCFDynamicSendPorts</b>.<br /><br />
+</li><li>
+Click <b>Orchestrations</b>, and then in the <b>Orchestrations</b> pane, double-click <b>WCF_Dynamic_Send_Port.DynamicSendNetTcp</b>. <br /><br />
+</li><li>
+In the <b>Orchestration Properties</b> dialog box, click <b>Bindings</b>.<br /><br />
+</li><li>
+In the <b>Host</b> drop-down list, select <b>BizTalkServerApplication</b>.<br /><br />
+</li><li>
+In the <b>Bindings</b> area, in the <b>PortIn</b> row of the <b>Inbound Logical Ports</b> table, select <b>DynReceivePort</b> from the <b>Receive Ports</b> drop-down list.<br /><br />
+
+<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left">Note </th></tr><tr><td>
+Make sure that in the <b>DynamicPortOut</b> row of the <b>Outbound Logical Ports</b> table, <b>WCF_Dynamic_Send_Port.DynamicSendNetTcp_DynamicPortOut_*</b> is selected. If you look at the <b>Properties</b> window for the <b>DynamicPortOut</b> port in Visual Studio 2008, you will see how this name is constructed automatically by Visual Studio 2008 using a combination of various property values in that window.<p></p>
+</td></tr></table><p></p></div>
+</li><li>
+Click <b>OK</b> to close the <b>Orchestration Properties</b> dialog box.<br /><br />
+</li><li>
+Double-click the <b>WCF_Dynamic_Send_Port.DynamicSendCustomNetTcp</b> orchestration.<br /><br />
+</li><li>
+In the <b>Orchestration Properties</b> dialog box, click <b>Bindings</b>.<br /><br />
+</li><li>
+In the <b>Host</b> drop-down list, select <b>BizTalkServerApplication</b>.<br /><br />
+</li><li>
+In the <b>Bindings</b> area, in the <b>PortIn_Custom</b> row of the <b>Inbound Logical Ports</b> table, select <b>DynReceivePort</b> from the <b>Receive Ports</b> drop-down list.<br /><br />
+
+<div class="alert"><table width="100%" cellspacing="0" cellpadding="0"><tr><th align="left">Note </th></tr><tr><td>
+Make sure that in the <b>DynamicPortOut</b> row of the <b>Outbound Logical Ports</b> table, <b>WCF_Dynamic_Send_Port.DynamicSendCustomNetTcp_DynamicPortOut_Custom_*</b> is selected. If you look at the <b>Properties</b> window for the <b>DynamicPortOut_Custom</b> port in Visual Studio 2008, you will see how this name is constructed automatically by Visual Studio 2008 using a combination of various property values in that window.<p></p></td></tr></table><p></p></div></li><li>
+Click <b>OK</b> to close the <b>Orchestration Properties</b> dialog box.<br /><br />
+</li></ol>
+</td></tr></table>
+</content></div><h1 class="heading">Testing This Sample</h1><div id="sectionSection6" class="section"><content xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">
+<h3 class="subHeading" xmlns=""></h3><table xmlns=""><tr>
+<td colspan="1">
+<p>To test the orchestrations</p>
+</td></tr><tr>
+<td colspan="1">
+<ol class="ordered"><li>
+Browse to <b>C:\WCF Dynamic Send Ports\WcfService\bin\debug</b>. Double-click on <b>WCF Service.exe</b> to start the service.<br /><br />
+</li><li>
+Click <b>Start</b>, point to <b>Microsoft </b><b>BizTalk Server 2009</b>, and then click <b>BizTalk Server Administration</b>.<br /><br />
+</li><li>
+In the BizTalk Server Administration console, expand <b>BizTalk Server 2009</b><b> Administration</b>, expand <b>BizTalk Group</b>, and then expand <b>WCFDynamicSendPorts</b>.<br /><br />
+</li><li>
+Right-click <b>WCFDynamicSendPorts</b>, and then click <b>Start</b>.<br /><br />
+</li><li>
+Browse to the <b>C:\WCF Dynamic Send Ports\Orchestrations</b> folder.<br /><br />
+</li><li>
+Copy <b>TestInstance.xml</b> to the <b>Input</b> folder.<br /><br />
+</li><li>
+Look for the two messages in the console window. One was received from <b>net.tcp://localhost:8001/NetTcp</b> and was sent by the orchestration using the WCF-NetTcp transport in the dynamic send port:  <b>Message received by net.tcp://localhost:8001/netTcp</b>.<br /><br />
+
+The other message was received from <b>net.tcp://localhost:8002/CustomNetTcp</b> and was sent by the orchestration using the WCF-Custom transport: <b>Message received by net.tcp://localhost:8002/customNetTcp</b>.<br /><br />
+</li></ol>
+</td></tr></table>
+</content></div><h1 class="heading"><span id="seeAlsoNoToggle">See Also</span></h1><div id="seeAlsoSection" class="section"><h4 class="subHeading">Other Resources</h4><a href="http://go.microsoft.com/fwlink/?LinkId=92956" target="_blank" alt=""><linkText xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">WCF Adapters Property Schema and Properties</linkText></a><br /><a href="http://go.microsoft.com/fwlink/?LinkID=92957" target="_blank" alt=""><linkText xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">Configuring Dynamic Send Ports Using WCF Adapters Context Properties</linkText></a><br /><a href="http://go.microsoft.com/fwlink/?LinkID=92958" target="_blank" alt=""><linkText xmlns="http://ddue.schemas.microsoft.com/authoring/2003/5">Specifying SOAP Actions for WCF Send Adapters</linkText></a><br /><br /></div><!--[if gte IE 5]>
+			<tool:tip element="seeAlsoToolTip" avoidmouse="false"/><tool:tip element="languageFilterToolTip" avoidmouse="false"/>
+		<![endif]--></div><div id="footer"><A NAME="feedback"></A><span></span></div></div></body></html>

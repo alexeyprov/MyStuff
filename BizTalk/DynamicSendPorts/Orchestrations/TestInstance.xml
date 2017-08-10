@@ -1,0 +1,3 @@
+<ns0:PurchaseOrderRequest xmlns:ns0="http://WCF_Dynamic_Send_Port.Test">
+  <OrderID>OrderID_0</OrderID>
+</ns0:PurchaseOrderRequest>

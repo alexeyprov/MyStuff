@@ -1,0 +1,20 @@
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleProperties", "SampleProperties\SampleProperties.btproj", "{4444CD68-C1C6-4751-9189-B00788B14C94}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Deployment|Any CPU = Deployment|Any CPU
+		Development|Any CPU = Development|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4444CD68-C1C6-4751-9189-B00788B14C94}.Deployment|Any CPU.ActiveCfg = Deployment|Any CPU
+		{4444CD68-C1C6-4751-9189-B00788B14C94}.Deployment|Any CPU.Build.0 = Deployment|Any CPU
+		{4444CD68-C1C6-4751-9189-B00788B14C94}.Deployment|Any CPU.Deploy.0 = Deployment|Any CPU
+		{4444CD68-C1C6-4751-9189-B00788B14C94}.Development|Any CPU.ActiveCfg = Development|Any CPU
+		{4444CD68-C1C6-4751-9189-B00788B14C94}.Development|Any CPU.Build.0 = Development|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,1 @@
+csc /debug /out:Hotels.exe Program.cs ISolver.cs IterativeSolver.cs DynamicSolver.cs

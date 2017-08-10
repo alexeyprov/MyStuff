@@ -1,0 +1,33 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExRichTextBox", "ExRichTextBox\ExRichTextBox.csproj", "{1A63B1D0-D2F0-4F8C-B242-863E83E1419C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IMWindow", "IMWindow\IMWindow.csproj", "{D4C249AE-EDA1-4B65-B114-430EBAC971FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RtfInsert", "MiniWordPad\RtfInsert.csproj", "{4893F022-8100-45EE-B65E-14C6E3D9641A}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{1A63B1D0-D2F0-4F8C-B242-863E83E1419C}.Debug.ActiveCfg = Debug|.NET
+		{1A63B1D0-D2F0-4F8C-B242-863E83E1419C}.Debug.Build.0 = Debug|.NET
+		{1A63B1D0-D2F0-4F8C-B242-863E83E1419C}.Release.ActiveCfg = Release|.NET
+		{1A63B1D0-D2F0-4F8C-B242-863E83E1419C}.Release.Build.0 = Release|.NET
+		{D4C249AE-EDA1-4B65-B114-430EBAC971FA}.Debug.ActiveCfg = Debug|.NET
+		{D4C249AE-EDA1-4B65-B114-430EBAC971FA}.Debug.Build.0 = Debug|.NET
+		{D4C249AE-EDA1-4B65-B114-430EBAC971FA}.Release.ActiveCfg = Release|.NET
+		{D4C249AE-EDA1-4B65-B114-430EBAC971FA}.Release.Build.0 = Release|.NET
+		{4893F022-8100-45EE-B65E-14C6E3D9641A}.Debug.ActiveCfg = Debug|.NET
+		{4893F022-8100-45EE-B65E-14C6E3D9641A}.Debug.Build.0 = Debug|.NET
+		{4893F022-8100-45EE-B65E-14C6E3D9641A}.Release.ActiveCfg = Release|.NET
+		{4893F022-8100-45EE-B65E-14C6E3D9641A}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

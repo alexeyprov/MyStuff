@@ -1,0 +1,80 @@
+<Configuration>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="26F1F27C-0EAD-47A4-9D28-5F4A39F2746D/f:UnzipperData.cs" caret="2009" fromTop="118" />
+      <File id="26F1F27C-0EAD-47A4-9D28-5F4A39F2746D/f:Unzipper.cs" caret="1452" fromTop="28" />
+      <File id="26F1F27C-0EAD-47A4-9D28-5F4A39F2746D/f:Program.cs" caret="198" fromTop="12" />
+      <File id="2D47D2E8-DA81-4368-A956-E4B3DC7F543A/f:Array.cs" caret="2611" fromTop="15" />
+      <File id="0E7413FF-EB9E-4714-ACF2-BE3A6A7B2FFD/d:Zip/d:Compression/d:Streams/f:OutputWindow.cs" caret="6346" fromTop="17" />
+      <File id="0E7413FF-EB9E-4714-ACF2-BE3A6A7B2FFD/d:Zip/d:Compression/f:Inflater.cs" caret="22653" fromTop="18" />
+      <File id="0E7413FF-EB9E-4714-ACF2-BE3A6A7B2FFD/d:Zip/d:Compression/d:Streams/f:InflaterInputStream.cs" caret="14434" fromTop="13" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="26F1F27C-0EAD-47A4-9D28-5F4A39F2746D/f:UnzipperData.cs" caret="432" fromTop="16" />
+      <File id="26F1F27C-0EAD-47A4-9D28-5F4A39F2746D/f:UnzipperData.cs" caret="510" fromTop="22" />
+      <File id="26F1F27C-0EAD-47A4-9D28-5F4A39F2746D/f:UnzipperData.cs" caret="600" fromTop="26" />
+      <File id="26F1F27C-0EAD-47A4-9D28-5F4A39F2746D/f:UnzipperData.cs" caret="1101" fromTop="21" />
+      <File id="26F1F27C-0EAD-47A4-9D28-5F4A39F2746D/f:UnzipperData.cs" caret="890" fromTop="11" />
+      <File id="26F1F27C-0EAD-47A4-9D28-5F4A39F2746D/f:UnzipperData.cs" caret="1603" fromTop="38" />
+      <File id="26F1F27C-0EAD-47A4-9D28-5F4A39F2746D/f:UnzipperData.cs" caret="1764" fromTop="29" />
+      <File id="26F1F27C-0EAD-47A4-9D28-5F4A39F2746D/f:UnzipperData.cs" caret="1681" fromTop="21" />
+      <File id="26F1F27C-0EAD-47A4-9D28-5F4A39F2746D/f:UnzipperData.cs" caret="204" fromTop="13" />
+      <File id="26F1F27C-0EAD-47A4-9D28-5F4A39F2746D/f:UnzipperData.cs" caret="15" fromTop="1" />
+      <File id="26F1F27C-0EAD-47A4-9D28-5F4A39F2746D/f:UnzipperData.cs" caret="2009" fromTop="28" />
+      <File id="26F1F27C-0EAD-47A4-9D28-5F4A39F2746D/f:Unzipper.cs" caret="256" fromTop="15" />
+      <File id="26F1F27C-0EAD-47A4-9D28-5F4A39F2746D/f:Unzipper.cs" caret="1245" fromTop="10" />
+      <File id="26F1F27C-0EAD-47A4-9D28-5F4A39F2746D/f:Unzipper.cs" caret="223" fromTop="10" />
+      <File id="26F1F27C-0EAD-47A4-9D28-5F4A39F2746D/f:Unzipper.cs" caret="1690" fromTop="22" />
+      <File id="26F1F27C-0EAD-47A4-9D28-5F4A39F2746D/f:Unzipper.cs" caret="490" fromTop="22" />
+      <File id="26F1F27C-0EAD-47A4-9D28-5F4A39F2746D/f:Unzipper.cs" caret="637" fromTop="26" />
+      <File id="26F1F27C-0EAD-47A4-9D28-5F4A39F2746D/f:Unzipper.cs" caret="1034" fromTop="26" />
+      <File id="26F1F27C-0EAD-47A4-9D28-5F4A39F2746D/f:Unzipper.cs" caret="60" fromTop="3" />
+      <File id="26F1F27C-0EAD-47A4-9D28-5F4A39F2746D/f:Program.cs" caret="237" fromTop="15" />
+      <File id="26F1F27C-0EAD-47A4-9D28-5F4A39F2746D/f:Program.cs" caret="13" fromTop="0" />
+      <File id="26F1F27C-0EAD-47A4-9D28-5F4A39F2746D/f:Program.cs" caret="483" fromTop="22" />
+      <File id="26F1F27C-0EAD-47A4-9D28-5F4A39F2746D/f:Unzipper.cs" caret="1142" fromTop="31" />
+      <File id="0E7413FF-EB9E-4714-ACF2-BE3A6A7B2FFD/d:Zip/d:Compression/f:Inflater.cs" caret="21125" fromTop="30" />
+    </RecentEdits>
+  </RecentFiles>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="CSharpCodeCompletionContext">
+      <Item value="ZipFile`0" priority="31" />
+      <Item value="ZipFile" priority="29" />
+      <Item value="string" priority="127" />
+      <Item value="targetDirectory" priority="95" />
+      <Item value="if" priority="31" />
+      <Item value="Directory`0" priority="63" />
+      <Item value="throw" priority="31" />
+      <Item value="new" priority="31" />
+      <Item value="String`0" priority="31" />
+      <Item value="d" priority="31" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.IO.Directory">
+      <Item value="Exists`0" priority="26" />
+      <Item value="CreateDirectory`0" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:@System.String">
+      <Item value="Empty" priority="26" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:Unzipper.UnzipperData">
+      <Item value="TargetDirectory" priority="26" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir>C:\Program Files (x86)\NUnit 2.4.7\bin\net-2.0\lib</NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+</Configuration>

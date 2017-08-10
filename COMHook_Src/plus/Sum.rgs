@@ -1,0 +1,25 @@
+HKCR
+{
+	Plus.Sum.1 = s 'Sum Class'
+	{
+		CLSID = s '{C910B122-A6E9-498B-A662-1EA7D26AF4E2}'
+	}
+	Plus.Sum = s 'Sum Class'
+	{
+		CLSID = s '{C910B122-A6E9-498B-A662-1EA7D26AF4E2}'
+		CurVer = s 'Plus.Sum.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {C910B122-A6E9-498B-A662-1EA7D26AF4E2} = s 'Sum Class'
+		{
+			ProgID = s 'Plus.Sum.1'
+			VersionIndependentProgID = s 'Plus.Sum'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			'TypeLib' = s '{C08CD14F-7E94-4392-983A-53DCEA2CF22B}'
+		}
+	}
+}

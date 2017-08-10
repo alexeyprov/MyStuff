@@ -1,0 +1,39 @@
+// RndGen.idl : IDL source for RndGen
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (RndGen.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(3CE9F3CD-E854-462B-AAD4-A131042146A0),
+	dual,
+	nonextensible,
+	helpstring("IGenerator Interface"),
+	pointer_default(unique)
+]
+interface IGenerator : IDispatch{
+	[propget, id(1), helpstring("property Seed")] HRESULT Seed([out, retval] LONG* pVal);
+	[propput, id(1), helpstring("property Seed")] HRESULT Seed([in] LONG newVal);
+	[id(2), helpstring("method NextRandom")] HRESULT NextRandom([in] LONG nMinValue, [in] LONG nMaxValue, [out, retval] LONG* pVal);
+};
+[
+	uuid(14DAF2E8-1C79-448C-916B-ED5189216CEA),
+	version(1.0),
+	helpstring("AlexeyPr Random Numbers Generator Library")
+]
+library RndGenLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(66EF5506-AB8A-4DFE-A0B2-1485844B473E),
+		helpstring("Generator Class")
+	]
+	coclass Generator
+	{
+		[default] interface IGenerator;
+	};
+};

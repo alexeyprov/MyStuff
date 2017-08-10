@@ -1,0 +1,39 @@
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfService", "WCF Service\WcfService.csproj", "{0FF408BE-C0AC-4749-8CD4-37260A9683CA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WCF Dynamic Send Port", "Orchestrations\WCF Dynamic Send Port.btproj", "{16ECAD94-C406-4FD7-BFB0-8FC56F249AE2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Deployment|Any CPU = Deployment|Any CPU
+		Development|Any CPU = Development|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0FF408BE-C0AC-4749-8CD4-37260A9683CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FF408BE-C0AC-4749-8CD4-37260A9683CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0FF408BE-C0AC-4749-8CD4-37260A9683CA}.Deployment|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FF408BE-C0AC-4749-8CD4-37260A9683CA}.Deployment|Any CPU.Build.0 = Debug|Any CPU
+		{0FF408BE-C0AC-4749-8CD4-37260A9683CA}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{0FF408BE-C0AC-4749-8CD4-37260A9683CA}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{0FF408BE-C0AC-4749-8CD4-37260A9683CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0FF408BE-C0AC-4749-8CD4-37260A9683CA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{16ECAD94-C406-4FD7-BFB0-8FC56F249AE2}.Debug|Any CPU.ActiveCfg = Deployment|Any CPU
+		{16ECAD94-C406-4FD7-BFB0-8FC56F249AE2}.Debug|Any CPU.Build.0 = Deployment|Any CPU
+		{16ECAD94-C406-4FD7-BFB0-8FC56F249AE2}.Debug|Any CPU.Deploy.0 = Deployment|Any CPU
+		{16ECAD94-C406-4FD7-BFB0-8FC56F249AE2}.Deployment|Any CPU.ActiveCfg = Deployment|Any CPU
+		{16ECAD94-C406-4FD7-BFB0-8FC56F249AE2}.Deployment|Any CPU.Build.0 = Deployment|Any CPU
+		{16ECAD94-C406-4FD7-BFB0-8FC56F249AE2}.Deployment|Any CPU.Deploy.0 = Deployment|Any CPU
+		{16ECAD94-C406-4FD7-BFB0-8FC56F249AE2}.Development|Any CPU.ActiveCfg = Development|Any CPU
+		{16ECAD94-C406-4FD7-BFB0-8FC56F249AE2}.Development|Any CPU.Build.0 = Development|Any CPU
+		{16ECAD94-C406-4FD7-BFB0-8FC56F249AE2}.Development|Any CPU.Deploy.0 = Development|Any CPU
+		{16ECAD94-C406-4FD7-BFB0-8FC56F249AE2}.Release|Any CPU.ActiveCfg = Deployment|Any CPU
+		{16ECAD94-C406-4FD7-BFB0-8FC56F249AE2}.Release|Any CPU.Build.0 = Deployment|Any CPU
+		{16ECAD94-C406-4FD7-BFB0-8FC56F249AE2}.Release|Any CPU.Deploy.0 = Deployment|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

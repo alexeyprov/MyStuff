@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCMSTest", "MCMSTest.csproj", "{C1146605-0D82-4723-BFD8-DF948812C18F}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MCMSNavigator", "MCMSNavigator\MCMSNavigator.csproj", "{6E8723DA-959D-4B9B-82B4-102E1D21B5FF}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{C1146605-0D82-4723-BFD8-DF948812C18F}.Debug.ActiveCfg = Debug|.NET
+		{C1146605-0D82-4723-BFD8-DF948812C18F}.Debug.Build.0 = Debug|.NET
+		{C1146605-0D82-4723-BFD8-DF948812C18F}.Release.ActiveCfg = Release|.NET
+		{C1146605-0D82-4723-BFD8-DF948812C18F}.Release.Build.0 = Release|.NET
+		{6E8723DA-959D-4B9B-82B4-102E1D21B5FF}.Debug.ActiveCfg = Debug|.NET
+		{6E8723DA-959D-4B9B-82B4-102E1D21B5FF}.Debug.Build.0 = Debug|.NET
+		{6E8723DA-959D-4B9B-82B4-102E1D21B5FF}.Release.ActiveCfg = Release|.NET
+		{6E8723DA-959D-4B9B-82B4-102E1D21B5FF}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,60 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: Edit - Win32 Debug--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "rc.exe /l 0x409 /fo"Debug/Edit.res" /d "_DEBUG" /d "_AFXDLL" "D:\Projects\MyStuff\RTFImage\HBITMAP\Edit\Edit.rc"" 
+Creating temporary file "C:\DOCUME~1\AlexeyP\LOCALS~1\Temp\RSP179.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Debug/" /Fp"Debug/Edit.pch" /Yu"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\Projects\MyStuff\RTFImage\HBITMAP\Edit\CntrItem.cpp"
+"D:\Projects\MyStuff\RTFImage\HBITMAP\Edit\Edit.cpp"
+"D:\Projects\MyStuff\RTFImage\HBITMAP\Edit\EditDoc.cpp"
+"D:\Projects\MyStuff\RTFImage\HBITMAP\Edit\EditView.cpp"
+"D:\Projects\MyStuff\RTFImage\HBITMAP\Edit\ImageDataObject.cpp"
+"D:\Projects\MyStuff\RTFImage\HBITMAP\Edit\MainFrm.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\AlexeyP\LOCALS~1\Temp\RSP179.tmp" 
+Creating temporary file "C:\DOCUME~1\AlexeyP\LOCALS~1\Temp\RSP17A.tmp" with contents
+[
+/nologo /MDd /W3 /Gm /GX /ZI /Od /D "WIN32" /D "_DEBUG" /D "_WINDOWS" /D "_AFXDLL" /D "_MBCS" /FR"Debug/" /Fp"Debug/Edit.pch" /Yc"stdafx.h" /Fo"Debug/" /Fd"Debug/" /FD /GZ /c 
+"D:\Projects\MyStuff\RTFImage\HBITMAP\Edit\StdAfx.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\AlexeyP\LOCALS~1\Temp\RSP17A.tmp" 
+Creating temporary file "C:\DOCUME~1\AlexeyP\LOCALS~1\Temp\RSP17B.tmp" with contents
+[
+/nologo /subsystem:windows /incremental:yes /pdb:"Debug/Edit.pdb" /debug /machine:I386 /out:"Debug/Edit.exe" /pdbtype:sept 
+.\Debug\CntrItem.obj
+.\Debug\Edit.obj
+.\Debug\EditDoc.obj
+.\Debug\EditView.obj
+.\Debug\ImageDataObject.obj
+.\Debug\MainFrm.obj
+.\Debug\StdAfx.obj
+.\Debug\Edit.res
+]
+Creating command line "link.exe @C:\DOCUME~1\AlexeyP\LOCALS~1\Temp\RSP17B.tmp"
+<h3>Output Window</h3>
+Compiling resources...
+Compiling...
+StdAfx.cpp
+Compiling...
+CntrItem.cpp
+Edit.cpp
+EditDoc.cpp
+EditView.cpp
+ImageDataObject.cpp
+MainFrm.cpp
+Generating Code...
+Linking...
+
+
+
+<h3>Results</h3>
+Edit.exe - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

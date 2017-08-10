@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="16a12014-112d-4eb7-90bb-b1815ce8a64e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="https://ocmmail.onecallmedical.com/EWS/Services.wsdl" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="messages.xsd" MetadataType="Schema" ID="dd37722c-5ffa-4ec3-ac3e-95dd77b8f703" SourceId="1" SourceUrl="https://ocmmail.onecallmedical.com/EWS/messages.xsd" />
+    <MetadataFile FileName="Services.wsdl" MetadataType="Wsdl" ID="79f3768d-6c96-4b79-bcc3-08ba6bd9e1fa" SourceId="1" SourceUrl="https://ocmmail.onecallmedical.com/EWS/Services.wsdl" />
+    <MetadataFile FileName="types.xsd" MetadataType="Schema" ID="2334287f-26ef-42d8-ae05-605dd062205f" SourceId="1" SourceUrl="https://ocmmail.onecallmedical.com/EWS/types.xsd" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

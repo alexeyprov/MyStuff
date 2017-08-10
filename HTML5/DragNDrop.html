@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style type="text/css">
+#div1, #div2
+{float:right; width:100px; height:35px; margin:3px;padding:10px;border:1px solid #aaaaaa;}
+</style>
+<script type="text/javascript">
+
+//dragstart event handler
+function img1_onDragStart(e) {
+  e.dataTransfer.setData("preved", e.target.id);
+}
+
+//dragover event handler
+function div_onDragOver(e) {
+  e.preventDefault();
+}
+
+// drop event handler
+function div_onDrop(e) {
+  e.preventDefault();
+  var elementID = e.dataTransfer.getData("preved");
+  e.target.appendChild(document.getElementById(elementID));
+}
+
+</script>
+</head>
+<body>
+
+<div id="div1" 
+  ondrop="div_onDrop(event)" 
+  ondragover="div_onDragOver(event)">
+  <img src="img_w3slogo.gif" draggable="true"
+   ondragstart="img1_onDragStart(event)" id="img1" width="88" height="31" />
+</div>
+
+<div id="div2" 
+  ondrop="div_onDrop(event)" 
+  ondragover="div_onDragOver(event)" >
+</div>
+
+</body>
+</html>
+

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="MapSolution">
+</Property><Property Name="Solution File" Value="C:\Projects\MyStuff\DynamicMaps\MapSolution.sln">
+</Property><Property Name="Date" Value="Monday, June 28, 2010">
+</Property><Property Name="Time" Value="16:41 PM">
+</Property></Properties><Event ErrorLevel="0" Project="C:\Projects\MyStuff\DynamicMaps\Orchestrations\Orchestrations.btproj" Source="Orchestrations\Orchestrations.btproj" Description="Project Upgrade Beginning...">
+</Event><Event ErrorLevel="0" Project="C:\Projects\MyStuff\DynamicMaps\Orchestrations\Orchestrations.btproj" Source="Orchestrations\Orchestrations.btproj" Description="Temporary backup created for project file at: C:\Projects\MyStuff\DynamicMaps\Orchestrations\Orchestrations.btproj.bak">
+</Event><Event ErrorLevel="0" Project="C:\Projects\MyStuff\DynamicMaps\Orchestrations\Orchestrations.btproj" Source="Orchestrations\Orchestrations.btproj" Description="Project file 'Orchestrations.btproj' upgraded">
+</Event><Event ErrorLevel="3" Project="C:\Projects\MyStuff\DynamicMaps\Orchestrations\Orchestrations.btproj" Source="Orchestrations\Orchestrations.btproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="C:\Projects\MyStuff\DynamicMaps\DynamicMaps\DynamicMaps.btproj" Source="DynamicMaps\DynamicMaps.btproj" Description="Project Upgrade Beginning...">
+</Event><Event ErrorLevel="0" Project="C:\Projects\MyStuff\DynamicMaps\DynamicMaps\DynamicMaps.btproj" Source="DynamicMaps\DynamicMaps.btproj" Description="Temporary backup created for project file at: C:\Projects\MyStuff\DynamicMaps\DynamicMaps\DynamicMaps.btproj.bak">
+</Event><Event ErrorLevel="0" Project="C:\Projects\MyStuff\DynamicMaps\DynamicMaps\DynamicMaps.btproj" Source="DynamicMaps\DynamicMaps.btproj" Description="Project file 'DynamicMaps.btproj' upgraded">
+</Event><Event ErrorLevel="3" Project="C:\Projects\MyStuff\DynamicMaps\DynamicMaps\DynamicMaps.btproj" Source="DynamicMaps\DynamicMaps.btproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="MapSolution.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="MapSolution.sln" Description="Converted">
+</Event></UpgradeLog>

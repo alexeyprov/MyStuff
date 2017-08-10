@@ -1,0 +1,304 @@
+﻿<RepriceStack xmlns="https://secure.prime-health.net/core/">
+			<stack>
+				<testmode>true</testmode>
+				<clientid>mitchell</clientid>
+				<siteid>FF1</siteid>
+				<subclientid>PRIME ARCOMP</subclientid>
+				<clientpassword>prime08sa</clientpassword>
+				<resultcode>0</resultcode>
+				<bills>
+					<bill>
+						<formtype>U</formtype>
+						<billid>FF1PRO11</billid>
+						<claimnumber>SB001</claimnumber>
+						<dateofservice>2007-03-10T00:00:00.0000000-08:00</dateofservice>
+						<productcode>W</productcode>
+						<patient>
+							<ssn />
+							<dob>1976-09-22T00:00:00.0000000-07:00</dob>
+							<firstname>SHERI</firstname>
+							<lastname>STUHL</lastname>
+							<mi>A</mi>
+							<address1>350 LAURINDA AVE</address1>
+							<address2>PO BOX #1</address2>
+							<city>LONG BEACH</city>
+							<state>CA</state>
+							<zip>908031345</zip>
+						</patient>
+						<provider>
+							<taxid>621337069</taxid>
+							<facilityname>FACILITY DEKALB</facilityname>
+							<firstname>PATRICIA</firstname>
+							<lastname>BROTMAN</lastname>
+							<mi>M</mi>
+							<degree>MR.</degree>
+							<address1>520 W MAIN ST</address1>
+							<address2>PO BOX PRACT</address2>
+							<city>SMITHVILLE</city>
+							<state>TN</state>
+							<zip>371661138</zip>
+							<specialty>AS</specialty>
+							<servicezip>987123234</servicezip>
+						</provider>
+						<lineitems>
+							<lineitem>
+								<servicefrom>2007-03-10T00:00:00.0000000-08:00</servicefrom>
+								<serviceto>2007-03-10T00:00:00.0000000-08:00</serviceto>
+								<code>36415</code>
+								<modifier1>30</modifier1>
+								<modifier2 />
+								<units>1</units>
+								<pos>131</pos>
+								<tos>0</tos>
+								<linecharge>13.5</linecharge>
+								<statesavings>0</statesavings>
+								<stateallowed>13.5</stateallowed>
+								<pposavings>0</pposavings>
+								<othersavings>0</othersavings>
+								<repricedlineamount>0</repricedlineamount>
+								<repricedlinesavings>0</repricedlinesavings>
+								<resultcode>0</resultcode>
+							</lineitem>
+							<lineitem>
+								<servicefrom>2007-03-10T00:00:00.0000000-08:00</servicefrom>
+								<serviceto>2007-03-10T00:00:00.0000000-08:00</serviceto>
+								<code>80053</code>
+								<modifier1 />
+								<modifier2 />
+								<units>1</units>
+								<pos>131</pos>
+								<tos>0</tos>
+								<linecharge>287</linecharge>
+								<statesavings>269.28</statesavings>
+								<stateallowed>17.72</stateallowed>
+								<pposavings>0</pposavings>
+								<othersavings>0</othersavings>
+								<repricedlineamount>0</repricedlineamount>
+								<repricedlinesavings>0</repricedlinesavings>
+								<resultcode>0</resultcode>
+							</lineitem>
+							<lineitem>
+								<servicefrom>2007-03-11T00:00:00.0000000-08:00</servicefrom>
+								<serviceto>2007-03-11T00:00:00.0000000-08:00</serviceto>
+								<code>82550</code>
+								<modifier1 />
+								<modifier2 />
+								<units>1</units>
+								<pos>131</pos>
+								<tos>0</tos>
+								<linecharge>99</linecharge>
+								<statesavings>88.08</statesavings>
+								<stateallowed>10.92</stateallowed>
+								<pposavings>0</pposavings>
+								<othersavings>0</othersavings>
+								<repricedlineamount>0</repricedlineamount>
+								<repricedlinesavings>0</repricedlinesavings>
+								<resultcode>0</resultcode>
+							</lineitem>
+							<lineitem>
+								<servicefrom>2007-03-11T00:00:00.0000000-08:00</servicefrom>
+								<serviceto>2007-03-11T00:00:00.0000000-08:00</serviceto>
+								<code>84484</code>
+								<modifier1 />
+								<modifier2 />
+								<units>1</units>
+								<pos>131</pos>
+								<tos>0</tos>
+								<linecharge>117</linecharge>
+								<statesavings>100.5</statesavings>
+								<stateallowed>16.5</stateallowed>
+								<pposavings>0</pposavings>
+								<othersavings>0</othersavings>
+								<repricedlineamount>0</repricedlineamount>
+								<repricedlinesavings>0</repricedlinesavings>
+								<resultcode>0</resultcode>
+							</lineitem>
+							<lineitem>
+								<servicefrom>2007-03-11T00:00:00.0000000-08:00</servicefrom>
+								<serviceto>2007-03-11T00:00:00.0000000-08:00</serviceto>
+								<code>85025</code>
+								<modifier1 />
+								<modifier2 />
+								<units>1</units>
+								<pos>131</pos>
+								<tos>0</tos>
+								<linecharge>68.5</linecharge>
+								<statesavings>55.47</statesavings>
+								<stateallowed>13.03</stateallowed>
+								<pposavings>0</pposavings>
+								<othersavings>0</othersavings>
+								<repricedlineamount>0</repricedlineamount>
+								<repricedlinesavings>0</repricedlinesavings>
+								<resultcode>0</resultcode>
+							</lineitem>
+							<lineitem>
+								<servicefrom>2007-03-11T00:00:00.0000000-08:00</servicefrom>
+								<serviceto>2007-03-11T00:00:00.0000000-08:00</serviceto>
+								<code>85610</code>
+								<modifier1 />
+								<modifier2 />
+								<units>1</units>
+								<pos>131</pos>
+								<tos>0</tos>
+								<linecharge>87.5</linecharge>
+								<statesavings>80.91</statesavings>
+								<stateallowed>6.59</stateallowed>
+								<pposavings>0</pposavings>
+								<othersavings>0</othersavings>
+								<repricedlineamount>0</repricedlineamount>
+								<repricedlinesavings>0</repricedlinesavings>
+								<resultcode>0</resultcode>
+							</lineitem>
+							<lineitem>
+								<servicefrom>2007-03-11T00:00:00.0000000-08:00</servicefrom>
+								<serviceto>2007-03-11T00:00:00.0000000-08:00</serviceto>
+								<code>85730</code>
+								<modifier1 />
+								<modifier2 />
+								<units>1</units>
+								<pos>131</pos>
+								<tos>0</tos>
+								<linecharge>87.5</linecharge>
+								<statesavings>77.44</statesavings>
+								<stateallowed>10.06</stateallowed>
+								<pposavings>0</pposavings>
+								<othersavings>0</othersavings>
+								<repricedlineamount>0</repricedlineamount>
+								<repricedlinesavings>0</repricedlinesavings>
+								<resultcode>0</resultcode>
+							</lineitem>
+							<lineitem>
+								<servicefrom>2007-03-11T00:00:00.0000000-08:00</servicefrom>
+								<serviceto>2007-03-11T00:00:00.0000000-08:00</serviceto>
+								<code>71010</code>
+								<modifier1 />
+								<modifier2 />
+								<units>1</units>
+								<pos>131</pos>
+								<tos>0</tos>
+								<linecharge>239</linecharge>
+								<statesavings>201</statesavings>
+								<stateallowed>38</stateallowed>
+								<pposavings>0</pposavings>
+								<othersavings>0</othersavings>
+								<repricedlineamount>0</repricedlineamount>
+								<repricedlinesavings>0</repricedlinesavings>
+								<resultcode>0</resultcode>
+							</lineitem>
+							<lineitem>
+								<servicefrom>2007-03-11T00:00:00.0000000-08:00</servicefrom>
+								<serviceto>2007-03-11T00:00:00.0000000-08:00</serviceto>
+								<code>70450</code>
+								<modifier1 />
+								<modifier2 />
+								<units>1</units>
+								<pos>131</pos>
+								<tos>0</tos>
+								<linecharge>1632</linecharge>
+								<statesavings>1312.56</statesavings>
+								<stateallowed>319.44</stateallowed>
+								<pposavings>0</pposavings>
+								<othersavings>0</othersavings>
+								<repricedlineamount>0</repricedlineamount>
+								<repricedlinesavings>0</repricedlinesavings>
+								<resultcode>0</resultcode>
+							</lineitem>
+							<lineitem>
+								<servicefrom>2007-03-11T00:00:00.0000000-08:00</servicefrom>
+								<serviceto>2007-03-11T00:00:00.0000000-08:00</serviceto>
+								<code>90784</code>
+								<modifier1 />
+								<modifier2 />
+								<units>1</units>
+								<pos>131</pos>
+								<tos>0</tos>
+								<linecharge>95</linecharge>
+								<statesavings>95</statesavings>
+								<stateallowed>0</stateallowed>
+								<pposavings>0</pposavings>
+								<othersavings>0</othersavings>
+								<repricedlineamount>0</repricedlineamount>
+								<repricedlinesavings>0</repricedlinesavings>
+								<resultcode>0</resultcode>
+							</lineitem>
+							<lineitem>
+								<servicefrom>2007-03-11T00:00:00.0000000-08:00</servicefrom>
+								<serviceto>2007-03-11T00:00:00.0000000-08:00</serviceto>
+								<code>99284</code>
+								<modifier1>25</modifier1>
+								<modifier2>26</modifier2>
+								<units>1</units>
+								<pos>131</pos>
+								<tos>0</tos>
+								<linecharge>904</linecharge>
+								<statesavings>904</statesavings>
+								<stateallowed>0</stateallowed>
+								<pposavings>0</pposavings>
+								<othersavings>0</othersavings>
+								<repricedlineamount>0</repricedlineamount>
+								<repricedlinesavings>0</repricedlinesavings>
+								<resultcode>0</resultcode>
+							</lineitem>
+							<lineitem>
+								<servicefrom>2007-03-11T00:00:00.0000000-08:00</servicefrom>
+								<serviceto>2007-03-11T00:00:00.0000000-08:00</serviceto>
+								<code>94761</code>
+								<modifier1 />
+								<modifier2 />
+								<units>1</units>
+								<pos>131</pos>
+								<tos>0</tos>
+								<linecharge>126</linecharge>
+								<statesavings>126</statesavings>
+								<stateallowed>0</stateallowed>
+								<pposavings>0</pposavings>
+								<othersavings>0</othersavings>
+								<repricedlineamount>0</repricedlineamount>
+								<repricedlinesavings>0</repricedlinesavings>
+								<resultcode>0</resultcode>
+							</lineitem>
+							<lineitem>
+								<servicefrom>2007-03-12T00:00:00.0000000-07:00</servicefrom>
+								<serviceto>2007-03-12T00:00:00.0000000-07:00</serviceto>
+								<code>93005</code>
+								<modifier1 />
+								<modifier2 />
+								<units>1</units>
+								<pos>131</pos>
+								<tos>0</tos>
+								<linecharge>206</linecharge>
+								<statesavings>170.94</statesavings>
+								<stateallowed>35.06</stateallowed>
+								<pposavings>0</pposavings>
+								<othersavings>0</othersavings>
+								<repricedlineamount>0</repricedlineamount>
+								<repricedlinesavings>0</repricedlinesavings>
+								<resultcode>0</resultcode>
+							</lineitem>
+						</lineitems>
+						<diagnosiscodes>
+							<string>536.8</string>
+							<string>784.0</string>
+							<string>V58.61</string>
+						</diagnosiscodes>
+						<procedurecodes>
+							<string>70.11</string>
+							<string>90.12</string>
+							<string>90.05</string>
+							<string>80.02</string>
+							<string>70.29</string>
+							<string>50.0</string>
+						</procedurecodes>
+						<totalbilledcharges>3962</totalbilledcharges>
+						<billallowance>0</billallowance>
+						<pposavings>0</pposavings>
+						<othersavings>0</othersavings>
+						<stateucrsavings>3481.18</stateucrsavings>
+						<totalsavings>0</totalsavings>
+						<resultCode>0</resultCode>
+					</bill>
+				</bills>
+				<ignoreexhibits>false</ignoreexhibits>
+				<allowpendedbills>false</allowpendedbills>
+			</stack>
+		</RepriceStack>

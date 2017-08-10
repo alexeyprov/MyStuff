@@ -1,0 +1,1 @@
+csc /out:PoissonJugs.exe /debug Program.cs ISolver.cs BaseSolver.cs BruteForceSolver.cs ScientificSolver.cs

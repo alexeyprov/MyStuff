@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PDFParser", "PDFParser\PDFParser.csproj", "{3C1CCE85-7C38-4C0E-9724-B2C621498F87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ICSharpCode.SharpZLib", "..\SharpZipLib\ICSharpCode.SharpZLib.csproj", "{0E7413FF-EB9E-4714-ACF2-BE3A6A7B2FFD}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "PDFDebug", "PDFDebug\PDFDebug.vbproj", "{EF3C05EF-34D4-4B7B-AC01-5AC86320CE53}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3C1CCE85-7C38-4C0E-9724-B2C621498F87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C1CCE85-7C38-4C0E-9724-B2C621498F87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C1CCE85-7C38-4C0E-9724-B2C621498F87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C1CCE85-7C38-4C0E-9724-B2C621498F87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E7413FF-EB9E-4714-ACF2-BE3A6A7B2FFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E7413FF-EB9E-4714-ACF2-BE3A6A7B2FFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E7413FF-EB9E-4714-ACF2-BE3A6A7B2FFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E7413FF-EB9E-4714-ACF2-BE3A6A7B2FFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EF3C05EF-34D4-4B7B-AC01-5AC86320CE53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF3C05EF-34D4-4B7B-AC01-5AC86320CE53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF3C05EF-34D4-4B7B-AC01-5AC86320CE53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF3C05EF-34D4-4B7B-AC01-5AC86320CE53}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

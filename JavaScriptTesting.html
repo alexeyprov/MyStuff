@@ -1,0 +1,232 @@
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+	<title>Validators Testing</title>
+</head>
+<body>
+	<form name="frmSample" method="post" action="" onsubmit="return ValidateForm()">
+		<p>
+			Enter a value to validate :
+			<input type="text" name="txtDate" maxlength="100" size="25">
+		</p>
+		<p>
+			<input type="submit" name="Submit" value="Submit">
+		</p>
+	</form>
+
+	<script language="JavaScript" type="text/javascript">
+
+		function ASPxClientEditValidationEventArgs(errorText, isValid, value)
+		{
+			this.errorText = errorText;
+			this.isValid = isValid;
+			this.value = value;
+		}
+
+		function ValidateForm()
+		{
+			var dt = document.frmSample.txtDate;
+			var e = new ASPxClientEditValidationEventArgs(null, true, dt.value);
+
+			// put function to validate here
+			validateLong(dt, e);
+
+			if (!e.isValid)
+			{
+				alert(e.errorText);
+				dt.focus();
+			}
+			else
+			{
+				alert("value is valid!");
+			}
+
+			return e.isValid;
+		}
+
+		function validateString(s, e)
+		{
+			e.isValid = false;
+			var val = e.value;
+			
+			if ((null == val) || (0 == val.length) || (val.length > 1000))
+			{
+				e.errorText = "Invalid value for String parameter";
+				return;
+			}
+			
+			e.isValid = true;
+		}
+		
+		function validateChar(s, e)
+		{
+			e.isValid = false;
+			var val = e.value;
+			
+			if ((null == val) || (val.length != 1))
+			{
+				e.errorText = "Invalid value for Char parameter";
+				return;
+			}
+			
+			e.isValid = true;
+		}
+
+		function validateDateTime(s, e)
+		{
+			e.isValid = false;
+			var val = e.value;
+			
+			if (null == val)
+			{
+				return;
+			}
+			
+			// regular expression to match required date/time format
+			re = /^(\d{1,2})\/(\d{1,2})\/(\d{4})[ ]+(\d{1,2}):(\d{2}):(\d{2})$/;
+			
+			var regs = val.match(re);
+			if (!regs)
+			{
+				e.errorText = "DateTime parameter should be in the mm/dd/yyyy hh24:mi:ss format";
+				return; 
+			}
+			
+			var month = regs[1];
+			var day = regs[2];
+			var year = regs[3];
+			
+			if (month < 1 || month > 12)
+			{
+				e.errorText = "Invalid value for month: " + month;
+				return;
+			}
+			
+			if (year < 1900 || year > 2200)
+			{
+				e.errorText = "Invalid value for year: " + year + " - must be between 1900 and 2200";
+				return;
+			}
+			
+			var maxDay = (month < 8) ? 
+				30 + (month % 2) :
+				31 - (month % 2);
+			
+			if (2 == month)
+			{
+				// February has 29 days in any leap year,
+				// except for centennial years which are not multiple of 400
+				maxDay = ((0 == year % 4) && ((year % 100 != 0) || (0 == year % 400))) ? 29 : 28;
+			}
+				 
+			if (day < 1 || day > maxDay)
+			{
+				e.errorText = "Invalid value for date: " + day;
+				return;
+			}
+			
+			// time
+			if (regs[4] > 23) 
+			{ 
+				e.errorText = "Invalid value for hours: " + regs[4];
+				return;
+			}
+			
+			if (regs[5] > 59)
+			{
+				e.errorText = "Invalid value for minutes: " + regs[5];
+				return;
+			}
+			
+			if (regs[6] > 59)
+			{
+				e.errorText = "Invalid value for seconds: " + regs[6];
+				return;
+			}
+			
+			e.isValid = true;
+		}
+		
+		function validateNumber(e, type, minValue, maxValue)
+		{
+			e.isValid = false;
+			var val = e.value;
+			
+			if (null == val)
+			{
+				return;
+			}
+			
+			// regular expression to match int
+			var re = new RegExp("^-?\\d{1," + maxValue.length + "}$");
+			var n = parseInt(val);
+			
+			if (!val.match(re) || isNaN(n))
+			{
+				e.errorText = "Invalid value for " + type + " parameter";
+				return; 
+			}
+			
+			var isNegative = ("-" == val[0]);
+			var modulus = val.substr(isNegative ? 1 : 0);
+			if (modulus.length == maxValue.length)
+			{
+				for (i = 0; i < maxValue.length; ++i)
+				{
+					var c = isNegative ? minValue.charCodeAt(i + 1) : maxValue.charCodeAt(i);
+					if (modulus.charCodeAt(i) > c)
+					{
+						e.errorText = type + " parameter value should be between " +
+							minValue + " and " + maxValue;
+						return;
+					}
+					else if (modulus.charCodeAt(i) < c)
+					{
+						break;
+					}
+				}
+			}
+			
+			e.isValid = true;
+		}
+		
+		function validateDecimal(s, e)
+		{
+			e.isValid = false;
+			var val = e.value;
+			
+			if (null == val)
+			{
+				return;
+			}
+			
+			// regular expression to match int
+			re = /^-?(\d{1,29})\.?(\d{1,28})$/;
+			var regs = val.match(re);
+			if (!regs || (regs[1].length + regs[2].length) > 29)
+			{
+				e.errorText = "Invalid value for Decimal parameter";
+				return; 
+			}
+			
+			e.isValid = true;
+		}
+		
+		function validateShort(s, e)
+		{
+			validateNumber(e, "Short", "-32767", "32768");
+		}
+		
+		function validateInt(s, e)
+		{
+			validateNumber(e, "Integer", "–2147483648", "2147483647");
+		}
+
+		function validateLong(s, e)
+		{
+			validateNumber(e, "Long", "-9223372036854775808", "9223372036854775807");
+		}
+
+	</script>
+
+</body>
+</html>

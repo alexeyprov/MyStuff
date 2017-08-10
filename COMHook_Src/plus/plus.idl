@@ -1,0 +1,41 @@
+// plus.idl : IDL source for plus.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (plus.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+	[
+		object,
+		uuid(17137C98-D54C-4C76-ADF6-7491D037F086),
+	
+		helpstring("ISum Interface"),
+		pointer_default(unique)
+	]
+	interface ISum : IUnknown
+	{
+		[helpstring("method method1")] HRESULT method1();
+		[helpstring("method method2")] HRESULT method2();
+		[helpstring("method woo")] HRESULT woo();
+	};
+
+[
+	uuid(C08CD14F-7E94-4392-983A-53DCEA2CF22B),
+	version(1.0),
+	helpstring("plus 1.0 Type Library")
+]
+library PLUSLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(C910B122-A6E9-498B-A662-1EA7D26AF4E2),
+		helpstring("Sum Class")
+	]
+	coclass Sum
+	{
+		[default] interface ISum;
+	};
+};

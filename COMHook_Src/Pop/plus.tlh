@@ -1,0 +1,65 @@
+// Created by Microsoft (R) C/C++ Compiler Version 12.00.8964.0 (08d2d68f).
+//
+// c:\documents and settings\zzheng\desktop\pop\debug\plus.tlh
+//
+// C++ source equivalent of Win32 type library plus.dll
+// compiler-generated file created 09/29/03 at 17:48:46 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+namespace PLUSLib {
+
+//
+// Forward references and typedefs
+//
+
+struct /* coclass */ Sum;
+struct __declspec(uuid("17137c98-d54c-4c76-adf6-7491d037f086"))
+/* interface */ ISum;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(ISum, __uuidof(ISum));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("c910b122-a6e9-498b-a662-1ea7d26af4e2"))
+Sum;
+    // [ default ] interface ISum
+
+struct __declspec(uuid("17137c98-d54c-4c76-adf6-7491d037f086"))
+ISum : IUnknown
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    HRESULT method1 ( );
+    HRESULT method2 ( );
+    HRESULT woo ( );
+
+    //
+    // Raw methods provided by interface
+    //
+
+    virtual HRESULT __stdcall raw_method1 ( ) = 0;
+    virtual HRESULT __stdcall raw_method2 ( ) = 0;
+    virtual HRESULT __stdcall raw_woo ( ) = 0;
+};
+
+//
+// Wrapper method implementations
+//
+
+#include "c:\documents and settings\zzheng\desktop\pop\debug\plus.tli"
+
+} // namespace PLUSLib
+
+#pragma pack(pop)

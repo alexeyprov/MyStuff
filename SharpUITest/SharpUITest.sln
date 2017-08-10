@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "SharpUITest", "SharpUITest.vbproj", "{544D83CC-DD39-45B9-BBA4-1F424D02484D}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{544D83CC-DD39-45B9-BBA4-1F424D02484D}.Debug.ActiveCfg = Debug|.NET
+		{544D83CC-DD39-45B9-BBA4-1F424D02484D}.Debug.Build.0 = Debug|.NET
+		{544D83CC-DD39-45B9-BBA4-1F424D02484D}.Release.ActiveCfg = Release|.NET
+		{544D83CC-DD39-45B9-BBA4-1F424D02484D}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

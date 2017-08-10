@@ -1,0 +1,24 @@
+HKCR
+{
+	KillMe.FooSpeaker.1 = s 'FooSpeaker Class'
+	{
+		CLSID = s '{C59F44B2-7B32-4AD7-9540-EBC9C4BE1974}'
+	}
+	KillMe.FooSpeaker = s 'FooSpeaker Class'
+	{
+		CLSID = s '{C59F44B2-7B32-4AD7-9540-EBC9C4BE1974}'
+		CurVer = s 'KillMe.FooSpeaker.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {C59F44B2-7B32-4AD7-9540-EBC9C4BE1974} = s 'FooSpeaker Class'
+		{
+			ProgID = s 'KillMe.FooSpeaker.1'
+			VersionIndependentProgID = s 'KillMe.FooSpeaker'
+			ForceRemove 'Programmable'
+			LocalServer32 = s '%MODULE%'
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{00422B18-F116-40A9-B8B9-F0497D81D541}'
+		}
+	}
+}

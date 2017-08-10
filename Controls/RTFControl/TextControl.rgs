@@ -1,0 +1,34 @@
+HKCR
+{
+	RTFControl.TextControl.1 = s 'AlexeyPr RTF Text Control'
+	{
+		CLSID = s '{462C59B7-F7B1-4999-AD0F-9F4B1455E09A}'
+	}
+	RTFControl.TextControl = s 'AlexeyPr RTF Text Control'
+	{
+		CLSID = s '{462C59B7-F7B1-4999-AD0F-9F4B1455E09A}'
+		CurVer = s 'RTFControl.TextControl.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {462C59B7-F7B1-4999-AD0F-9F4B1455E09A} = s 'AlexeyPr RTF Text Control'
+		{
+			ProgID = s 'RTFControl.TextControl.1'
+			VersionIndependentProgID = s 'RTFControl.TextControl'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			ForceRemove 'Control'
+			ForceRemove 'Insertable'
+			ForceRemove 'ToolboxBitmap32' = s '%MODULE%, 101'
+			'MiscStatus' = s '0'
+			{
+			    '1' = s '131473'
+			}
+			'TypeLib' = s '{B1B3D823-3BFC-494F-8187-52C036303B82}'
+			'Version' = s '1.0'
+		}
+	}
+}

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<?xml-stylesheet type="text/xsl" href="ChangesLog.xslt"?>
+<tasks project="QMagic" xmlns="http://tempuri.org/ChangesLog.xsd">
+	<task name="Adding Call action to Employee Actions" server="tunesas">
+		<step date="09-03-2004" model="ED">
+			<object type="User Choice List Item" action="Added">Call</object>
+		</step>
+		<step date="09-03-2004" model="BM">
+			<object type="Client Script" action="Added">QM_Employee_Call Form</object>
+		</step>
+		<step date="09-03-2004" model="BM">
+			<object type="Active Form" action="Added">QM_Employee_Call</object>
+		</step>
+		<step date="09-03-2004" model="BM">
+			<object type="Client Script" action="Modified">QM_Global_EmployeeActions</object>
+		</step>
+		<step date="09-03-2004" model="BM">
+			<object type="Target Query" action="Added">Activity List Call Action</object>
+		</step>
+		<step date="09-03-2004" model="BM">
+			<object type="Target Query" action="Added">Activity List Visit Action</object>
+		</step>
+		<step date="09-03-2004" model="BM">
+			<object type="Active Form" action="Modified">Today's Activity List</object>
+		</step>
+		<security>
+			<privelege action="Granted">
+				<grantee>QMagic administrator</grantee>
+				<subject>QM_Employee_Call</subject>
+			</privelege>
+			<privelege action="Granted">
+				<grantee>QMagic Education</grantee>
+				<subject>QM_Employee_Call</subject>
+			</privelege>
+			<privelege action="Granted">
+				<grantee>QMagic Expertise consultant</grantee>
+				<subject>QM_Employee_Call</subject>
+			</privelege>
+			<privelege action="Granted">
+				<grantee>QMagic Financial administration</grantee>
+				<subject>QM_Employee_Call</subject>
+			</privelege>
+			<privelege action="Granted">
+				<grantee>QMagic general user</grantee>
+				<subject>QM_Employee_Call</subject>
+			</privelege>
+			<privelege action="Granted">
+				<grantee>QMagic HR</grantee>
+				<subject>QM_Employee_Call</subject>
+			</privelege>
+			<privelege action="Granted">
+				<grantee>QMagic Invoices</grantee>
+				<subject>QM_Employee_Call</subject>
+			</privelege>
+			<privelege action="Granted">
+				<grantee>QMagic Marketing</grantee>
+				<subject>QM_Employee_Call</subject>
+			</privelege>
+			<privelege action="Granted">
+				<grantee>QMagic QA Management</grantee>
+				<subject>QM_Employee_Call</subject>
+			</privelege>
+			<privelege action="Granted">
+				<grantee>QMagic Support</grantee>
+				<subject>QM_Employee_Call</subject>
+			</privelege>
+			<privelege action="Granted">
+				<grantee>QMagic Telemarketeers</grantee>
+				<subject>QM_Employee_Call</subject>
+			</privelege>
+			<privelege action="Granted">
+				<grantee>QMagic Telemarketing manager</grantee>
+				<subject>QM_Employee_Call</subject>
+			</privelege>
+			<privelege action="Granted">
+				<grantee>Relationship Administrator</grantee>
+				<subject>QM_Employee_Call</subject>
+			</privelege>
+		</security>
+	</task>
+	<task name="Updating IDs in QM_EDU_Employee" server="localhost">
+	<step date="10-03-2004" model="BM">
+		<object action="Added" type="Target Query">EDU Child ?</object>
+	</step>
+	<step date="10-03-2004" model="BM">
+		<object action="Added" type="Target Query">EDU Master ?</object>
+	</step>	
+	<step date="11-03-2004" model="BM">
+		<object type="Table" action="Added">QM_Import_Education_Mapping</object>
+	</step>
+	<step date="11-03-2004" model="BM">
+		<object type="Table Index" action="Added">QM_Import_Education_MasterName</object>
+	</step>
+	<step date="11-03-2004" model="BM">
+		<object type="Table Index" action="Added">QM_Import_Education_ChildName</object>
+	</step>
+	<step date="11-03-2004" model="BM">
+		<object type="Business Object" action="Added">* QM Import Education Maping</object>
+	</step>
+	<step date="11-03-2004" model="BM">
+		<object type="List" action="Added">QM Import Education Map List</object>
+	</step>
+	<step date="11-03-2004" model="BM">
+		<object type="Target Query" action="Added">Map Entry with Master ? and Child ?</object>
+	</step>
+	<step date="11-03-2004" model="BM">
+		<object type="Target Query" action="Added">QM Education with Descriptor ?</object>
+	</step>
+	<step date="11-03-2004" model="BM">
+		<object type="Agent" action="Added">QMagic\QM Education\Clear Mapping Table</object>
+	</step>
+	<step date="11-03-2004" model="BM">
+		<object type="Agent" action="Added">QMagic\QM Education\Fill Mapping Table</object>
+	</step>
+	<step date="11-03-2004" model="BM">
+		<object type="Agent" action="Added">QMagic\QM Education\Smart Update EDU Employee</object>
+	</step>
+	
+	</task>
+</tasks>

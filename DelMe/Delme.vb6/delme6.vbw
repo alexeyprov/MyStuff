@@ -1,0 +1,6 @@
+frmPortal = 66, 66, 722, 678, , 22, 22, 678, 634, C
+Global = 44, 44, 700, 656, 
+TransitPointParams = 88, 88, 744, 700, 
+CustomDialogBox = 110, 110, 766, 722, 
+CMSErrorObject = 132, 132, 788, 744, 
+Constants = 198, 198, 854, 810, 

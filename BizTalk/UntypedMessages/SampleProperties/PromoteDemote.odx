@@ -1,0 +1,434 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="6990c0c6-a0b8-47e9-922f-1031649dd883" LowerBound="1.1" HigherBound="124.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="SampleProperties" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="2f1e9234-3ac3-4562-bb12-8b275b2f26e7" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_1" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="a97fbc27-2bdd-477b-84b7-7a1d7396a823" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="fffaa8f2-9b5d-44e9-b227-7205f98fb01d" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="ae60d739-1780-4ce5-a7ad-2230dfd2b92a" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_2" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="52b5a981-d810-492f-a163-83ea3de5649c" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="96fdb071-e4a3-4b28-a735-be788da8f303" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="4e994de9-1f59-489e-b390-bbf588f69cd2" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="123.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PromoteDemote" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="VariableDeclaration" OID="5c6a80f1-9051-4f90-aea5-233250114a95" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="30.1" HigherBound="31.1">
+                <om:Property Name="UseDefaultConstructor" Value="True" />
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="xDoc" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="f2eeac1f-4ebb-416c-86d6-f795896919be" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="31.1" HigherBound="32.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReviewName" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="VariableDeclaration" OID="6ada58d3-0aef-4e35-84b9-d3dd1e095b1b" ParentLink="ServiceDeclaration_VariableDeclaration" LowerBound="32.1" HigherBound="33.1">
+                <om:Property Name="UseDefaultConstructor" Value="False" />
+                <om:Property Name="Type" Value="System.String" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="ReviewType" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="303677dc-0c9a-4e5e-ab65-8c87412c8040" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="In" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="460603bd-e766-4f8a-a9bf-f6ae84497977" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Out" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="99211e76-2dda-407f-afbe-4045d8a9278f" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="27.1" HigherBound="28.1">
+                <om:Property Name="Type" Value="SampleProperties.BookReview" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="CastBookIn" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="3056ca9b-34b1-4773-9b4e-378a875782d7" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="28.1" HigherBound="29.1">
+                <om:Property Name="Type" Value="SampleProperties.MovieReivew" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="CastMovieIn" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="a088b968-4688-4d13-8244-c9648b497fd8" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="29.1" HigherBound="30.1">
+                <om:Property Name="Type" Value="SampleProperties.MovieReivew" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="CastMovieOut" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="8d6bddea-b4ac-4196-a095-d581afd97a02" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="ac558e81-d204-4648-83bc-5033aa655dd1" ParentLink="ServiceBody_Statement" LowerBound="35.1" HigherBound="40.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="Port_1" />
+                    <om:Property Name="MessageName" Value="In" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Receive_XMLDoc" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Decision" OID="7e60061c-2e5c-491b-99db-47726e6d8870" ParentLink="ServiceBody_Statement" LowerBound="40.1" HigherBound="108.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="MessageType" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="DecisionBranch" OID="3be3e6c1-d6cc-450d-a9c2-2557fae988ff" ParentLink="ReallyComplexStatement_Branch" LowerBound="41.13" HigherBound="69.1">
+                        <om:Property Name="Expression" Value="In(BTS.MessageType) == &quot;BookReview&quot;" />
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="BookReview" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Construct" OID="26b2770d-80b9-4d55-8f39-f41b23a3b1da" ParentLink="ComplexStatement_Statement" LowerBound="43.1" HigherBound="54.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ConstructBook" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessageRef" OID="b07f1cfc-9d81-4f5b-a1b4-51723a589cfc" ParentLink="Construct_MessageRef" LowerBound="44.27" HigherBound="44.37">
+                                <om:Property Name="Ref" Value="CastBookIn" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessageAssignment" OID="45d2accb-454c-4a4b-b058-aea9b92e6e05" ParentLink="ComplexStatement_Statement" LowerBound="46.1" HigherBound="53.1">
+                                <om:Property Name="Expression" Value="// Cast the XML Document into a Typed Message&#xD;&#xA;CastBookIn = In;&#xD;&#xA;&#xD;&#xA;// Now, we can get access to the additional message context properties&#xD;&#xA;ReviewName = CastBookIn(SampleProperties.RName);&#xD;&#xA;ReviewType = CastBookIn(SampleProperties.Status);" />
+                                <om:Property Name="ReportToAnalyst" Value="False" />
+                                <om:Property Name="Name" Value="MessageAssignment_1" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="Construct" OID="21e9d404-186b-4b20-b477-49dd88af7c45" ParentLink="ComplexStatement_Statement" LowerBound="54.1" HigherBound="68.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ConstructOutXMLDoc" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessageRef" OID="4f7ce093-269b-4af9-9665-9a64bf676a39" ParentLink="Construct_MessageRef" LowerBound="55.27" HigherBound="55.30">
+                                <om:Property Name="Ref" Value="Out" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessageAssignment" OID="b2d557bd-d244-4596-b769-4913ce00a86e" ParentLink="ComplexStatement_Statement" LowerBound="57.1" HigherBound="67.1">
+                                <om:Property Name="Expression" Value="// Create a new XML Document&#xD;&#xA;xDoc = new System.Xml.XmlDocument();&#xD;&#xA;Out = xDoc;&#xD;&#xA;Out = (System.Xml.XmlDocument)CastBookIn;&#xD;&#xA;&#xD;&#xA;// Note that you can not set properties of this out message, like SampleProperties.Name&#xD;&#xA;// If you wanted to do that, create a CastMovieOut and load a blank schema into it&#xD;&#xA;// Then you can cast that into Out after you change the properties.&#xD;&#xA;// See the Construct for Movie )next door) for a sample" />
+                                <om:Property Name="ReportToAnalyst" Value="False" />
+                                <om:Property Name="Name" Value="MessageAssignment_2" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="DecisionBranch" OID="5112dee5-d738-4603-9f6e-4e9ffb47f80b" ParentLink="ReallyComplexStatement_Branch" LowerBound="69.18" HigherBound="103.1">
+                        <om:Property Name="Expression" Value="In(BTS.MessageType) == &quot;MovieReview&quot;" />
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="MovieReview" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="Construct" OID="b58939ad-51af-4b41-9e27-4f4c33d0322f" ParentLink="ComplexStatement_Statement" LowerBound="71.1" HigherBound="93.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ConstructMovie" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessageRef" OID="4fe3d12a-d7ab-4ad5-ac9a-46e108661741" ParentLink="Construct_MessageRef" LowerBound="72.27" HigherBound="72.38">
+                                <om:Property Name="Ref" Value="CastMovieIn" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessageRef" OID="88137786-8ea8-48a9-a855-8697219d5c86" ParentLink="Construct_MessageRef" LowerBound="72.40" HigherBound="72.52">
+                                <om:Property Name="Ref" Value="CastMovieOut" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessageAssignment" OID="f153aabe-9267-49bc-8881-abcad96dcd3a" ParentLink="ComplexStatement_Statement" LowerBound="74.1" HigherBound="92.1">
+                                <om:Property Name="Expression" Value="// Cast the XML Document into a Typed Message&#xD;&#xA;CastMovieIn = In;&#xD;&#xA;&#xD;&#xA;// Now, we can get access to the additional message context properties&#xD;&#xA;ReviewName = CastMovieIn(SampleProperties.RName);&#xD;&#xA;ReviewType = CastMovieIn(SampleProperties.Status);&#xD;&#xA;&#xD;&#xA;// Create a new XML Document and load a Blank Schema&#xD;&#xA;xDoc = new System.Xml.XmlDocument();&#xD;&#xA;xDoc.LoadXml(&quot;&lt;MovieReview&gt;&lt;FilmName&gt;&lt;/FilmName&gt;&lt;Stars&gt;&lt;/Stars&gt;&lt;Critics&gt;&lt;/Critics&gt;&lt;Review&gt;&lt;/Review&gt;&lt;Grade&gt;&lt;/Grade&gt;&lt;/MovieReview&gt;&quot;);&#xD;&#xA;CastMovieOut = xDoc;&#xD;&#xA;&#xD;&#xA;// Now, you can change the values&#xD;&#xA;CastMovieOut(SampleProperties.RName) = &quot;Updated Movie Name to Something Here&quot;;&#xD;&#xA;&#xD;&#xA;// Just to show this, I will set it to a value in the In Message&#xD;&#xA;CastMovieOut(SampleProperties.Status) = CastMovieIn(SampleProperties.RName);&#xD;&#xA;" />
+                                <om:Property Name="ReportToAnalyst" Value="False" />
+                                <om:Property Name="Name" Value="MessageAssignment_1" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                        </om:Element>
+                        <om:Element Type="Construct" OID="6cb95573-245f-4ad9-a7ae-695c467cbebb" ParentLink="ComplexStatement_Statement" LowerBound="93.1" HigherBound="102.1">
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="ConstructOutXMLDoc" />
+                            <om:Property Name="Signal" Value="True" />
+                            <om:Element Type="MessageRef" OID="6dc6628b-0dd2-4be7-b4e0-3c670be5cc86" ParentLink="Construct_MessageRef" LowerBound="94.27" HigherBound="94.30">
+                                <om:Property Name="Ref" Value="Out" />
+                                <om:Property Name="ReportToAnalyst" Value="True" />
+                                <om:Property Name="Signal" Value="False" />
+                            </om:Element>
+                            <om:Element Type="MessageAssignment" OID="d9324b06-f6ab-4857-8d5c-e2f7ed6e9e70" ParentLink="ComplexStatement_Statement" LowerBound="96.1" HigherBound="101.1">
+                                <om:Property Name="Expression" Value="// Create a new XML Document&#xD;&#xA;xDoc = new System.Xml.XmlDocument();&#xD;&#xA;Out = xDoc;&#xD;&#xA;Out = (System.Xml.XmlDocument)CastMovieIn;" />
+                                <om:Property Name="ReportToAnalyst" Value="False" />
+                                <om:Property Name="Name" Value="MessageAssignment_2" />
+                                <om:Property Name="Signal" Value="True" />
+                            </om:Element>
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="DecisionBranch" OID="2e33f299-14db-4b8e-b74c-98905a4660f9" ParentLink="ReallyComplexStatement_Branch">
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Else" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="Terminate" OID="82baa911-151b-47ee-9c10-eba599ddd1fe" ParentLink="ComplexStatement_Statement" LowerBound="105.1" HigherBound="107.1">
+                            <om:Property Name="ErrorMessage" Value="&quot;MessageType Not Found&quot;;" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="SchemaNotFound" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Decision" OID="bca10fd4-7fde-418b-ad59-07d465a017b7" ParentLink="ServiceBody_Statement" LowerBound="108.1" HigherBound="119.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ReviewType" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="DecisionBranch" OID="0b3ff6b7-5b58-4085-b9a2-9cf21e9860d9" ParentLink="ReallyComplexStatement_Branch" LowerBound="109.13" HigherBound="114.1">
+                        <om:Property Name="Expression" Value="ReviewType==&quot;good&quot;" />
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="GoodReview" />
+                        <om:Property Name="Signal" Value="True" />
+                        <om:Element Type="VariableAssignment" OID="833017c2-0ccc-4fb3-8f43-d3661247c45b" ParentLink="ComplexStatement_Statement" LowerBound="111.1" HigherBound="113.1">
+                            <om:Property Name="Expression" Value="System.Diagnostics.EventLog.WriteEntry(&quot;Good Review&quot;,ReviewName);" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="GoodEvent" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                    <om:Element Type="DecisionBranch" OID="ccf25ac6-4cd2-4733-8b4b-4844f91ed672" ParentLink="ReallyComplexStatement_Branch">
+                        <om:Property Name="IsGhostBranch" Value="True" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Name" Value="Else" />
+                        <om:Property Name="Signal" Value="False" />
+                        <om:Element Type="VariableAssignment" OID="c736d54b-a4bb-4c1c-925c-c0cc4207a7e2" ParentLink="ComplexStatement_Statement" LowerBound="116.1" HigherBound="118.1">
+                            <om:Property Name="Expression" Value="System.Diagnostics.EventLog.WriteEntry(&quot;Bad Review&quot;,ReviewName);" />
+                            <om:Property Name="ReportToAnalyst" Value="True" />
+                            <om:Property Name="Name" Value="BadEvent" />
+                            <om:Property Name="Signal" Value="False" />
+                        </om:Element>
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="Send" OID="7fc52a87-ac19-462a-adbe-fd40f3a08f7c" ParentLink="ServiceBody_Statement" LowerBound="119.1" HigherBound="121.1">
+                    <om:Property Name="PortName" Value="Port_2" />
+                    <om:Property Name="MessageName" Value="Out" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Send_XMLDoc" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="0ccabdd2-b2b6-4464-8d07-607bfd5d27c9" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Unbound" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="SampleProperties.PortType_1" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="PhysicalBindingAttribute" OID="8465dfd8-f8d4-4b7b-b1f6-ea5056d3385b" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
+                    <om:Property Name="InPipeline" Value="Microsoft.BizTalk.DefaultPipelines.XMLReceive" />
+                    <om:Property Name="OutPipeline" Value="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" />
+                    <om:Property Name="TransportType" Value="FILE" />
+                    <om:Property Name="URI" Value="C:\SampleProperties\In\*.xml" />
+                    <om:Property Name="IsDynamic" Value="False" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="c881860b-3889-4d4f-a7fc-c649fc3f5a60" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Unbound" />
+                <om:Property Name="PortIndex" Value="-1" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="SampleProperties.PortType_2" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Port_2" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="PhysicalBindingAttribute" OID="da56dbb7-509e-4e6d-b865-45390dbbcf6d" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                    <om:Property Name="InPipeline" Value="Microsoft.BizTalk.DefaultPipelines.XMLReceive" />
+                    <om:Property Name="OutPipeline" Value="Microsoft.BizTalk.DefaultPipelines.XMLTransmit" />
+                    <om:Property Name="TransportType" Value="FILE" />
+                    <om:Property Name="URI" Value="C:\SampleProperties\Out\%MessageID%.xml" />
+                    <om:Property Name="IsDynamic" Value="False" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module SampleProperties
+{
+    internal porttype PortType_1
+    {
+        oneway Operation_1
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    internal porttype PortType_2
+    {
+        oneway Operation_1
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service PromoteDemote
+    {
+        [Microsoft.XLANGs.BaseTypes.PhysicalBinding("FILE", "C:\\SampleProperties\\In\\*.xml", typeof(Microsoft.BizTalk.DefaultPipelines.XMLReceive))]
+        port implements PortType_1 Port_1;
+        [Microsoft.XLANGs.BaseTypes.PhysicalBinding("FILE", "C:\\SampleProperties\\Out\\%MessageID%.xml", typeof(Microsoft.BizTalk.DefaultPipelines.XMLTransmit))]
+        port uses PortType_2 Port_2;
+        message System.Xml.XmlDocument In;
+        message System.Xml.XmlDocument Out;
+        message BookReview CastBookIn;
+        message MovieReivew CastMovieIn;
+        message MovieReivew CastMovieOut;
+        System.Xml.XmlDocument xDoc;
+        System.String ReviewName;
+        System.String ReviewType;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("ac558e81-d204-4648-83bc-5033aa655dd1")]
+            activate receive (Port_1.Operation_1, In);
+            xDoc = new System.Xml.XmlDocument();
+            ReviewName = "";
+            ReviewType = "";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("7e60061c-2e5c-491b-99db-47726e6d8870")]
+            if (In(BTS.MessageType) == "BookReview")
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("26b2770d-80b9-4d55-8f39-f41b23a3b1da")]
+                construct CastBookIn
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("45d2accb-454c-4a4b-b058-aea9b92e6e05")]
+                    // Cast the XML Document into a Typed Message
+                    CastBookIn = In;
+                    
+                    // Now, we can get access to the additional message context properties
+                    ReviewName = CastBookIn(SampleProperties.RName);
+                    ReviewType = CastBookIn(SampleProperties.Status);
+                }
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("21e9d404-186b-4b20-b477-49dd88af7c45")]
+                construct Out
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("b2d557bd-d244-4596-b769-4913ce00a86e")]
+                    // Create a new XML Document
+                    xDoc = new System.Xml.XmlDocument();
+                    Out = xDoc;
+                    Out = (System.Xml.XmlDocument)CastBookIn;
+                    
+                    // Note that you can not set properties of this out message, like SampleProperties.Name
+                    // If you wanted to do that, create a CastMovieOut and load a blank schema into it
+                    // Then you can cast that into Out after you change the properties.
+                    // See the Construct for Movie )next door) for a sample
+                }
+            }
+            else if (In(BTS.MessageType) == "MovieReview")
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("b58939ad-51af-4b41-9e27-4f4c33d0322f")]
+                construct CastMovieIn, CastMovieOut
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("f153aabe-9267-49bc-8881-abcad96dcd3a")]
+                    // Cast the XML Document into a Typed Message
+                    CastMovieIn = In;
+                    
+                    // Now, we can get access to the additional message context properties
+                    ReviewName = CastMovieIn(SampleProperties.RName);
+                    ReviewType = CastMovieIn(SampleProperties.Status);
+                    
+                    // Create a new XML Document and load a Blank Schema
+                    xDoc = new System.Xml.XmlDocument();
+                    xDoc.LoadXml("<MovieReview><FilmName></FilmName><Stars></Stars><Critics></Critics><Review></Review><Grade></Grade></MovieReview>");
+                    CastMovieOut = xDoc;
+                    
+                    // Now, you can change the values
+                    CastMovieOut(SampleProperties.RName) = "Updated Movie Name to Something Here";
+                    
+                    // Just to show this, I will set it to a value in the In Message
+                    CastMovieOut(SampleProperties.Status) = CastMovieIn(SampleProperties.RName);
+                }
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("6cb95573-245f-4ad9-a7ae-695c467cbebb")]
+                construct Out
+                {
+                    [Microsoft.XLANGs.BaseTypes.DesignerPosition("d9324b06-f6ab-4857-8d5c-e2f7ed6e9e70")]
+                    // Create a new XML Document
+                    xDoc = new System.Xml.XmlDocument();
+                    Out = xDoc;
+                    Out = (System.Xml.XmlDocument)CastMovieIn;
+                }
+            }
+            else 
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("82baa911-151b-47ee-9c10-eba599ddd1fe")]
+                terminate "MessageType Not Found";;
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("bca10fd4-7fde-418b-ad59-07d465a017b7")]
+            if (ReviewType=="good")
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("833017c2-0ccc-4fb3-8f43-d3661247c45b")]
+                System.Diagnostics.EventLog.WriteEntry("Good Review",ReviewName);
+            }
+            else 
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("c736d54b-a4bb-4c1c-925c-c0cc4207a7e2")]
+                System.Diagnostics.EventLog.WriteEntry("Bad Review",ReviewName);
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("7fc52a87-ac19-462a-adbe-fd40f3a08f7c")]
+            send (Port_2.Operation_1, Out);
+        }
+    }
+}
+

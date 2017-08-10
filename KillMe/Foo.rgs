@@ -1,0 +1,24 @@
+HKCR
+{
+	KillMe.Foo.1 = s 'Foo Class'
+	{
+		CLSID = s '{D5215B01-0021-4B87-9F94-2C06E1FF05FF}'
+	}
+	KillMe.Foo = s 'Foo Class'
+	{
+		CLSID = s '{D5215B01-0021-4B87-9F94-2C06E1FF05FF}'
+		CurVer = s 'KillMe.Foo.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {D5215B01-0021-4B87-9F94-2C06E1FF05FF} = s 'Foo Class'
+		{
+			ProgID = s 'KillMe.Foo.1'
+			VersionIndependentProgID = s 'KillMe.Foo'
+			ForceRemove 'Programmable'
+			LocalServer32 = s '%MODULE%'
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{00422B18-F116-40A9-B8B9-F0497D81D541}'
+		}
+	}
+}

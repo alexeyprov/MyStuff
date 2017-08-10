@@ -1,0 +1,1 @@
+csc /debug /out:Cashier.exe Program.cs Problem.cs Slot.cs RecursiveSolver.cs DynamicSolver.cs ISolver.cs

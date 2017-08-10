@@ -1,0 +1,29 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XPathXA", "XPathXA.csproj", "{616352EC-1C7D-4502-A4C6-D396BF3F1D3A}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlHelpers", "..\XmlHelpers\XmlHelpers.csproj", "{652AC4C2-7644-444B-B009-B8B64C3217B6}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{616352EC-1C7D-4502-A4C6-D396BF3F1D3A}.Debug.ActiveCfg = Debug|.NET
+		{616352EC-1C7D-4502-A4C6-D396BF3F1D3A}.Debug.Build.0 = Debug|.NET
+		{616352EC-1C7D-4502-A4C6-D396BF3F1D3A}.Release.ActiveCfg = Release|.NET
+		{616352EC-1C7D-4502-A4C6-D396BF3F1D3A}.Release.Build.0 = Release|.NET
+		{652AC4C2-7644-444B-B009-B8B64C3217B6}.Debug.ActiveCfg = Debug|.NET
+		{652AC4C2-7644-444B-B009-B8B64C3217B6}.Debug.Build.0 = Debug|.NET
+		{652AC4C2-7644-444B-B009-B8B64C3217B6}.Release.ActiveCfg = Release|.NET
+		{652AC4C2-7644-444B-B009-B8B64C3217B6}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,87 @@
+<html>
+<body>
+<pre>
+<h1>Build Log</h1>
+<h3>
+--------------------Configuration: RTFControl - Win32 Unicode Release MinDependency--------------------
+</h3>
+<h3>Command Lines</h3>
+Creating command line "midl.exe /tlb ".\RTFControl.tlb" /h "RTFControl.h" /iid "RTFControl_i.c" /Oicf "D:\Projects\MyStuff\RTFControl\RTFControl.idl""
+Creating command line "rc.exe /l 0x409 /fo"ReleaseUMinDependency/RTFControl.res" /d "NDEBUG" "D:\Projects\MyStuff\RTFControl\RTFControl.rc"" 
+Creating temporary file "C:\DOCUME~1\AlexeyP\LOCALS~1\Temp\RSP14A.tmp" with contents
+[
+/nologo /MT /W3 /O1 /D "WIN32" /D "NDEBUG" /D "_WINDOWS" /D "_USRDLL" /D "_UNICODE" /D "_ATL_STATIC_REGISTRY" /D "_ATL_MIN_CRT" /Fp"ReleaseUMinDependency/RTFControl.pch" /Yu"stdafx.h" /Fo"ReleaseUMinDependency/" /Fd"ReleaseUMinDependency/" /FD /c 
+"D:\Projects\MyStuff\RTFControl\RTFControl.cpp"
+"D:\Projects\MyStuff\RTFControl\TextControl.cpp"
+]
+Creating command line "cl.exe @C:\DOCUME~1\AlexeyP\LOCALS~1\Temp\RSP14A.tmp" 
+Creating temporary file "C:\DOCUME~1\AlexeyP\LOCALS~1\Temp\RSP14B.tmp" with contents
+[
+kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /nologo /subsystem:windows /dll /incremental:no /pdb:"ReleaseUMinDependency/RTFControl.pdb" /machine:I386 /def:".\RTFControl.def" /out:"ReleaseUMinDependency/RTFControl.dll" /implib:"ReleaseUMinDependency/RTFControl.lib" 
+.\ReleaseUMinDependency\StdAfx.obj
+.\ReleaseUMinDependency\RTFControl.obj
+.\ReleaseUMinDependency\RTFControl.res
+.\ReleaseUMinDependency\TextControl.obj
+]
+Creating command line "link.exe @C:\DOCUME~1\AlexeyP\LOCALS~1\Temp\RSP14B.tmp"
+Creating temporary file "C:\DOCUME~1\AlexeyP\LOCALS~1\Temp\RSP14C.bat" with contents
+[
+@echo off
+if "%OS%"=="" goto NOTNT
+if not "%OS%"=="Windows_NT" goto NOTNT
+regsvr32 /s /c ".\ReleaseUMinDependency\RTFControl.dll"
+echo regsvr32 exec. time > ".\ReleaseUMinDependency\regsvr32.trg"
+goto end
+:NOTNT
+echo Warning : Cannot register Unicode DLL on Windows 95
+:end
+]
+Creating command line "C:\DOCUME~1\AlexeyP\LOCALS~1\Temp\RSP14C.bat"
+Creating Type Library...
+Microsoft (R) MIDL Compiler Version 5.01.0164  
+Copyright (c) Microsoft Corp 1991-1997. All rights reserved.
+Processing D:\Projects\MyStuff\RTFControl\RTFControl.idl
+RTFControl.idl
+Processing D:\Program Files\Microsoft SDK\Include\oaidl.idl
+oaidl.idl
+Processing D:\Program Files\Microsoft SDK\Include\objidl.idl
+objidl.idl
+Processing D:\Program Files\Microsoft SDK\Include\unknwn.idl
+unknwn.idl
+Processing D:\Program Files\Microsoft SDK\Include\wtypes.idl
+wtypes.idl
+Processing D:\Program Files\Microsoft SDK\Include\basetsd.h
+basetsd.h
+Processing D:\Program Files\Microsoft SDK\Include\guiddef.h
+guiddef.h
+Processing D:\Program Files\Microsoft SDK\Include\ocidl.idl
+ocidl.idl
+Processing D:\Program Files\Microsoft SDK\Include\oleidl.idl
+oleidl.idl
+Processing D:\Program Files\Microsoft SDK\Include\servprov.idl
+servprov.idl
+Processing D:\Program Files\Microsoft SDK\Include\urlmon.idl
+urlmon.idl
+Processing D:\Program Files\Microsoft SDK\Include\msxml.idl
+msxml.idl
+Processing D:\Program Files\Microsoft SDK\Include\oaidl.acf
+oaidl.acf
+Processing D:\Program Files\Microsoft SDK\Include\ocidl.acf
+ocidl.acf
+Compiling resources...
+Compiling...
+RTFControl.cpp
+TextControl.cpp
+Generating Code...
+Linking...
+   Creating library ReleaseUMinDependency/RTFControl.lib and object ReleaseUMinDependency/RTFControl.exp
+<h3>Output Window</h3>
+Performing registration
+
+
+
+<h3>Results</h3>
+RTFControl.dll - 0 error(s), 0 warning(s)
+</pre>
+</body>
+</html>

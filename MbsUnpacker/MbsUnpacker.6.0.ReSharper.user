@@ -1,0 +1,29 @@
+<Configuration>
+  <RecentFiles>
+    <RecentFiles>
+      <File id="34269EAF-6884-4EEA-8F4F-5839B53CF01A/f:MbsUnpacker.cpp" caret="262" fromTop="0" />
+    </RecentFiles>
+    <RecentEdits>
+      <File id="34269EAF-6884-4EEA-8F4F-5839B53CF01A/f:MbsUnpacker.cpp" caret="2063" fromTop="20" />
+      <File id="34269EAF-6884-4EEA-8F4F-5839B53CF01A/f:MbsUnpacker.cpp" caret="143" fromTop="6" />
+      <File id="34269EAF-6884-4EEA-8F4F-5839B53CF01A/f:MbsUnpacker.cpp" caret="233" fromTop="11" />
+    </RecentEdits>
+  </RecentFiles>
+  <NAntValidationSettings>
+    <NAntPath value="" />
+  </NAntValidationSettings>
+  <UnitTestRunner>
+    <Providers />
+  </UnitTestRunner>
+  <UnitTestRunnerNUnit>
+    <NUnitInstallDir>C:\Program Files (x86)\NUnit 2.4.7\bin\net-2.0\lib</NUnitInstallDir>
+    <UseAddins>Never</UseAddins>
+  </UnitTestRunnerNUnit>
+  <SettingsComponent>
+    <string />
+    <integer />
+    <boolean>
+      <setting name="SolutionAnalysisEnabled">False</setting>
+    </boolean>
+  </SettingsComponent>
+</Configuration>

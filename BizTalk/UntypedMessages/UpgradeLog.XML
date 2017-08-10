@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="SampleProperties">
+</Property><Property Name="Solution File" Value="C:\Projects\MyStuff\UntypedMessages\SampleProperties.sln">
+</Property><Property Name="Date" Value="Wednesday, July 21, 2010">
+</Property><Property Name="Time" Value="17:38 PM">
+</Property></Properties><Event ErrorLevel="0" Project="C:\Projects\MyStuff\UntypedMessages\SampleProperties\SampleProperties.btproj" Source="SampleProperties\SampleProperties.btproj" Description="Project Upgrade Beginning...">
+</Event><Event ErrorLevel="0" Project="C:\Projects\MyStuff\UntypedMessages\SampleProperties\SampleProperties.btproj" Source="SampleProperties\SampleProperties.btproj" Description="Temporary backup created for project file at: C:\Projects\MyStuff\UntypedMessages\SampleProperties\SampleProperties.btproj.bak">
+</Event><Event ErrorLevel="0" Project="C:\Projects\MyStuff\UntypedMessages\SampleProperties\SampleProperties.btproj" Source="SampleProperties\SampleProperties.btproj" Description="Project file 'SampleProperties.btproj' upgraded">
+</Event><Event ErrorLevel="0" Project="C:\Projects\MyStuff\UntypedMessages\SampleProperties\SampleProperties.btproj" Source="SampleProperties\SampleProperties.btproj.user" Description="Temporary backup created for user file at: C:\Projects\MyStuff\UntypedMessages\SampleProperties\SampleProperties.btproj.user.bak">
+</Event><Event ErrorLevel="0" Project="C:\Projects\MyStuff\UntypedMessages\SampleProperties\SampleProperties.btproj" Source="SampleProperties\SampleProperties.btproj.user" Description="User file 'SampleProperties.btproj.user' upgraded">
+</Event><Event ErrorLevel="3" Project="C:\Projects\MyStuff\UntypedMessages\SampleProperties\SampleProperties.btproj" Source="SampleProperties\SampleProperties.btproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="SampleProperties.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="SampleProperties.sln" Description="Converted">
+</Event></UpgradeLog>

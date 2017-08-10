@@ -1,0 +1,28 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RndGen", "RndGen.vcproj", "{67D76BC7-04C6-45B0-BBB4-E17610059A9B}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "RndGenPS", "RndGenPS.vcproj", "{38AA61DB-C683-4A30-97C6-5361CD3BA414}"
+	ProjectSection(ProjectDependencies) = postProject
+		{67D76BC7-04C6-45B0-BBB4-E17610059A9B} = {67D76BC7-04C6-45B0-BBB4-E17610059A9B}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{67D76BC7-04C6-45B0-BBB4-E17610059A9B}.Debug.ActiveCfg = Debug|Win32
+		{67D76BC7-04C6-45B0-BBB4-E17610059A9B}.Debug.Build.0 = Debug|Win32
+		{67D76BC7-04C6-45B0-BBB4-E17610059A9B}.Release.ActiveCfg = Release|Win32
+		{67D76BC7-04C6-45B0-BBB4-E17610059A9B}.Release.Build.0 = Release|Win32
+		{38AA61DB-C683-4A30-97C6-5361CD3BA414}.Debug.ActiveCfg = Debug|Win32
+		{38AA61DB-C683-4A30-97C6-5361CD3BA414}.Release.ActiveCfg = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

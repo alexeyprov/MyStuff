@@ -1,0 +1,16 @@
+[History]
+B0=XmlFrm/frmMain/HelpAbout
+B1=XmlFrm/frmMain/FileOpen
+B2=XmlFrm/frmMain/imgVSplitter_MouseDown
+B3=XmlFrm/frmMain/SizeControls
+B4=XmlFrm/frmMain/Form_Load
+B5=XmlFrm/frmMain/cboTemplate_Click
+B6=XmlFrm/frmMain/ToggleHtmlView
+B7=XmlFrm/frmMain/tbToolBar_ButtonClick
+B8=XmlFrm/frmAbout
+B9=XmlFrm/frmMain/imgSplitter_MouseMove
+B10=XmlFrm/frmMain/TreeView1_DragDrop
+B11=XmlFrm/frmMain/Form_Resize
+B12=XmlFrm/frmMain/CoolBar1_HeightChanged
+B13=XmlFrm/frmMain/imgSplitter_MouseUp
+B14=XmlFrm/frmMain/imgSplitter_MouseDown

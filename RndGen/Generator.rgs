@@ -1,0 +1,28 @@
+HKCR
+{
+	RndGen.Generator.1 = s 'Generator Class'
+	{
+		CLSID = s '{66EF5506-AB8A-4DFE-A0B2-1485844B473E}'
+	}
+	RndGen.Generator = s 'Generator Class'
+	{
+		CLSID = s '{66EF5506-AB8A-4DFE-A0B2-1485844B473E}'
+		CurVer = s 'RndGen.Generator.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {66EF5506-AB8A-4DFE-A0B2-1485844B473E} = s 'Generator Class'
+		{
+			ProgID = s 'RndGen.Generator.1'
+			VersionIndependentProgID = s 'RndGen.Generator'
+			ForceRemove 'Programmable'
+			LocalServer32 = s '%MODULE%'
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{14DAF2E8-1C79-448C-916B-ED5189216CEA}'
+			ForceRemove 'Implemented Categories'
+			{
+				'{1F132BA0-3662-11D1-9E46-00A0C96CA177}'
+			}
+		}
+	}
+}

@@ -1,0 +1,4 @@
+VBGROUP 5.0
+StartupProject=xmlfrm.vbp
+Project=Link\HyperLink.vbp
+Project=Viewer\xmlView.vbp

@@ -1,0 +1,80 @@
+// KillMe.idl : IDL source for KillMe
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (KillMe.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(7BEC3033-E07A-4C02-A5B6-D7F2717F13E6),
+	dual,
+	nonextensible,
+	helpstring("IFoo Interface"),
+	pointer_default(unique)
+]
+interface IFoo : IDispatch
+{
+	[propget, id(1), helpstring("property Name")] HRESULT Name([out, retval] BSTR* pVal);
+};
+
+[
+	object,
+	uuid(3050A51D-8FEA-4875-B82C-4F9B1B427034),
+	dual,
+	nonextensible,
+	helpstring("IFooListener Interface"),
+	pointer_default(unique)
+]
+interface IFooListener : IFoo
+{
+	[id(2), helpstring("method Listen")] HRESULT Listen([in] BSTR data);
+};
+
+[
+	object,
+	uuid(29EA7B6E-DF4E-4D97-8C41-F71105F47B0B),
+	dual,
+	nonextensible,
+	helpstring("IFooSpeaker Interface"),
+	pointer_default(unique)
+]
+interface IFooSpeaker : IFoo
+{
+	[id(2), helpstring("method Speak")] HRESULT Speak([out,retval] BSTR* ret);
+};
+[
+	uuid(00422B18-F116-40A9-B8B9-F0497D81D541),
+	version(1.0),
+	helpstring("KillMe 1.0 Type Library")
+]
+library KillMeLib
+{
+	//importlib("stdole2.tlb");
+	//[
+	//	uuid(D5215B01-0021-4B87-9F94-2C06E1FF05FF),
+	//	helpstring("Foo Class")
+	//]
+	//coclass Foo
+	//{
+	//	[default] interface IFoo;
+	//};
+	[
+		uuid(AF9BAA44-70E4-43C0-95C8-4EA4C4FE8F67),
+		helpstring("FooListener Class")
+	]
+	coclass FooListener
+	{
+		[default] interface IFooListener;
+	};
+	[
+		uuid(C59F44B2-7B32-4AD7-9540-EBC9C4BE1974),
+		helpstring("FooSpeaker Class")
+	]
+	coclass FooSpeaker
+	{
+		[default] interface IFooSpeaker;
+	};
+};

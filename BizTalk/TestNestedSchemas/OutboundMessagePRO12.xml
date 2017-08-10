@@ -1,0 +1,102 @@
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+	<soap:Body>
+		<RepriceStack xmlns="https://secure.prime-health.net/core/">
+			<stack>
+				<testmode>true</testmode>
+				<clientid>mitchell</clientid>
+				<siteid>FF1</siteid>
+				<subclientid>PRIME ARCOMP</subclientid>
+				<clientpassword>prime08sa</clientpassword>
+				<resultcode>0</resultcode>
+				<bills>
+					<bill>
+						<formtype>H</formtype>
+						<billid>FF1PRO12</billid>
+						<claimnumber>SB002</claimnumber>
+						<dateofservice>2008-11-01T00:00:00.0000000-07:00</dateofservice>
+						<productcode>W</productcode>
+						<patient>
+							<ssn />
+							<dob>1965-06-14T00:00:00.0000000-07:00</dob>
+							<firstname>JACKEY</firstname>
+							<lastname>SPRADLEY</lastname>
+							<mi />
+							<address1>10071 HWY 70</address1>
+							<address2 />
+							<city>MARYSVILLE</city>
+							<state>CA</state>
+							<zip>95901</zip>
+						</patient>
+						<provider>
+							<taxid>752014828</taxid>
+							<facilityname>OCCUPATIONAL HEALTH CENTERS</facilityname>
+							<firstname>LARRY</firstname>
+							<lastname>DODGE</lastname>
+							<mi>D</mi>
+							<degree>MD</degree>
+							<address1>1345 VALWOOD PKWY</address1>
+							<address2>STE 306</address2>
+							<city>CARROLLTON</city>
+							<state>TX</state>
+							<zip>750066891</zip>
+							<specialty />
+							<servicezip>750066891</servicezip>
+						</provider>
+						<lineitems>
+							<lineitem>
+								<servicefrom>2008-11-01T00:00:00.0000000-07:00</servicefrom>
+								<serviceto>2008-11-01T00:00:00.0000000-07:00</serviceto>
+								<code>99244</code>
+								<modifier1 />
+								<modifier2 />
+								<units>1</units>
+								<pos>20</pos>
+								<tos>0</tos>
+								<linecharge>240</linecharge>
+								<statesavings>55.14</statesavings>
+								<stateallowed>184.86</stateallowed>
+								<pposavings>0</pposavings>
+								<othersavings>0</othersavings>
+								<repricedlineamount>0</repricedlineamount>
+								<repricedlinesavings>0</repricedlinesavings>
+								<resultcode>0</resultcode>
+							</lineitem>
+							<lineitem>
+								<servicefrom>2008-11-01T00:00:00.0000000-07:00</servicefrom>
+								<serviceto>2008-11-01T00:00:00.0000000-07:00</serviceto>
+								<code>99080</code>
+								<modifier1>17</modifier1>
+								<modifier2 />
+								<units>2</units>
+								<pos>11</pos>
+								<tos>0</tos>
+								<linecharge>89.18</linecharge>
+								<statesavings>27.83</statesavings>
+								<stateallowed>61.35</stateallowed>
+								<pposavings>0</pposavings>
+								<othersavings>0</othersavings>
+								<repricedlineamount>0</repricedlineamount>
+								<repricedlinesavings>0</repricedlinesavings>
+								<resultcode>0</resultcode>
+							</lineitem>
+						</lineitems>
+						<diagnosiscodes>
+							<string>724.3</string>
+							<string>847.2</string>
+							<string>722.52</string>
+						</diagnosiscodes>
+						<totalbilledcharges>329.18</totalbilledcharges>
+						<billallowance>0</billallowance>
+						<pposavings>0</pposavings>
+						<othersavings>0</othersavings>
+						<stateucrsavings>82.97</stateucrsavings>
+						<totalsavings>0</totalsavings>
+						<resultCode>0</resultCode>
+					</bill>
+				</bills>
+				<ignoreexhibits>false</ignoreexhibits>
+				<allowpendedbills>false</allowpendedbills>
+			</stack>
+		</RepriceStack>
+	</soap:Body>
+</soap:Envelope>

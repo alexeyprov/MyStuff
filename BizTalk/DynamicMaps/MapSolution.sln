@@ -1,0 +1,55 @@
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orchestrations", "Orchestrations\Orchestrations.btproj", "{03A7B515-EB94-4C51-9BA8-EBA90A99D557}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DynamicMaps", "DynamicMaps\DynamicMaps.btproj", "{2507DF96-D65D-4BE2-8DE8-3836290480B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThirdPartyMaps", "ThirdPartyMaps\ThirdPartyMaps.btproj", "{66B3985A-95D5-4E20-B75C-292B294B73A8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Deployment|Any CPU = Deployment|Any CPU
+		Development|Any CPU = Development|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{03A7B515-EB94-4C51-9BA8-EBA90A99D557}.Debug|Any CPU.ActiveCfg = Deployment|Any CPU
+		{03A7B515-EB94-4C51-9BA8-EBA90A99D557}.Debug|Any CPU.Build.0 = Deployment|Any CPU
+		{03A7B515-EB94-4C51-9BA8-EBA90A99D557}.Debug|Any CPU.Deploy.0 = Deployment|Any CPU
+		{03A7B515-EB94-4C51-9BA8-EBA90A99D557}.Deployment|Any CPU.ActiveCfg = Deployment|Any CPU
+		{03A7B515-EB94-4C51-9BA8-EBA90A99D557}.Deployment|Any CPU.Build.0 = Deployment|Any CPU
+		{03A7B515-EB94-4C51-9BA8-EBA90A99D557}.Deployment|Any CPU.Deploy.0 = Deployment|Any CPU
+		{03A7B515-EB94-4C51-9BA8-EBA90A99D557}.Development|Any CPU.ActiveCfg = Development|Any CPU
+		{03A7B515-EB94-4C51-9BA8-EBA90A99D557}.Development|Any CPU.Build.0 = Development|Any CPU
+		{03A7B515-EB94-4C51-9BA8-EBA90A99D557}.Release|Any CPU.ActiveCfg = Deployment|Any CPU
+		{03A7B515-EB94-4C51-9BA8-EBA90A99D557}.Release|Any CPU.Build.0 = Deployment|Any CPU
+		{03A7B515-EB94-4C51-9BA8-EBA90A99D557}.Release|Any CPU.Deploy.0 = Deployment|Any CPU
+		{2507DF96-D65D-4BE2-8DE8-3836290480B6}.Debug|Any CPU.ActiveCfg = Deployment|Any CPU
+		{2507DF96-D65D-4BE2-8DE8-3836290480B6}.Debug|Any CPU.Build.0 = Deployment|Any CPU
+		{2507DF96-D65D-4BE2-8DE8-3836290480B6}.Debug|Any CPU.Deploy.0 = Deployment|Any CPU
+		{2507DF96-D65D-4BE2-8DE8-3836290480B6}.Deployment|Any CPU.ActiveCfg = Deployment|Any CPU
+		{2507DF96-D65D-4BE2-8DE8-3836290480B6}.Deployment|Any CPU.Build.0 = Deployment|Any CPU
+		{2507DF96-D65D-4BE2-8DE8-3836290480B6}.Deployment|Any CPU.Deploy.0 = Deployment|Any CPU
+		{2507DF96-D65D-4BE2-8DE8-3836290480B6}.Development|Any CPU.ActiveCfg = Development|Any CPU
+		{2507DF96-D65D-4BE2-8DE8-3836290480B6}.Development|Any CPU.Build.0 = Development|Any CPU
+		{2507DF96-D65D-4BE2-8DE8-3836290480B6}.Release|Any CPU.ActiveCfg = Deployment|Any CPU
+		{2507DF96-D65D-4BE2-8DE8-3836290480B6}.Release|Any CPU.Build.0 = Deployment|Any CPU
+		{2507DF96-D65D-4BE2-8DE8-3836290480B6}.Release|Any CPU.Deploy.0 = Deployment|Any CPU
+		{66B3985A-95D5-4E20-B75C-292B294B73A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66B3985A-95D5-4E20-B75C-292B294B73A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66B3985A-95D5-4E20-B75C-292B294B73A8}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{66B3985A-95D5-4E20-B75C-292B294B73A8}.Deployment|Any CPU.ActiveCfg = Debug|Any CPU
+		{66B3985A-95D5-4E20-B75C-292B294B73A8}.Deployment|Any CPU.Build.0 = Debug|Any CPU
+		{66B3985A-95D5-4E20-B75C-292B294B73A8}.Deployment|Any CPU.Deploy.0 = Debug|Any CPU
+		{66B3985A-95D5-4E20-B75C-292B294B73A8}.Development|Any CPU.ActiveCfg = Debug|Any CPU
+		{66B3985A-95D5-4E20-B75C-292B294B73A8}.Development|Any CPU.Build.0 = Debug|Any CPU
+		{66B3985A-95D5-4E20-B75C-292B294B73A8}.Development|Any CPU.Deploy.0 = Debug|Any CPU
+		{66B3985A-95D5-4E20-B75C-292B294B73A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66B3985A-95D5-4E20-B75C-292B294B73A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66B3985A-95D5-4E20-B75C-292B294B73A8}.Release|Any CPU.Deploy.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

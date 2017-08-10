@@ -1,0 +1,65 @@
+<?xml version="1.0" ?>
+<xs:schema id="tasks" targetNamespace="http://nikolayzl2k/pivotal/ChangesLog.xsd" xmlns:mstns="http://nikolayzl2k/pivotal/ChangesLog.xsd"
+	xmlns="http://nikolayzl2k/pivotal/ChangesLog.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata"
+	attributeFormDefault="qualified" elementFormDefault="qualified">
+	<xs:element name="tasks" msdata:IsDataSet="true" msdata:Locale="ru-RU" msdata:EnforceConstraints="False">
+		<xs:complexType>
+			<xs:choice maxOccurs="unbounded">
+				<xs:element name="task">
+					<xs:complexType>
+						<xs:sequence>
+							<xs:element name="step" minOccurs="0" maxOccurs="unbounded">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="object" nillable="true" minOccurs="0" maxOccurs="unbounded">
+											<xs:complexType>
+												<xs:simpleContent msdata:ColumnName="object_Text" msdata:Ordinal="2">
+													<xs:extension base="xs:string">
+														<xs:attribute name="type" form="unqualified" type="xs:string" />
+														<xs:attribute name="action" form="unqualified" type="xs:string" />
+													</xs:extension>
+												</xs:simpleContent>
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+									<xs:attribute name="date" form="unqualified" type="xs:string" />
+									<xs:attribute name="model" form="unqualified" type="xs:string" />
+								</xs:complexType>
+							</xs:element>
+							<xs:element name="security" maxOccurs="1">
+								<xs:complexType>
+									<xs:sequence>
+										<xs:element name="privelege">
+											<xs:complexType>
+												<xs:sequence>
+													<xs:element name="grantee">
+														<xs:complexType>
+															<xs:sequence />
+														</xs:complexType>
+													</xs:element>
+													<xs:element name="subject">
+														<xs:complexType>
+															<xs:sequence />
+														</xs:complexType>
+													</xs:element>
+												</xs:sequence>
+												<xs:attribute name="action" type="xs:string" />
+											</xs:complexType>
+										</xs:element>
+									</xs:sequence>
+								</xs:complexType>
+							</xs:element>
+						</xs:sequence>
+						<xs:attribute name="name" form="unqualified" type="xs:string" />
+						<xs:attribute name="server" form="unqualified" type="xs:string" />
+					</xs:complexType>
+				</xs:element>
+			</xs:choice>
+			<xs:attribute name="project" type="xs:string" />			
+		</xs:complexType>
+		<xs:key name="tasksKey1">
+			<xs:selector xpath=".//mstns:task" />
+			<xs:field xpath="@name" />
+		</xs:key>
+	</xs:element>
+</xs:schema>

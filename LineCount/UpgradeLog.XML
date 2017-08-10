@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="LineCount">
+</Property><Property Name="Solution File" Value="D:\Projects\MyStuff\LineCount\LineCount.sln">
+</Property><Property Name="User Options File" Value="D:\Projects\MyStuff\LineCount\LineCount.suo">
+</Property><Property Name="Date" Value="Wednesday, April 16, 2008">
+</Property><Property Name="Time" Value="13:21 PM">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="LineCount.sln" Description="File successfully backed up as D:\Projects\MyStuff\LineCount\Backup\LineCount.sln">
+</Event><Event ErrorLevel="0" Project="" Source="LineCount.suo" Description="File successfully backed up as D:\Projects\MyStuff\LineCount\Backup\LineCount.suo">
+</Event><Event ErrorLevel="0" Project="LineCount" Source="LineCount.csproj" Description="Project file successfully backed up as D:\Projects\MyStuff\LineCount\Backup\LineCount.csproj">
+</Event><Event ErrorLevel="0" Project="LineCount" Source="LineCount.csproj.user" Description="Project user file successfully backed up as D:\Projects\MyStuff\LineCount\Backup\LineCount.csproj.user">
+</Event><Event ErrorLevel="0" Project="LineCount" Source="AssemblyInfo.cs" Description="File successfully backed up as D:\Projects\MyStuff\LineCount\Backup\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="LineCount" Source="LineCounter.cs" Description="File successfully backed up as D:\Projects\MyStuff\LineCount\Backup\LineCounter.cs">
+</Event><Event ErrorLevel="0" Project="LineCount" Source="MainForm.cs" Description="File successfully backed up as D:\Projects\MyStuff\LineCount\Backup\MainForm.cs">
+</Event><Event ErrorLevel="0" Project="LineCount" Source="App.ico" Description="File successfully backed up as D:\Projects\MyStuff\LineCount\Backup\App.ico">
+</Event><Event ErrorLevel="0" Project="LineCount" Source="MainForm.resx" Description="File successfully backed up as D:\Projects\MyStuff\LineCount\Backup\MainForm.resx">
+</Event><Event ErrorLevel="0" Project="LineCount" Source="LineCount.csproj" Description="Project converted successfully">
+</Event><Event ErrorLevel="3" Project="LineCount" Source="LineCount.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="LineCount.sln" Description="Solution converted successfully">
+</Event><Event ErrorLevel="3" Project="" Source="LineCount.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="LineCount" Source="LineCount.csproj" Description="Scan complete: Upgrade not required for project files.">
+</Event></UpgradeLog>

@@ -1,0 +1,100 @@
+<soap:Envelope xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+	<soap:Body>
+		<RepriceStack xmlns="https://secure.prime-health.net/core/">
+			<stack>
+				<testmode>true</testmode>
+				<clientid>mitchell</clientid>
+				<siteid>FF1</siteid>
+				<subclientid>PRIME ARCOMP</subclientid>
+				<clientpassword>prime08sa</clientpassword>
+				<resultcode>0</resultcode>
+				<bills>
+					<bill>
+						<formtype>H</formtype>
+						<billid>FF1PRO14</billid>
+						<claimnumber>SB004</claimnumber>
+						<dateofservice>2008-05-28T00:00:00.0000000-07:00</dateofservice>
+						<productcode>W</productcode>
+						<patient>
+							<ssn />
+							<dob>1900-01-01T00:00:00.0000000-08:00</dob>
+							<firstname>MINNIE</firstname>
+							<lastname>TRAUB</lastname>
+							<mi>S</mi>
+							<address1>3244 MORTON AVE</address1>
+							<address2 />
+							<city>ANAHEIM</city>
+							<state>CA</state>
+							<zip>92804</zip>
+						</patient>
+						<provider>
+							<taxid>OTHERDISC</taxid>
+							<facilityname>PALOS VERDES EST POL DEPT</facilityname>
+							<firstname>THOMAS</firstname>
+							<lastname>PHELPS</lastname>
+							<mi>R</mi>
+							<degree>MD</degree>
+							<address1>340 PALOS VERDES DR WEST</address1>
+							<address2 />
+							<city>PALOS VERDES</city>
+							<state>CA</state>
+							<zip>90274</zip>
+							<specialty />
+							<servicezip>90274</servicezip>
+						</provider>
+						<lineitems>
+							<lineitem>
+								<servicefrom>2008-05-28T00:00:00.0000000-07:00</servicefrom>
+								<serviceto>2008-05-28T00:00:00.0000000-07:00</serviceto>
+								<code>99214</code>
+								<modifier1 />
+								<modifier2 />
+								<units>1</units>
+								<pos>11</pos>
+								<tos>0</tos>
+								<linecharge>168</linecharge>
+								<statesavings>78.43</statesavings>
+								<stateallowed>89.57</stateallowed>
+								<pposavings>0</pposavings>
+								<othersavings>0</othersavings>
+								<repricedlineamount>0</repricedlineamount>
+								<repricedlinesavings>0</repricedlinesavings>
+								<resultcode>0</resultcode>
+							</lineitem>
+							<lineitem>
+								<servicefrom>2008-05-28T00:00:00.0000000-07:00</servicefrom>
+								<serviceto>2008-05-28T00:00:00.0000000-07:00</serviceto>
+								<code>99081</code>
+								<modifier1 />
+								<modifier2 />
+								<units>1</units>
+								<pos>11</pos>
+								<tos>0</tos>
+								<linecharge>30</linecharge>
+								<statesavings>18.31</statesavings>
+								<stateallowed>11.69</stateallowed>
+								<pposavings>0</pposavings>
+								<othersavings>0</othersavings>
+								<repricedlineamount>0</repricedlineamount>
+								<repricedlinesavings>0</repricedlinesavings>
+								<resultcode>0</resultcode>
+							</lineitem>
+						</lineitems>
+						<diagnosiscodes>
+							<string>841.9</string>
+						</diagnosiscodes>
+						<totalbilledcharges>198</totalbilledcharges>
+						<billallowance>0</billallowance>
+						<pposavings>0</pposavings>
+						<othersavings>0</othersavings>
+						<stateucrsavings>96.74</stateucrsavings>
+						<totalsavings>0</totalsavings>
+						<resultCode>0</resultCode>
+					</bill>
+				</bills>
+				<ignoreexhibits>false</ignoreexhibits>
+				<allowpendedbills>false</allowpendedbills>
+			</stack>
+		</RepriceStack>
+	</soap:Body>
+</soap:Envelope>

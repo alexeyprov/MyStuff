@@ -1,0 +1,260 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#define APSTUDIO_HIDDEN_SYMBOLS
+#include "windows.h"
+#undef APSTUDIO_HIDDEN_SYMBOLS
+#include "winver.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+ENHMETA_ICON            ICON    DISCARDABLE     "ENHMETA.ICO"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+ENHMETA_MENU MENU DISCARDABLE 
+BEGIN
+    POPUP "&File"
+    BEGIN
+        MENUITEM "&Open ...",                   ID_FILE_OPEN
+        MENUITEM SEPARATOR
+        MENUITEM "Save &Regular ...",           ID_FILE_SAVEREGULAR
+        MENUITEM "Save P&laceable ...",         ID_FILE_SAVEPLACEABLE
+        MENUITEM "Save &Enhanced ...",          ID_FILE_SAVEENHANCED
+        MENUITEM SEPARATOR
+        MENUITEM "&Print ...",                  ID_FILE_PRINT
+        MENUITEM SEPARATOR
+        MENUITEM "E&xit",                       ID_FILE_EXIT
+    END
+    POPUP "&Edit"
+    BEGIN
+        MENUITEM "&Copy",                       ID_EDIT_COPY
+        MENUITEM "&Paste",                      ID_EDIT_PASTE
+        MENUITEM SEPARATOR
+        MENUITEM "&Original Size",              ID_EDIT_ORIGINALSIZE
+        MENUITEM "&Stretch to Fit",             ID_EDIT_STRETCHTOFIT
+        MENUITEM SEPARATOR
+        MENUITEM "Metafile &Info ...",          ID_EDIT_METAFILEINFO
+        MENUITEM "Metafile &Records ...",       ID_EDIT_METAFILERECORDS
+    END
+    POPUP "&Help"
+    BEGIN
+        MENUITEM "&About",                      ID_HELP_ABOUT
+    END
+END
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+1 VERSIONINFO
+ FILEVERSION 3,3,0,0
+ PRODUCTVERSION 3,3,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0xbL
+#else
+ FILEFLAGS 0xaL
+#endif
+ FILEOS 0x10001L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904e4"
+        BEGIN
+            VALUE "CompanyName", "Microsoft Corporation\0"
+            VALUE "FileDescription", "ENHMETA Example Application\0"
+            VALUE "FileVersion", "3.3\0"
+            VALUE "InternalName", "ENHMETA\0"
+            VALUE "LegalCopyright", "Copyright © Microsoft Corp. 1990 - 1993\0"
+            VALUE "LegalTrademarks", "Microsoft® is a registered trademark of Microsoft Corporation. Windows(TM) is a trademark of Microsoft Corporation\0"
+            VALUE "OriginalFilename", "\0"
+            VALUE "ProductName", "ENHMETA\0"
+            VALUE "ProductVersion", "3.2\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1252
+    END
+END
+
+#endif    // !_MAC
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""windows.h""\r\n"
+    "#undef APSTUDIO_HIDDEN_SYMBOLS\r\n"
+    "#include ""winver.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_METAINFODLG DIALOG DISCARDABLE  0, 0, 244, 162
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Enhanced MetaFile Info"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Close",IDOK,95,142,50,14
+    LTEXT           "Top",IDC_STATIC,20,20,30,8
+    LTEXT           "Left",IDC_STATIC,20,29,30,8
+    LTEXT           "Right",IDC_STATIC,20,38,30,8
+    LTEXT           "Bottom",IDC_STATIC,20,47,30,8
+    LTEXT           "Top",IDC_BOUNDTOP,68,20,30,8
+    LTEXT           "Left",IDC_BOUNDLEFT,68,29,30,8
+    LTEXT           "Right",IDC_BOUNDRIGHT,68,38,30,8
+    LTEXT           "Bottom",IDC_BOUNDBOTTOM,68,47,30,8
+    LTEXT           "Top",IDC_STATIC,139,20,30,8
+    LTEXT           "Left",IDC_STATIC,139,29,30,8
+    LTEXT           "Right",IDC_STATIC,139,38,30,8
+    LTEXT           "Bottom",IDC_STATIC,139,47,30,8
+    LTEXT           "Top",IDC_FRAMETOP,187,20,30,8
+    LTEXT           "Left",IDC_FRAMELEFT,187,29,30,8
+    LTEXT           "Right",IDC_FRAMERIGHT,187,38,30,8
+    LTEXT           "Bottom",IDC_FRAMEBOTTOM,187,47,30,8
+    LTEXT           "MetaFile Bytes",IDC_STATIC,6,70,68,8
+    LTEXT           "MetaFile Records",IDC_STATIC,6,81,68,8
+    LTEXT           "Static",IDC_BYTES,89,70,30,8
+    LTEXT           "Static",IDC_RECORDS,89,81,30,8
+    LTEXT           "Handles in Metafile",IDC_STATIC,6,92,68,8
+    LTEXT           "Static",IDC_HANDLES,89,92,30,8
+    LTEXT           "MetaFile Palette Entries",IDC_STATIC,6,103,80,8
+    LTEXT           "MetaFile Device Pixels X",IDC_STATIC,125,70,81,8
+    LTEXT           "Static",IDC_PALENTRIES,89,103,30,8
+    LTEXT           "Static",IDC_PIXELSX,209,70,30,8
+    LTEXT           "MetaFile Device mm X",IDC_STATIC,125,92,80,8
+    LTEXT           "Static",IDC_MMX,209,92,30,8
+    LTEXT           "MetaFile Device Pixels Y",IDC_STATIC,125,81,81,8
+    LTEXT           "Static",IDC_PIXELSY,209,81,30,8
+    LTEXT           "MetaFile Device mm Y",IDC_STATIC,125,103,80,8
+    LTEXT           "Static",IDC_MMY,209,103,30,8
+    LTEXT           "Description",IDC_STATIC,7,123,41,8
+    GROUPBOX        "Metafile Bounds (Device Units)",IDC_STATIC,5,4,108,60
+    GROUPBOX        "Metafile Surface (0.01mm)",IDC_STATIC,124,4,108,60
+    EDITTEXT        IDC_DESCRIPTION,51,120,185,13,ES_AUTOHSCROLL | 
+                    ES_READONLY
+END
+
+IDD_ABOUTDLG DIALOG DISCARDABLE  0, 0, 168, 167
+STYLE DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "About EnhMeta"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "Close",IDOK,59,146,50,14
+    EDITTEXT        IDC_ABOUTTEXT,2,5,163,134,ES_CENTER | ES_MULTILINE | 
+                    ES_AUTOVSCROLL | ES_AUTOHSCROLL | ES_READONLY
+END
+
+IDD_METARECORDSDLG DIALOG DISCARDABLE  0, 0, 450, 262
+STYLE WS_POPUP | WS_CAPTION | WS_SYSMENU | WS_THICKFRAME
+CAPTION "Metafile Records"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,69,241,50,14
+    LISTBOX         IDC_RECORDSLIST,7,7,436,227,LBS_MULTIPLESEL | 
+                    LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_HSCROLL | 
+                    WS_TABSTOP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_METARECORDSDLG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 443
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 255
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTSTRING         "EnhMeta reads three types of metafiles - regular(16bit), placeable(16bit), and enhanced(32bit). It also writes all three types. It will copy to and paste from the clipboard in enhanced metafile format. All metafiles are converted to enhanced metafiles at the time that they are loaded. These enhanced metafiles can then be displayed or printed at either the original size, or scaled to the size of the window/printer-paper."
+END
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

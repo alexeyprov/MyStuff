@@ -1,0 +1,200 @@
+﻿#if __DESIGNER_DATA
+#error Do not define __DESIGNER_DATA.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<om:MetaModel MajorVersion="1" MinorVersion="3" Core="2b131234-7959-458d-834f-2dc0769ce683" ScheduleModel="66366196-361d-448d-976f-cab5e87496d2" xmlns:om="http://schemas.microsoft.com/BizTalk/2003/DesignerData">
+    <om:Element Type="Module" OID="f5665b62-15c5-4782-a2aa-44c8f780b567" LowerBound="1.1" HigherBound="48.1">
+        <om:Property Name="ReportToAnalyst" Value="True" />
+        <om:Property Name="Name" Value="WCF_Dynamic_Send_Port" />
+        <om:Property Name="Signal" Value="False" />
+        <om:Element Type="PortType" OID="7405ae69-5a45-47d0-9742-7516c6c5dad8" ParentLink="Module_PortType" LowerBound="4.1" HigherBound="11.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_3" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="0e7427f7-f33d-4379-9af6-0e7890e68e38" ParentLink="PortType_OperationDeclaration" LowerBound="6.1" HigherBound="10.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="ec2d8d55-356a-40b7-95c1-4525efaa27dc" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="8.13" HigherBound="8.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="PortType" OID="0c593ab0-1a5e-4872-9789-30c8be87143e" ParentLink="Module_PortType" LowerBound="11.1" HigherBound="18.1">
+            <om:Property Name="Synchronous" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="PortType_4" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="OperationDeclaration" OID="be5601da-19de-48eb-8c2c-fe4ac243bbc0" ParentLink="PortType_OperationDeclaration" LowerBound="13.1" HigherBound="17.1">
+                <om:Property Name="OperationType" Value="OneWay" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="Operation_1" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="MessageRef" OID="1076e24e-e9d6-46cf-a3cd-dfe42d00f3e7" ParentLink="OperationDeclaration_RequestMessageRef" LowerBound="15.13" HigherBound="15.35">
+                    <om:Property Name="Ref" Value="System.Xml.XmlDocument" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="Request" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+        <om:Element Type="ServiceDeclaration" OID="4e2b284a-1ece-4ec4-ae19-01809a19a1d2" ParentLink="Module_ServiceDeclaration" LowerBound="18.1" HigherBound="47.1">
+            <om:Property Name="InitializedTransactionType" Value="False" />
+            <om:Property Name="IsInvokable" Value="False" />
+            <om:Property Name="TypeModifier" Value="Internal" />
+            <om:Property Name="ReportToAnalyst" Value="True" />
+            <om:Property Name="Name" Value="DynamicSendCustomNetTcp" />
+            <om:Property Name="Signal" Value="False" />
+            <om:Element Type="MessageDeclaration" OID="e5f455a2-6db1-483e-9abe-87ee6418cc90" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="25.1" HigherBound="26.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MessageIn" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="MessageDeclaration" OID="70bdf961-0510-46b9-a65f-f80cc157ec69" ParentLink="ServiceDeclaration_MessageDeclaration" LowerBound="26.1" HigherBound="27.1">
+                <om:Property Name="Type" Value="System.Xml.XmlDocument" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="MessageOut" />
+                <om:Property Name="Signal" Value="True" />
+            </om:Element>
+            <om:Element Type="ServiceBody" OID="32c1605c-d51f-49bf-baaa-de896f415e02" ParentLink="ServiceDeclaration_ServiceBody">
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="Receive" OID="e6828479-b01e-48ae-af7c-448fe9100b4c" ParentLink="ServiceBody_Statement" LowerBound="29.1" HigherBound="31.1">
+                    <om:Property Name="Activate" Value="True" />
+                    <om:Property Name="PortName" Value="PortIn_Custom" />
+                    <om:Property Name="MessageName" Value="MessageIn" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ReceiveMessage" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Construct" OID="3fa7ad53-10b0-476a-bcc4-5736ef2d96ab" ParentLink="ServiceBody_Statement" LowerBound="31.1" HigherBound="40.1">
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="ConstructMessageOut" />
+                    <om:Property Name="Signal" Value="True" />
+                    <om:Element Type="MessageAssignment" OID="59a85fe3-df59-4f12-b148-1e3ad39c5f71" ParentLink="ComplexStatement_Statement" LowerBound="34.1" HigherBound="39.1">
+                        <om:Property Name="Expression" Value="MessageOut = MessageIn;&#xD;&#xA;MessageOut(WCF.BindingType) = &quot;customBinding&quot;;&#xD;&#xA;MessageOut(WCF.Action) = &quot;http://tempuri.org/IReceiveMessage/ReceiveMessage&quot;;&#xD;&#xA;MessageOut(WCF.BindingConfiguration) = @&quot;&lt;binding name=&quot;&quot;customBinding&quot;&quot;&gt;&lt;binaryMessageEncoding /&gt;&lt;tcpTransport /&gt;&lt;/binding&gt;&quot;;" />
+                        <om:Property Name="ReportToAnalyst" Value="False" />
+                        <om:Property Name="Name" Value="SetMessageProp" />
+                        <om:Property Name="Signal" Value="True" />
+                    </om:Element>
+                    <om:Element Type="MessageRef" OID="4059b0af-02e2-4076-8cd3-bc4970b29840" ParentLink="Construct_MessageRef" LowerBound="32.23" HigherBound="32.33">
+                        <om:Property Name="Ref" Value="MessageOut" />
+                        <om:Property Name="ReportToAnalyst" Value="True" />
+                        <om:Property Name="Signal" Value="False" />
+                    </om:Element>
+                </om:Element>
+                <om:Element Type="VariableAssignment" OID="9d2cdbd1-f0c0-40df-ab45-9dc8e6881e41" ParentLink="ServiceBody_Statement" LowerBound="40.1" HigherBound="43.1">
+                    <om:Property Name="Expression" Value="DynamicPortOut_Custom(Microsoft.XLANGs.BaseTypes.Address) = &quot;net.tcp://localhost:8002/customNetTcp&quot;;&#xD;&#xA;DynamicPortOut_Custom(Microsoft.XLANGs.BaseTypes.TransportType) = &quot;WCF-Custom&quot;;" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="SetPortProp" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+                <om:Element Type="Send" OID="4cfea575-7f40-4dc4-a3ea-22304378b759" ParentLink="ServiceBody_Statement" LowerBound="43.1" HigherBound="45.1">
+                    <om:Property Name="PortName" Value="DynamicPortOut_Custom" />
+                    <om:Property Name="MessageName" Value="MessageOut" />
+                    <om:Property Name="OperationName" Value="Operation_1" />
+                    <om:Property Name="OperationMessageName" Value="Request" />
+                    <om:Property Name="ReportToAnalyst" Value="True" />
+                    <om:Property Name="Name" Value="SendMessage" />
+                    <om:Property Name="Signal" Value="True" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="394a155b-897b-4000-8ef8-885239bf8fc9" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="21.1" HigherBound="23.1">
+                <om:Property Name="PortModifier" Value="Implements" />
+                <om:Property Name="Orientation" Value="Left" />
+                <om:Property Name="PortIndex" Value="2" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="WCF_Dynamic_Send_Port.PortType_3" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="PortIn_Custom" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="LogicalBindingAttribute" OID="ea962893-4806-4927-966a-013c06813402" ParentLink="PortDeclaration_CLRAttribute" LowerBound="21.1" HigherBound="22.1">
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+            <om:Element Type="PortDeclaration" OID="0deebf2a-823e-45e1-9fbc-c53599a781ed" ParentLink="ServiceDeclaration_PortDeclaration" LowerBound="23.1" HigherBound="25.1">
+                <om:Property Name="PortModifier" Value="Uses" />
+                <om:Property Name="Orientation" Value="Right" />
+                <om:Property Name="PortIndex" Value="20" />
+                <om:Property Name="IsWebPort" Value="False" />
+                <om:Property Name="OrderedDelivery" Value="False" />
+                <om:Property Name="DeliveryNotification" Value="None" />
+                <om:Property Name="Type" Value="WCF_Dynamic_Send_Port.PortType_4" />
+                <om:Property Name="ParamDirection" Value="In" />
+                <om:Property Name="ReportToAnalyst" Value="True" />
+                <om:Property Name="Name" Value="DynamicPortOut_Custom" />
+                <om:Property Name="Signal" Value="False" />
+                <om:Element Type="PhysicalBindingAttribute" OID="2f2a33a1-778a-4054-ae93-7b3610628047" ParentLink="PortDeclaration_CLRAttribute" LowerBound="23.1" HigherBound="24.1">
+                    <om:Property Name="InPipeline" Value="Microsoft.BizTalk.DefaultPipelines.XMLReceive" />
+                    <om:Property Name="OutPipeline" Value="Microsoft.BizTalk.DefaultPipelines.PassThruTransmit" />
+                    <om:Property Name="TransportType" Value="HTTP" />
+                    <om:Property Name="URI" Value="http://tempURI" />
+                    <om:Property Name="IsDynamic" Value="True" />
+                    <om:Property Name="Signal" Value="False" />
+                </om:Element>
+            </om:Element>
+        </om:Element>
+    </om:Element>
+</om:MetaModel>
+#endif // __DESIGNER_DATA
+[Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+module WCF_Dynamic_Send_Port
+{
+    internal porttype PortType_3
+    {
+        oneway Operation_1
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    internal porttype PortType_4
+    {
+        oneway Operation_1
+        {
+            System.Xml.XmlDocument
+        };
+    };
+    [Microsoft.XLANGs.BaseTypes.BPELExportable(false)]
+    internal service DynamicSendCustomNetTcp
+    {
+        [Microsoft.XLANGs.BaseTypes.LogicalBinding()]
+        port implements PortType_3 PortIn_Custom;
+        [Microsoft.XLANGs.BaseTypes.PhysicalBinding(typeof(Microsoft.BizTalk.DefaultPipelines.PassThruTransmit))]
+        port uses dynamic PortType_4 DynamicPortOut_Custom;
+        message System.Xml.XmlDocument MessageIn;
+        message System.Xml.XmlDocument MessageOut;
+        body ()
+        {
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("e6828479-b01e-48ae-af7c-448fe9100b4c")]
+            activate receive (PortIn_Custom.Operation_1, MessageIn);
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("3fa7ad53-10b0-476a-bcc4-5736ef2d96ab")]
+            construct MessageOut
+            {
+                [Microsoft.XLANGs.BaseTypes.DesignerPosition("59a85fe3-df59-4f12-b148-1e3ad39c5f71")]
+                MessageOut = MessageIn;
+                MessageOut(WCF.BindingType) = "customBinding";
+                MessageOut(WCF.Action) = "http://tempuri.org/IReceiveMessage/ReceiveMessage";
+                MessageOut(WCF.BindingConfiguration) = @"<binding name=""customBinding""><binaryMessageEncoding /><tcpTransport /></binding>";
+            }
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("9d2cdbd1-f0c0-40df-ab45-9dc8e6881e41")]
+            DynamicPortOut_Custom(Microsoft.XLANGs.BaseTypes.Address) = "net.tcp://localhost:8002/customNetTcp";
+            DynamicPortOut_Custom(Microsoft.XLANGs.BaseTypes.TransportType) = "WCF-Custom";
+            [Microsoft.XLANGs.BaseTypes.DesignerPosition("4cfea575-7f40-4dc4-a3ea-22304378b759")]
+            send (DynamicPortOut_Custom.Operation_1, MessageOut);
+        }
+    }
+}
+

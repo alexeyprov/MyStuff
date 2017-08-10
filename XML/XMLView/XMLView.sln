@@ -1,0 +1,45 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMLView", "XMLView.csproj", "{61B3A56A-EC9A-4B3F-B934-0E2D3F59FAFF}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlValid", "..\XmlValid\XmlValid.csproj", "{46AB1FC3-75C5-48FC-851D-725933ED3569}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XPathXA", "..\XPathXA\XPathXA.csproj", "{616352EC-1C7D-4502-A4C6-D396BF3F1D3A}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XmlHelpers", "..\XmlHelpers\XmlHelpers.csproj", "{652AC4C2-7644-444B-B009-B8B64C3217B6}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{61B3A56A-EC9A-4B3F-B934-0E2D3F59FAFF}.Debug.ActiveCfg = Debug|.NET
+		{61B3A56A-EC9A-4B3F-B934-0E2D3F59FAFF}.Debug.Build.0 = Debug|.NET
+		{61B3A56A-EC9A-4B3F-B934-0E2D3F59FAFF}.Release.ActiveCfg = Release|.NET
+		{61B3A56A-EC9A-4B3F-B934-0E2D3F59FAFF}.Release.Build.0 = Release|.NET
+		{46AB1FC3-75C5-48FC-851D-725933ED3569}.Debug.ActiveCfg = Debug|.NET
+		{46AB1FC3-75C5-48FC-851D-725933ED3569}.Debug.Build.0 = Debug|.NET
+		{46AB1FC3-75C5-48FC-851D-725933ED3569}.Release.ActiveCfg = Release|.NET
+		{46AB1FC3-75C5-48FC-851D-725933ED3569}.Release.Build.0 = Release|.NET
+		{616352EC-1C7D-4502-A4C6-D396BF3F1D3A}.Debug.ActiveCfg = Debug|.NET
+		{616352EC-1C7D-4502-A4C6-D396BF3F1D3A}.Debug.Build.0 = Debug|.NET
+		{616352EC-1C7D-4502-A4C6-D396BF3F1D3A}.Release.ActiveCfg = Release|.NET
+		{616352EC-1C7D-4502-A4C6-D396BF3F1D3A}.Release.Build.0 = Release|.NET
+		{652AC4C2-7644-444B-B009-B8B64C3217B6}.Debug.ActiveCfg = Debug|.NET
+		{652AC4C2-7644-444B-B009-B8B64C3217B6}.Debug.Build.0 = Debug|.NET
+		{652AC4C2-7644-444B-B009-B8B64C3217B6}.Release.ActiveCfg = Release|.NET
+		{652AC4C2-7644-444B-B009-B8B64C3217B6}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

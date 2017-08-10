@@ -1,0 +1,4 @@
+<Modules>
+  <Module PersistentId="79481F8E-4600-4F9C-98C7-4BA9176A83EB" ModuleId="LinqToTerraServerProvider" />
+  <Module PersistentId="24C6F1FF-0B2E-4D50-B216-29113B46AF6D" ModuleId="ClientApp" />
+</Modules>

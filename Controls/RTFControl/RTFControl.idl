@@ -1,0 +1,53 @@
+// RTFControl.idl : IDL source for RTFControl.dll
+//
+
+// This file will be processed by the MIDL tool to
+// produce the type library (RTFControl.tlb) and marshalling code.
+
+import "oaidl.idl";
+import "ocidl.idl";
+#include "olectl.h"
+	
+
+	[
+		object,
+		uuid(438CF549-7F67-45FB-8A9C-91EFFA7F5F13),
+		dual,
+		helpstring("ITextControl Interface"),
+		pointer_default(unique)
+	]
+	interface ITextControl : IDispatch
+	{
+		[propput, id(DISPID_BACKCOLOR)]
+		HRESULT BackColor([in]OLE_COLOR clr);
+		[propget, id(DISPID_BACKCOLOR)]
+		HRESULT BackColor([out,retval]OLE_COLOR* pclr);
+		[propput, id(DISPID_FILLCOLOR)]
+		HRESULT FillColor([in]OLE_COLOR clr);
+		[propget, id(DISPID_FILLCOLOR)]
+		HRESULT FillColor([out, retval]OLE_COLOR* pclr);
+		[propput, id(DISPID_TEXT)]
+		HRESULT Text([in]BSTR strText);
+		[propget, id(DISPID_TEXT)]
+		HRESULT Text([out, retval]BSTR* pstrText);
+	};
+
+[
+	uuid(B1B3D823-3BFC-494F-8187-52C036303B82),
+	version(1.0),
+	helpstring("AlexeyPr RTF Controls 1.0")
+]
+library RTFCONTROLLib
+{
+	importlib("stdole32.tlb");
+	importlib("stdole2.tlb");
+
+	[
+		uuid(462C59B7-F7B1-4999-AD0F-9F4B1455E09A),
+		helpstring("AlexeyPr RTF Text Control")
+	]
+	coclass TextControl
+	{
+		[default] interface ITextControl;
+	};
+};

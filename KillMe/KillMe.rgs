@@ -1,0 +1,11 @@
+HKCR
+{
+	NoRemove AppID
+	{
+		'%APPID%' = s 'KillMe'
+		'KillMe.EXE'
+		{
+			val AppID = s '%APPID%'
+		}
+	}
+}
