@@ -8,6 +8,9 @@
             dfsTests.SearchForCycles();
             dfsTests.Linearize();
             dfsTests.Decompose();
+
+            BfsTests bfsTests = new BfsTests();
+            bfsTests.BreadthFirst();
         }
     }
 }
