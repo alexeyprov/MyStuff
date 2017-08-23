@@ -4,7 +4,7 @@ namespace Algo.Heaps.Entities
 {
     public interface IHeap<T> : IReadOnlyCollection<T>
     {
-        int Add(T value);
+        void Add(T value);
         
         T Peek();
 

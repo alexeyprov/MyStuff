@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 
 namespace Algo.Heaps.Entities
@@ -24,15 +23,10 @@ namespace Algo.Heaps.Entities
                 .ToDictionary(x => x.Value, x => x.Index);
         }
 
-        public override int Add(TValue item)
+        public override void Add(TValue item)
         {
-            int location = base.Add(item);
-
-            Debug.Assert(location >= 0);
-            Debug.Assert(location < Count);
-            _itemLocations[item] = location;
-
-            return location;
+            _itemLocations[item] = Count;
+            base.Add(item);
         }
 
         public override TValue Extract()
@@ -48,25 +42,25 @@ namespace Algo.Heaps.Entities
             TKey newKey = GetKey(item);
 
             int result = Compare(oldKey, newKey);
-            int newLocation;
             if (result < 0)
             {
-                newLocation = SiftDown(location);
+                SiftDown(location);
             }
             else if (result > 0)
             {
-                newLocation = SiftUp(location);
+                SiftUp(location);
             }
-            else
+        }
+
+        protected override void Swap(int index, int other)
+        {
+            base.Swap(index, other);
+
+            if (_itemLocations != null)
             {
-                return;
+                _itemLocations[base[index]] = index;
+                _itemLocations[base[other]] = other;
             }
-
-            Debug.Assert(newLocation >= 0);
-            Debug.Assert(newLocation < Count);
-            Debug.Assert(newLocation != location);
-
-            _itemLocations[item] = newLocation;
         }
     }
 }

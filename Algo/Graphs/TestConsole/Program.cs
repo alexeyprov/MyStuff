@@ -11,6 +11,7 @@
 
             BfsTests bfsTests = new BfsTests();
             bfsTests.BreadthFirst();
+            bfsTests.ShortestPath();
         }
     }
 }

@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 namespace Algo.Heaps.Entities
@@ -57,10 +58,10 @@ namespace Algo.Heaps.Entities
             return top;
         }
 
-        public virtual int Add(TValue item)
+        public virtual void Add(TValue item)
         {
             _heap.Add(item);
-            return SiftUp(_size++);
+            SiftUp(_size++);
         }
 
         IEnumerator<TValue> IEnumerable<TValue>.GetEnumerator()
@@ -74,6 +75,8 @@ namespace Algo.Heaps.Entities
         IEnumerator IEnumerable.GetEnumerator() => ((IEnumerable<TValue>)this).GetEnumerator();
 
         protected TKey GetKey(TValue item) => _keyFactory(item);
+
+        protected TValue this[int index] => _heap[index];
 
         private static int GetLeftChild(int index) => index * 2 + 1;
 
@@ -89,7 +92,7 @@ namespace Algo.Heaps.Entities
             }
         }
 
-        protected int SiftDown(int index)
+        protected void SiftDown(int index)
         {
             int left = GetLeftChild(index);
             int winner = index;
@@ -108,27 +111,23 @@ namespace Algo.Heaps.Entities
             if (winner != index)
             {
                 Swap(index, winner);
-                return SiftDown(winner);
+                SiftDown(winner);
             }
-
-            return index;
         }
 
-        protected int SiftUp(int index)
+        protected void SiftUp(int index)
         {
             if (index <= 0)
             {
-                return 0;
+                return;
             }
 
             int parent = GetParent(index);
-            if (Compare(index, parent) != index)
+            if (Compare(index, parent) != parent)
             {
                 Swap(index, parent);
-                return SiftUp(parent);
+                SiftUp(parent);
             }
-
-            return index;
         }
 
         /// <summary>
@@ -154,12 +153,9 @@ namespace Algo.Heaps.Entities
         protected int Compare(TKey key, TKey other) => _comparer.Compare(key, other) *
             (_isMaxHeap ? -1 : 1);
 
-        private void Swap(int index, int other)
+        protected virtual void Swap(int index, int other)
         {
-            if (index == other)
-            {
-                return;
-            }
+            Debug.Assert(index != other);
 
             TValue temp = _heap[index];
             _heap[index] = _heap[other];

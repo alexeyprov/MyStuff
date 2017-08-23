@@ -2,8 +2,8 @@ using System.Collections.Generic;
 
 namespace Algo.Graphs.Entities
 {
-    public interface IWeighedGraph
+    public interface IWeighedGraph : IGraph
     {
-        IEnumerable<WeighedDistance> GetAdjacentDistances(int vertex);
+        IEnumerable<WeighedDistance> GetDistances(int vertex);
     }
 }
