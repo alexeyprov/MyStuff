@@ -70,6 +70,9 @@ namespace Algo.Graphs.TestConsole
         {
             IShortestPathAlgorithm algo = new DijkstraAlgorithm(_figure46);
             TestShortestPath(algo, 3, 4);
+
+            algo = new DijkstraAlgorithmSlim(_figure46);
+            TestShortestPath(algo, 3, 4);
         }
 
         private void TestShortestPath(IShortestPathAlgorithm algo, params int[] targets)
