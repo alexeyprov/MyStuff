@@ -101,21 +101,7 @@ namespace Algo.Heaps.Entities
 
         protected Node this[int index] => _heap[index];
 
-        private static int GetLeftChild(int index) => index * 2 + 1;
-
-        private static int GetRightChild(int index) => index * 2 + 2;
-
-        private static int GetParent(int index) => (index - 1) / 2;
-
-        private void Heapify()
-        {
-            for (int index = _heap.Count / 2 - 1; index >= 0; --index)
-            {
-                SiftDown(index);
-            }
-        }
-
-        protected void SiftDown(int index)
+        protected void SiftDown(int index, bool useQuickSwap = false)
         {
             int left = GetLeftChild(index);
             int winner = index;
@@ -133,8 +119,16 @@ namespace Algo.Heaps.Entities
 
             if (winner != index)
             {
-                Swap(index, winner);
-                SiftDown(winner);
+                if (useQuickSwap)
+                {
+                    QuickSwap(index, winner);
+                }
+                else
+                {
+                    Swap(index, winner);
+                }
+
+                SiftDown(winner, useQuickSwap);
             }
         }
 
@@ -179,10 +173,7 @@ namespace Algo.Heaps.Entities
         protected virtual void Swap(int index, int other)
         {
             Debug.Assert(index != other);
-
-            Node temp = _heap[index];
-            _heap[index] = _heap[other];
-            _heap[other] = temp;
+            QuickSwap(index, other);
         }
 
         protected sealed class Node
@@ -190,6 +181,29 @@ namespace Algo.Heaps.Entities
             public TKey Key;
 
             public TValue Value;
+        }
+
+        private static int GetLeftChild(int index) => index * 2 + 1;
+
+        private static int GetRightChild(int index) => index * 2 + 2;
+
+        private static int GetParent(int index) => (index - 1) / 2;
+
+        private void Heapify()
+        {
+            for (int index = _heap.Count / 2 - 1; index >= 0; --index)
+            {
+                // called from constructors, use quick swaps, i.e. no virtual calls
+                SiftDown(index, true);
+            }
+        }
+
+
+        private void QuickSwap(int index, int other)
+        {
+            Node temp = _heap[index];
+            _heap[index] = _heap[other];
+            _heap[other] = temp;
         }
     }
 }

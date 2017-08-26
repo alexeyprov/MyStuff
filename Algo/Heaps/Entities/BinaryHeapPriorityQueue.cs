@@ -64,11 +64,8 @@ namespace Algo.Heaps.Entities
         {
             base.Swap(index, other);
 
-            if (_itemLocations != null)
-            {
-                _itemLocations[base[index].Value] = index;
-                _itemLocations[base[other].Value] = other;
-            }
+            _itemLocations[base[index].Value] = index;
+            _itemLocations[base[other].Value] = other;
         }
 
         private IDictionary<TValue, int> GetLocations() =>
