@@ -2,12 +2,12 @@ using System.Collections.Generic;
 
 namespace Algo.Heaps.Entities
 {
-    public interface IHeap<T> : IReadOnlyCollection<T>
+    public interface IHeap<TKey, TValue> : IReadOnlyCollection<TValue>
     {
-        void Add(T value);
+        void Add(TKey key, TValue value);
         
-        T Peek();
+        TValue Peek();
 
-        T Extract();
+        TValue Extract();
     }
 }

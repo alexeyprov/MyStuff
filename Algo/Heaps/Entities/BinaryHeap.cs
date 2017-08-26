@@ -6,12 +6,11 @@ using System.Linq;
 
 namespace Algo.Heaps.Entities
 {
-    public class BinaryHeap<TKey, TValue> : IHeap<TValue>
+    public class BinaryHeap<TKey, TValue> : IHeap<TKey, TValue>
         where TKey : IComparable<TKey>
     {
-        private readonly IList<TValue> _heap;
+        private readonly IList<Node> _heap;
         private readonly bool _isMaxHeap;
-        private readonly Func<TValue, TKey> _keyFactory;
         private readonly IComparer<TKey> _comparer;
         private int _size;
 
@@ -21,16 +20,42 @@ namespace Algo.Heaps.Entities
             Func<TValue, TKey> keyFactory, 
             IComparer<TKey> comparer = null)
         {
-            _heap = (data as IList<TValue>) ?? 
-                data?.ToList() ??
-                throw new ArgumentNullException(nameof(data));;
-            _isMaxHeap = isMaxHeap;
-            _keyFactory = keyFactory ??
+            if (keyFactory == null)
+            {
                 throw new ArgumentNullException(nameof(keyFactory));
+            }
+
+            _heap = (data ?? throw new ArgumentNullException(nameof(data)))
+                .Select(v => new Node 
+                                 { 
+                                     Key = keyFactory(v),
+                                     Value = v
+                                 })
+                .ToList();
+            _isMaxHeap = isMaxHeap;
             _size = _heap.Count;
             _comparer = comparer ?? Comparer<TKey>.Default;
 
             Heapify(); 
+        }
+
+        public BinaryHeap(
+            IEnumerable<TKey> keys,
+            IEnumerable<TValue> values,
+            bool isMaxHeap,
+            IComparer<TKey> comparer = null)
+        {
+            _heap = (keys ?? throw new ArgumentNullException(nameof(keys)))
+                .Zip(
+                    values ?? throw new ArgumentNullException(nameof(values)),
+                    (k, v) => new Node { Key = k, Value = v })
+                .ToList();
+
+            _isMaxHeap = isMaxHeap;
+            _size = _heap.Count;
+            _comparer = comparer ?? Comparer<TKey>.Default;
+
+            Heapify();
         }
 
         public int Count => _size;
@@ -42,7 +67,7 @@ namespace Algo.Heaps.Entities
                 throw new InvalidOperationException();
             }
 
-            return _heap[0];
+            return _heap[0].Value;
         }
 
         public virtual TValue Extract()
@@ -52,15 +77,15 @@ namespace Algo.Heaps.Entities
                 throw new InvalidOperationException();
             }
 
-            TValue top = _heap[0];
+            TValue top = _heap[0].Value;
             _heap[0] = _heap[_size-- - 1];
             SiftDown(0);
             return top;
         }
 
-        public virtual void Add(TValue item)
+        public virtual void Add(TKey key, TValue value)
         {
-            _heap.Add(item);
+            _heap.Add(new Node { Key = key, Value = value });
             SiftUp(_size++);
         }
 
@@ -68,15 +93,13 @@ namespace Algo.Heaps.Entities
         {
             for (int index = 0; index < _size; ++index)
             {
-                yield return _heap[index];
+                yield return _heap[index].Value;
             }
         }
 
         IEnumerator IEnumerable.GetEnumerator() => ((IEnumerable<TValue>)this).GetEnumerator();
 
-        protected TKey GetKey(TValue item) => _keyFactory(item);
-
-        protected TValue this[int index] => _heap[index];
+        protected Node this[int index] => _heap[index];
 
         private static int GetLeftChild(int index) => index * 2 + 1;
 
@@ -136,7 +159,7 @@ namespace Algo.Heaps.Entities
         /// element in a min heap.
         /// </summary>
         protected int Compare(int index, int other) =>
-            Compare(_keyFactory(_heap[index]), _keyFactory(_heap[other])) < 0 ?
+            Compare(_heap[index].Key, _heap[other].Key) < 0 ?
                 index :
                 other;
 
@@ -157,9 +180,16 @@ namespace Algo.Heaps.Entities
         {
             Debug.Assert(index != other);
 
-            TValue temp = _heap[index];
+            Node temp = _heap[index];
             _heap[index] = _heap[other];
             _heap[other] = temp;
+        }
+
+        protected sealed class Node
+        {
+            public TKey Key;
+
+            public TValue Value;
         }
     }
 }

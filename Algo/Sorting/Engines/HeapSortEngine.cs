@@ -13,7 +13,7 @@ namespace Algo.Sorting.Engines
         {
             IList<T> array = data?.ToArray() ?? 
                 throw new ArgumentNullException(nameof(data));
-            IHeap<T> heap = new SimpleBinaryHeap<T>(array, true);
+            IHeap<T, T> heap = new SimpleBinaryHeap<T>(array, true);
 
             for (int index = array.Count - 1; index > 0; --index)
             {

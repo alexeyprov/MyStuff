@@ -45,9 +45,9 @@ namespace Algo.Graphs.Paths
         }
 
         protected virtual IPriorityQueue<int, int> CreatePriorityQueue(
-            IReadOnlyList<int> distances) => new BinaryHeapPriorityQueue<int, int>(
-                Enumerable.Range(0, distances.Count), 
-                false, 
-                i => distances[i]);
+            IReadOnlyCollection<int> distances) => new BinaryHeapPriorityQueue<int, int>(
+                distances,
+                Enumerable.Range(0, distances.Count),
+                false);
     }
 }

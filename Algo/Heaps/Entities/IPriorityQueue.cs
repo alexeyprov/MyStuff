@@ -1,7 +1,7 @@
 namespace Algo.Heaps.Entities
 {
-    public interface IPriorityQueue<TKey, TValue> : IHeap<TValue>
+    public interface IPriorityQueue<TKey, TValue> : IHeap<TKey, TValue>
     {
-        void UpdateKey(TValue item, TKey oldKey);
+        void UpdateKey(TValue value, TKey key);
     }
 }
