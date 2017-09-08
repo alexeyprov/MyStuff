@@ -15,7 +15,7 @@ namespace Algo.Sorting.Engines
                 throw new ArgumentNullException(nameof(data));
             IHeap<T, T> heap = new SimpleBinaryHeap<T>(array, true);
 
-            for (int index = array.Count - 1; index > 0; --index)
+            for (int index = array.Count - 1; index >= 0; --index)
             {
                 T max = heap.Extract();
                 array[index] = max;
