@@ -9,7 +9,7 @@ namespace Algo.Heaps.Entities
     public class BinaryHeap<TKey, TValue> : IHeap<TKey, TValue>
         where TKey : IComparable<TKey>
     {
-        private readonly IList<Node> _heap;
+        private readonly IList<HeapNode<TKey, TValue>> _heap;
         private readonly bool _isMaxHeap;
         private readonly IComparer<TKey> _comparer;
         private int _size;
@@ -26,7 +26,7 @@ namespace Algo.Heaps.Entities
             }
 
             _heap = (data ?? throw new ArgumentNullException(nameof(data)))
-                .Select(v => new Node 
+                .Select(v => new HeapNode<TKey, TValue> 
                                  { 
                                      Key = keyFactory(v),
                                      Value = v
@@ -48,7 +48,7 @@ namespace Algo.Heaps.Entities
             _heap = (keys ?? throw new ArgumentNullException(nameof(keys)))
                 .Zip(
                     values ?? throw new ArgumentNullException(nameof(values)),
-                    (k, v) => new Node { Key = k, Value = v })
+                    (k, v) => new HeapNode<TKey, TValue> { Key = k, Value = v })
                 .ToList();
 
             _isMaxHeap = isMaxHeap;
@@ -85,7 +85,7 @@ namespace Algo.Heaps.Entities
 
         public virtual void Add(TKey key, TValue value)
         {
-            _heap.Add(new Node { Key = key, Value = value });
+            _heap.Add(new HeapNode<TKey, TValue> { Key = key, Value = value });
             SiftUp(_size++);
         }
 
@@ -99,7 +99,7 @@ namespace Algo.Heaps.Entities
 
         IEnumerator IEnumerable.GetEnumerator() => ((IEnumerable<TValue>)this).GetEnumerator();
 
-        protected Node this[int index] => _heap[index];
+        internal HeapNode<TKey, TValue> this[int index] => _heap[index];
 
         protected void SiftDown(int index, bool useQuickSwap = false)
         {
@@ -176,13 +176,6 @@ namespace Algo.Heaps.Entities
             QuickSwap(index, other);
         }
 
-        protected sealed class Node
-        {
-            public TKey Key;
-
-            public TValue Value;
-        }
-
         private static int GetLeftChild(int index) => index * 2 + 1;
 
         private static int GetRightChild(int index) => index * 2 + 2;
@@ -198,10 +191,9 @@ namespace Algo.Heaps.Entities
             }
         }
 
-
         private void QuickSwap(int index, int other)
         {
-            Node temp = _heap[index];
+            HeapNode<TKey, TValue> temp = _heap[index];
             _heap[index] = _heap[other];
             _heap[other] = temp;
         }
