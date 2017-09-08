@@ -77,12 +77,13 @@ namespace Algo.Heaps.Entities
             TValue top = _heap[0].Value;
             _heap[0] = _heap[--_size];
             SiftDown(0);
+            return top;
         }
 
         public virtual void Add(TKey key, TValue value)
         {
-            _heap.Add(new HeapNode { Key = key, Value = value });
-            SiftUp(_size++)
+            _heap.Add(new HeapNode<TKey, TValue> { Key = key, Value = value });
+            SiftUp(_size++);
         }
 
         IEnumerator<TValue> IEnumerable<TValue>.GetEnumerator() => 
