@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 
+using Algo.Common;
+
 namespace Algo.Sorting.Median
 {
     internal sealed class InPlaceSearchEngine<T>
@@ -66,7 +68,7 @@ namespace Algo.Sorting.Median
 
                 if (isLeftToBeSwapped && isRightToBeSwapped)
                 {
-                    Swap(leftIndex++, rightIndex--);
+                    _source.Swap(leftIndex++, rightIndex--);
                     isLeftToBeSwapped = false;
                     isRightToBeSwapped = false;
                 }
@@ -109,15 +111,6 @@ namespace Algo.Sorting.Median
             return true;
         }
 
-        private void Swap(int leftIndex, int rightIndex)
-        {
-            Debug.Assert(rightIndex != leftIndex);
-            
-            T temp = _source[leftIndex];
-            _source[leftIndex] = _source[rightIndex];
-            _source[rightIndex] = temp;
-        }
-
         private int PushOutProbes(T probe, int start, int end, Direction direction)
         {
             if (start >= end)
@@ -144,7 +137,7 @@ namespace Algo.Sorting.Median
 
                 if (comparison == 0)
                 {
-                    Swap(current, destination);
+                    _source.Swap(current, destination);
                     destination -= (int)direction;
                 }
                 else

@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 
+using Algo.Common;
+
 namespace Algo.Heaps.Entities
 {
     public class BinaryHeap<TKey, TValue> : IHeap<TKey, TValue>
@@ -121,7 +123,7 @@ namespace Algo.Heaps.Entities
             {
                 if (useQuickSwap)
                 {
-                    QuickSwap(index, winner);
+                    _heap.Swap(index, winner);
                 }
                 else
                 {
@@ -173,7 +175,7 @@ namespace Algo.Heaps.Entities
         protected virtual void Swap(int index, int other)
         {
             Debug.Assert(index != other);
-            QuickSwap(index, other);
+            _heap.Swap(index, other);
         }
 
         private static int GetLeftChild(int index) => index * 2 + 1;
@@ -189,13 +191,6 @@ namespace Algo.Heaps.Entities
                 // called from constructors, use quick swaps, i.e. no virtual calls
                 SiftDown(index, true);
             }
-        }
-
-        private void QuickSwap(int index, int other)
-        {
-            HeapNode<TKey, TValue> temp = _heap[index];
-            _heap[index] = _heap[other];
-            _heap[other] = temp;
         }
     }
 }
