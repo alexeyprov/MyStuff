@@ -1,7 +1,10 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 using Algo.Graphs.Entities;
 using Algo.Graphs.Paths;
+using Algo.Heaps.Entities;
 
 namespace Algo.Graphs.TestConsole
 {
@@ -73,6 +76,9 @@ namespace Algo.Graphs.TestConsole
 
             algo = new DijkstraAlgorithmSlim(_figure46);
             TestShortestPath(algo, 3, 4);
+
+            algo = new DijkstraSlimWithDaryHeap(_figure46, 3);
+            TestShortestPath(algo, 3, 4);
         }
 
         private void TestShortestPath(IShortestPathAlgorithm algo, params int[] targets)
@@ -90,6 +96,21 @@ namespace Algo.Graphs.TestConsole
             string path = string.Join("->", navigator.GetPath(target));
             Console.WriteLine(
                 $"{target} is at distance {navigator.GetDistance(target)}. Path is {path}");
+        }
+
+        private sealed class DijkstraSlimWithDaryHeap : DijkstraAlgorithmSlim
+        {
+            private readonly int _d;
+
+            public DijkstraSlimWithDaryHeap(IWeighedGraph graph, int d) : base(graph)
+            {
+                _d = d;
+            }
+
+            protected override IHeap<int, int> CreateHeap(IReadOnlyCollection<int> distances)
+            {
+                return new DHeap<int, int>(_d, Enumerable.Range(0, distances.Count), distances, false);
+            }
         }
     }
 }

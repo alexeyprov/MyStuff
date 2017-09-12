@@ -1,7 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
+
+using Algo.Common;
 
 namespace Algo.Heaps.Entities
 {
@@ -91,20 +94,80 @@ namespace Algo.Heaps.Entities
 
         IEnumerator IEnumerable.GetEnumerator() => ((IEnumerable<TValue>)this).GetEnumerator();
 
-        protected void SiftDown(int index)
+        protected void SiftDown(int index, bool useQuickSwap = false)
         {
-            throw new NotImplementedException();
+            int winner = index;
+            int firstChild = GetFirstChild(index);
+            int lastChild = Math.Min(firstChild, _size - 1);
+            for (int child = firstChild; child < lastChild; ++child)
+            {
+                winner = Compare(winner, child);
+            }
+
+            if (winner != index)
+            {
+                if (useQuickSwap)
+                {
+                    _heap.Swap(index, winner);
+                }
+                else
+                {
+                    Swap(index, winner);
+                }
+
+                SiftDown(winner, useQuickSwap);
+            }
         }
 
-        protected void SiftUp(int index)
+        protected void SiftUp(int index, bool useQuickSwap = false)
         {
-            throw new NotImplementedException();
+            if (index == 0)
+            {
+                return;
+            }
+
+            int parent = GetParent(index);
+            if (Compare(index, parent) != parent)
+            {
+                if (useQuickSwap)
+                {
+                    _heap.Swap(index, parent);
+                }
+                else
+                {
+                    Swap(index, parent);
+                }
+
+                SiftUp(parent);
+            }
+        }
+
+        protected virtual void Swap(int index, int other)
+        {
+            Debug.Assert(index != other);
+            _heap.Swap(index, other);
+        }
+
+        /// <summary>
+        /// Compares heap elements at two indices and returns the index of parent element.
+        /// I.e., this is the index of bigger element in a max heap, and index of the smaller
+        /// element in a min heap.
+        /// </summary>
+        protected int Compare(int index, int other)
+        {
+            int orderFactor = _isMaxHeap ? -1 : 1;
+            int compareResult = _comparer.Compare(_heap[index].Key, _heap[other].Key);
+            return orderFactor * compareResult < 0 ? index : other;
         }
 
         private static int VerifyChildCount(int d) =>
             d > 2 || d < int.MaxValue / 2 ? 
                 d : 
                 throw new ArgumentOutOfRangeException(nameof(d));
+
+        private int GetParent(int index) => index == 0 ? 0 : (index - 1) / _d;
+
+        private int GetFirstChild(int index) => index * _d + 1;
 
         private void Heapify()
         {
