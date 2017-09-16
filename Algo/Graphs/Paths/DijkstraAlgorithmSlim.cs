@@ -37,6 +37,12 @@ namespace Algo.Graphs.Paths
                 foreach (WeighedDistance neighbor in _graph.GetDistances(current))
                 {
                     int next = neighbor.Vertex;
+                    if (neighbor.Weight < 0)
+                    {
+                        throw new NotSupportedException(
+                            $"Edge ({current}, {next}) has a negative weight: {neighbor.Weight}");
+                    }
+
                     int oldDistance = distances[next];
                     int newDistance = distances[current] + neighbor.Weight;
                     if (newDistance < oldDistance)
