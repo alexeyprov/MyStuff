@@ -1,0 +1,47 @@
+// rotations
+
+     y      R        x
+    / \    -->      / \
+   x  T3           T1  y
+  / \      <--        / \
+ T1 T2      L        T2 T3
+
+// LL case
+
+       z                y
+      / \             /   \
+     y   T4    R     x     z
+    / \       -->   / \   / \
+   x  T3           T1 T2 T3 T4
+  / \
+ T1 T2
+
+// LR case
+
+       z                z               x
+      / \              / \            /   \
+     y  T4     L      x  T4   R      y     z
+    / \       -->    / \     -->    / \   / \
+   T1  x            y  T3          T1 T2 T3 T4
+      / \          / \
+     T2 T3        T1 T2
+
+// RR case
+       
+       z                y
+      / \             /   \
+     T1  y     L     z     x
+        / \   -->   / \   / \
+       T2  x       T1 T2 T3 T4
+          / \
+         T3 T4
+
+// RL case
+
+       z                z               x
+      / \              / \            /   \
+     T1  y    R       T1  x    L     z     y
+        / \  -->         / \  -->   / \   / \
+       x  T4            T2  y      T1 T2 T3 T4
+      / \                  / \
+     T2 T3                T3 T4
