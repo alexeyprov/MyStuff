@@ -80,7 +80,23 @@ namespace Algo.Trees.SearchTrees
 
         public bool Contains(TData item)
         {
-            throw new NotImplementedException();
+            TNode current = _root;
+            while (current != null)
+            {
+                switch (_comparer.Compare(item, current.Data))
+                {
+                    case 0:
+                        return true;
+                    case int result when result < 0:
+                        current = current.Left;
+                        break;
+                    case int result when result > 0:
+                        current = current.Right;
+                        break;
+                }
+            }
+
+            return false;
         } 
                 
         // CopyTo copies a collection into an Array, starting at a particular
