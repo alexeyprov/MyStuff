@@ -57,6 +57,7 @@ namespace Algo.Trees.TestConsole
         {
             TestTreeBalance(_balancedTree);
             TestTreeBalance(_unbalancedTree);
+            TestBst();
         }
 
         private static void TestTreeBalance(BinaryTreeNode<int> tree)
@@ -72,6 +73,19 @@ namespace Algo.Trees.TestConsole
             {
                 Console.WriteLine($"Tree is unbalanced at {unbalancedSubtree.Data}");
             }
+        }
+
+        private static void TestBst()
+        {
+            BinarySearchTree<int, BinaryTreeNode<int>> bst = new BinarySearchTree<int, BinaryTreeNode<int>>();
+
+            bst.Add(5);
+            bst.Add(9);
+            bst.Add(2);
+            bst.Add(4);
+            bst.Add(1);
+
+            Console.WriteLine($"BST: {string.Join(", ", bst)}");
         }
     }
 }

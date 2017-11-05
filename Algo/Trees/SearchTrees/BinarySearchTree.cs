@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 
 using Algo.Trees.Entities;
 
@@ -101,18 +102,36 @@ namespace Algo.Trees.SearchTrees
 
         IEnumerator<TData> IEnumerable<TData>.GetEnumerator()
         {
-            throw new NotImplementedException();
+            return IterateInOrder(_root).Select(n => n.Data).GetEnumerator();
         }
 
         #endregion
 
         #region IEnumerable Members
 
-        IEnumerator IEnumerable.GetEnumerator()
-        {
-            throw new NotImplementedException();
-        }
+        IEnumerator IEnumerable.GetEnumerator() =>
+            ((IEnumerable<TData>)this).GetEnumerator();
 
         #endregion
+
+        private static IEnumerable<TNode> IterateInOrder(TNode node)
+        {
+            if (node == null)
+            {
+                yield break;
+            }
+
+            foreach (TNode leftTreeNode in IterateInOrder(node.Left))
+            {
+                yield return leftTreeNode;
+            }
+
+            yield return node;
+
+            foreach (TNode rightTreeNode in IterateInOrder(node.Right))
+            {
+                yield return rightTreeNode;
+            }
+        }
     }
 }
