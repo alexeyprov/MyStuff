@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 
 using Algo.Trees.Entities;
@@ -11,14 +12,22 @@ namespace Algo.Trees.SearchTrees
         where TData : IComparable<TData>
         where TNode : BinaryTreeNode<TData, TNode>, new()
     {
+        #region Private Fields
+
         private readonly IComparer<TData> _comparer;
         private int _count;
         private TNode _root;
+
+        #endregion
+
+        #region Constructors
 
         public BinarySearchTree(IComparer<TData> comparer = null)
         {
             _comparer = comparer ?? Comparer<TData>.Default;
         }
+
+        #endregion
 
         #region ICollection<TData> Members
 
@@ -33,42 +42,29 @@ namespace Algo.Trees.SearchTrees
                 Data = item
             };
 
-            if (_root == null)
+            (TNode node, TNode parent) = FindNode(item);
+            if (node != null)
             {
-                _root = newNode;
-                _count++;
                 return;
             }
 
-            TNode parent = null, current = _root;
-            bool isLeft = false;
-            while (current != null)
-            {
-                parent = current;
-                switch (_comparer.Compare(item, current.Data))
-                {
-                    case int result when result < 0:
-                        current = current.Left;
-                        isLeft = true;
-                        break;
-                    case int result when result > 0:
-                        current = current.Right;
-                        isLeft = false;
-                        break;
-                    default:
-                        return;
-                }
-            }
-
             newNode.Parent = parent;
-            if (isLeft)
+            if (parent == null)
             {
-                parent.Left = newNode;
+                _root = newNode;
             }
             else
             {
-                parent.Right = newNode;
+                if (_comparer.Compare(item, parent.Data) < 0)
+                {
+                    parent.Left = newNode;
+                }
+                else
+                {
+                    parent.Right = newNode;
+                }
             }
+
             _count++;
         }
 
@@ -78,26 +74,7 @@ namespace Algo.Trees.SearchTrees
             _count = 0;
         }
 
-        public bool Contains(TData item)
-        {
-            TNode current = _root;
-            while (current != null)
-            {
-                switch (_comparer.Compare(item, current.Data))
-                {
-                    case 0:
-                        return true;
-                    case int result when result < 0:
-                        current = current.Left;
-                        break;
-                    case int result when result > 0:
-                        current = current.Right;
-                        break;
-                }
-            }
-
-            return false;
-        } 
+        public bool Contains(TData item) => FindNode(item).node != null;
                 
         // CopyTo copies a collection into an Array, starting at a particular
         // index into the array.
@@ -109,7 +86,44 @@ namespace Algo.Trees.SearchTrees
                 
         public bool Remove(TData item)
         {
-            throw new NotImplementedException();
+            (TNode node, TNode parent) = FindNode(item);
+            if (node == null)
+            {
+                return false;
+            }
+
+            TNode leftChild = node.Left,
+                  rightChild = node.Right,
+                  successor = node.GetSuccessor();
+            
+            if (successor == null)
+            {
+                Debug.Assert(rightChild == null);
+                successor = leftChild;
+            }
+            else
+            {
+                Debug.Assert(rightChild != null);
+                Debug.Assert(successor.Left == null);
+                Debug.Assert(successor.Parent != null);
+
+                if (successor != rightChild)
+                {
+                    BinaryTreeNode<TData, TNode>.Link(successor.Parent, successor.Right, true);
+                    BinaryTreeNode<TData, TNode>.Link(successor, rightChild, false);
+                }
+
+                BinaryTreeNode<TData, TNode>.Link(successor, leftChild, true);
+            }
+
+            BinaryTreeNode<TData, TNode>.Link(parent, successor, node == parent?.Left);
+            if (node == _root)
+            {
+                _root = successor;
+            }
+
+            _count--;
+            return true;
         }
 
         #endregion
@@ -130,6 +144,8 @@ namespace Algo.Trees.SearchTrees
 
         #endregion
 
+        #region Implementation
+
         private static IEnumerable<TNode> IterateInOrder(TNode node)
         {
             if (node == null)
@@ -149,5 +165,30 @@ namespace Algo.Trees.SearchTrees
                 yield return rightTreeNode;
             }
         }
+
+        private (TNode node, TNode parent) FindNode(TData item)
+        {
+            TNode current = _root, parent = null;
+            while (current != null)
+            {
+                switch (_comparer.Compare(item, current.Data))
+                {
+                    case 0:
+                        return (current, parent);
+                    case int result when result < 0:
+                        parent = current;
+                        current = current.Left;
+                        break;
+                    case int result when result > 0:
+                        parent = current;
+                        current = current.Right;
+                        break;
+                }
+            }
+
+            return (null, parent);
+        }
+
+        #endregion
     }
 }

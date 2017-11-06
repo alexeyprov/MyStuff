@@ -24,6 +24,43 @@ namespace Algo.Trees.Entities
             get => Children[1];
             set => UpdateChild(1, value);
         }
+
+        public static void Link(TNode parent, TNode child, bool isLeftChild)
+        {
+            if (parent != null)
+            {
+                if (isLeftChild)
+                {
+                    parent.Left = child;
+                }
+                else
+                {
+                    parent.Right = child;
+                }
+            }
+
+            if (child != null)
+            {
+                child.Parent = parent;
+            }
+        }
+
+        public TNode GetSuccessor()
+        {
+            TNode current = Right;
+
+            if (current == null)
+            {
+                return null;
+            }
+
+            while (current.Left != null)
+            {
+                current = current.Left;
+            }
+
+            return current;
+        }
     }
 
     public class BinaryTreeNode<TData> : BinaryTreeNode<TData, BinaryTreeNode<TData>>

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 
 using Algo.Trees.Entities;
 using Algo.Trees.SearchTrees;
@@ -83,9 +84,24 @@ namespace Algo.Trees.TestConsole
             bst.Add(9);
             bst.Add(2);
             bst.Add(4);
+            bst.Add(3);
             bst.Add(1);
+            bst.Add(12);
+            bst.Add(7);
+            bst.Add(8);
 
-            Console.WriteLine($"BST: {string.Join(", ", bst)}");
+            //         5
+            //      2     9
+            //    1   4 7   12
+            //       3   8
+
+            Console.WriteLine($"Initial BST: {string.Join(", ", bst)}");
+
+            Debug.Assert(bst.Remove(5));
+            Debug.Assert(bst.Remove(4));
+            Debug.Assert(!bst.Remove(6));
+
+            Console.WriteLine($"BST after removal: {string.Join(", ", bst)}");
         }
     }
 }
