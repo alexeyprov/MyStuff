@@ -94,32 +94,39 @@ namespace Algo.Trees.SearchTrees
 
             TNode leftChild = node.Left,
                   rightChild = node.Right,
-                  successor = node.GetSuccessor();
-            
-            if (successor == null)
+                  deleted = node,
+                  replacement = null;
+
+            if (leftChild == null)
             {
-                Debug.Assert(rightChild == null);
-                successor = leftChild;
+                replacement = rightChild;
+            }
+            else if (rightChild == null)
+            {   
+                replacement = leftChild;
             }
             else
             {
-                Debug.Assert(rightChild != null);
+                TNode successor = node.GetSuccessor();
+                Debug.Assert(successor != null);
                 Debug.Assert(successor.Left == null);
-                Debug.Assert(successor.Parent != null);
 
-                if (successor != rightChild)
-                {
-                    BinaryTreeNode<TData, TNode>.Link(successor.Parent, successor.Right, true);
-                    BinaryTreeNode<TData, TNode>.Link(successor, rightChild, false);
-                }
-
-                BinaryTreeNode<TData, TNode>.Link(successor, leftChild, true);
+                deleted = successor;
+                replacement = successor.Right;
             }
+            
+            BinaryTreeNode<TData, TNode>.Link(
+                deleted.Parent, 
+                replacement, 
+                deleted.Parent?.Left == deleted);
 
-            BinaryTreeNode<TData, TNode>.Link(parent, successor, node == parent?.Left);
-            if (node == _root)
+            if (deleted != node)
             {
-                _root = successor;
+                node.Data = deleted.Data;
+            }
+            else if (node == _root)
+            {
+                _root = replacement;
             }
 
             _count--;
