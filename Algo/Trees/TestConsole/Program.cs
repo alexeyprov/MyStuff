@@ -59,6 +59,7 @@ namespace Algo.Trees.TestConsole
             TestTreeBalance(_balancedTree);
             TestTreeBalance(_unbalancedTree);
             TestBst();
+            TestAvl();
         }
 
         private static void TestTreeBalance(BinaryTreeNode<int> tree)
@@ -102,6 +103,22 @@ namespace Algo.Trees.TestConsole
             Debug.Assert(!bst.Remove(6));
 
             Console.WriteLine($"BST after removal: {string.Join(", ", bst)}");
+        }
+
+        private static void TestAvl()
+        {
+            AvlTree<int> avl = new AvlTree<int>();
+
+            avl.Add(5);
+            avl.Add(9);
+            avl.Add(12); // RR case
+            avl.Add(2);
+            avl.Add(4);  // LR case
+
+            avl.Add(1);  // LL case
+            avl.Add(8);
+
+            Console.WriteLine($"Initial AVL tree: {string.Join(", ", avl)}");
         }
     }
 }

@@ -16,7 +16,6 @@ namespace Algo.Trees.SearchTrees
 
         private readonly IComparer<TData> _comparer;
         private int _count;
-        private TNode _root;
 
         #endregion
 
@@ -42,35 +41,15 @@ namespace Algo.Trees.SearchTrees
                 Data = item
             };
 
-            (TNode node, TNode parent) = FindNode(item);
-            if (node != null)
+            if (AddNode(newNode))
             {
-                return;
+                _count++;
             }
-
-            newNode.Parent = parent;
-            if (parent == null)
-            {
-                _root = newNode;
-            }
-            else
-            {
-                if (_comparer.Compare(item, parent.Data) < 0)
-                {
-                    parent.Left = newNode;
-                }
-                else
-                {
-                    parent.Right = newNode;
-                }
-            }
-
-            _count++;
         }
 
         public void Clear()
         {
-            _root = null;
+            Root = null;
             _count = 0;
         }
 
@@ -124,9 +103,9 @@ namespace Algo.Trees.SearchTrees
             {
                 node.Data = deleted.Data;
             }
-            else if (node == _root)
+            else if (node == Root)
             {
-                _root = replacement;
+                Root = replacement;
             }
 
             _count--;
@@ -139,7 +118,7 @@ namespace Algo.Trees.SearchTrees
 
         IEnumerator<TData> IEnumerable<TData>.GetEnumerator()
         {
-            return IterateInOrder(_root).Select(n => n.Data).GetEnumerator();
+            return IterateInOrder(Root).Select(n => n.Data).GetEnumerator();
         }
 
         #endregion
@@ -148,6 +127,41 @@ namespace Algo.Trees.SearchTrees
 
         IEnumerator IEnumerable.GetEnumerator() =>
             ((IEnumerable<TData>)this).GetEnumerator();
+
+        #endregion
+
+        #region Protected Interface
+
+        protected TNode Root { get; set; }
+
+        protected virtual bool AddNode(TNode newNode)
+        {
+            TData item = newNode.Data;
+            (TNode node, TNode parent) = FindNode(item);
+            if (node != null)
+            {
+                return false;
+            }
+
+            newNode.Parent = parent;
+            if (parent == null)
+            {
+                Root = newNode;
+            }
+            else
+            {
+                if (_comparer.Compare(item, parent.Data) < 0)
+                {
+                    parent.Left = newNode;
+                }
+                else
+                {
+                    parent.Right = newNode;
+                }
+            }
+
+            return true;
+        }
 
         #endregion
 
@@ -175,7 +189,7 @@ namespace Algo.Trees.SearchTrees
 
         private (TNode node, TNode parent) FindNode(TData item)
         {
-            TNode current = _root, parent = null;
+            TNode current = Root, parent = null;
             while (current != null)
             {
                 switch (_comparer.Compare(item, current.Data))
