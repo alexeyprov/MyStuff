@@ -61,6 +61,9 @@ namespace Algo.Trees.Entities
 
             return current;
         }
+
+        public override string ToString() =>
+            $"[{Data}]";
     }
 
     public class BinaryTreeNode<TData> : BinaryTreeNode<TData, BinaryTreeNode<TData>>

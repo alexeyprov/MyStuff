@@ -71,44 +71,7 @@ namespace Algo.Trees.SearchTrees
                 return false;
             }
 
-            TNode leftChild = node.Left,
-                  rightChild = node.Right,
-                  deleted = node,
-                  replacement = null;
-
-            if (leftChild == null)
-            {
-                replacement = rightChild;
-            }
-            else if (rightChild == null)
-            {   
-                replacement = leftChild;
-            }
-            else
-            {
-                TNode successor = node.GetSuccessor();
-                Debug.Assert(successor != null);
-                Debug.Assert(successor.Left == null);
-
-                deleted = successor;
-                replacement = successor.Right;
-            }
-            
-            BinaryTreeNode<TData, TNode>.Link(
-                deleted.Parent, 
-                replacement, 
-                deleted.Parent?.Left == deleted);
-
-            if (deleted != node)
-            {
-                node.Data = deleted.Data;
-            }
-            else if (node == Root)
-            {
-                Root = replacement;
-            }
-
-            _count--;
+            RemoveNode(node, parent);
             return true;
         }
 
@@ -162,6 +125,52 @@ namespace Algo.Trees.SearchTrees
 
             return true;
         }
+
+        protected virtual TNode RemoveNode(TNode node, TNode parent)
+        {
+            TNode leftChild = node.Left,
+                  rightChild = node.Right,
+                  deleted = node,
+                  replacement = null;
+
+            if (leftChild == null)
+            {
+                replacement = rightChild;
+            }
+            else if (rightChild == null)
+            {   
+                replacement = leftChild;
+            }
+            else
+            {
+                TNode successor = node.GetSuccessor();
+                Debug.Assert(successor != null);
+                Debug.Assert(successor.Left == null);
+
+                deleted = successor;
+                replacement = successor.Right;
+            }
+            
+            BinaryTreeNode<TData, TNode>.Link(
+                deleted.Parent, 
+                replacement, 
+                deleted.Parent?.Left == deleted);
+
+            if (deleted != node)
+            {
+                node.Data = deleted.Data;
+            }
+            else if (node == Root)
+            {
+                Root = replacement;
+            }
+
+            _count--;
+            return deleted;
+        }
+
+        protected int Compare(TNode left, TNode right) =>
+            _comparer.Compare(left.Data, right.Data);
 
         #endregion
 

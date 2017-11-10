@@ -117,6 +117,82 @@ namespace Algo.Trees.SearchTrees
             return true;
         }
 
+        protected override AvlTreeNode<T> RemoveNode(AvlTreeNode<T> node, AvlTreeNode<T> parent)
+        {
+            node = base.RemoveNode(node, parent);
+
+            AvlTreeNode<T> current = node.Parent;
+            bool isLeftChild = current != null && Compare(node, current) < 0;
+            while (current != null)
+            {
+                bool isRotated = false;
+                switch (current.Balance)
+                {
+                    case NodeBalance.Even:
+                        current.Balance = isLeftChild ? 
+                            NodeBalance.RightSkewed : 
+                            NodeBalance.LeftSkewed;
+                        return node;
+
+                    case NodeBalance.LeftSkewed:
+                        if (isLeftChild)
+                        {
+                            current.Balance = NodeBalance.Even;
+                            break;
+                        }
+
+                        if (current.Left.Balance == NodeBalance.RightSkewed)
+                        {
+                            // LR case
+                            RotateLeft(current.Left.Right);
+                            RotateRight(current.Left);
+                        }
+                        else
+                        {
+                            // LL case
+                            RotateRight(current.Left);
+                        }
+
+                        isRotated = true;
+                        break;
+
+                    case NodeBalance.RightSkewed:
+                        if (!isLeftChild)
+                        {
+                            current.Balance = NodeBalance.Even;
+                            break;
+                        }
+
+                        if (current.Right.Balance == NodeBalance.LeftSkewed)
+                        {
+                            // RL case
+                            RotateRight(current.Right.Left);
+                            RotateLeft(current.Right);
+                        }
+                        else
+                        {
+                            // RR case
+                            RotateLeft(current.Right);
+                        }
+
+                        isRotated = true;
+                        break;
+
+                    default:
+                        Debug.Fail($"Unexpected balance value {current.Balance} at node {current.Data}");
+                        break;
+                }
+
+                AvlTreeNode<T> child = isRotated ? current.Parent : current;
+                Debug.Assert(child != null);
+
+                current = child.Parent;
+                isLeftChild = current?.Left == child;
+            }
+
+            return node;
+        }
+
         private void RotateRight(AvlTreeNode<T> node)
         {
             if (node?.Parent == null)

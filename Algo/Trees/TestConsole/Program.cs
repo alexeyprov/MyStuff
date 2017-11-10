@@ -95,7 +95,6 @@ namespace Algo.Trees.TestConsole
             //      2     9
             //    1   4 7   12
             //       3   8
-
             Console.WriteLine($"Initial BST: {string.Join(", ", bst)}");
 
             Debug.Assert(bst.Remove(5));
@@ -117,8 +116,19 @@ namespace Algo.Trees.TestConsole
 
             avl.Add(1);  // LL case
             avl.Add(8);
+            avl.Add(10);
 
+            //        4     
+            //     2     9
+            //   1     5    12
+            //          8 10
             Console.WriteLine($"Initial AVL tree: {string.Join(", ", avl)}");
+              
+            Debug.Assert(avl.Remove(4));
+            Debug.Assert(avl.Remove(8)); // RL case
+            Debug.Assert(!avl.Remove(6));
+
+            Console.WriteLine($"AVL tree after removal: {string.Join(", ", avl)}");
         }
     }
 }

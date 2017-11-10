@@ -51,6 +51,9 @@ namespace Algo.Trees.SearchTrees.Entities
                         $"Cannot shift balance to the left for node '{Data}'");
             }
         }
+
+        public override string ToString() =>
+            $"{base.ToString()} - {Balance}";
     }
 
     public class AvlTreeNode<TData> : AvlTreeNode<TData, AvlTreeNode<TData>>
