@@ -29,7 +29,6 @@ namespace Algo.Trees.SearchTrees
 
             while (current != null)
             {
-                int rotations = 0;
                 switch (current.Balance)
                 {
                     case NodeBalance.Even:
@@ -49,17 +48,15 @@ namespace Algo.Trees.SearchTrees
                         {
                             // LL case
                             RotateRight(child);
-                            rotations = 1;
                         }
                         else
                         {
                             // LR case
                             RotateLeft(grandChild);
                             RotateRight(grandChild);
-                            rotations = 2;
                         }
 
-                        break;
+                        return true;
 
                     case NodeBalance.RightSkewed:
                         if (isLeftChild)
@@ -73,16 +70,14 @@ namespace Algo.Trees.SearchTrees
                             // RL case
                             RotateRight(grandChild);
                             RotateLeft(grandChild);
-                            rotations = 2;
                         }
                         else
                         {
                             // RR case
                             RotateLeft(child);
-                            rotations = 1;
                         }
 
-                        break;
+                        return true;
 
                     default:
                         Debug.Fail($"Unexpected balance value {current.Balance} at node {current.Data}");
@@ -90,24 +85,9 @@ namespace Algo.Trees.SearchTrees
                 }
 
                 // advance pointers
-                switch (rotations)
-                {
-                    case 0:
-                        grandChild = child;
-                        child = current;
-                        current = current.Parent;
-                        break;
-
-                    case 1:
-                        current = child.Parent;
-                        break;
-
-                    case 2:
-                        grandChild = child;
-                        child = grandChild.Parent;
-                        current = child.Parent;
-                        break;
-                }
+                grandChild = child;
+                child = current;
+                current = current.Parent;
 
                 // update path directions
                 isLeftGrandChild = child.Left == grandChild;
