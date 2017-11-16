@@ -8,7 +8,7 @@ using Algo.Trees.Entities;
 
 namespace Algo.Trees.SearchTrees
 {
-    public class BinarySearchTree<TData, TNode> : ICollection<TData>
+    public class BinarySearchTree<TData, TNode> : ISearchTree<TData>
         where TData : IComparable<TData>
         where TNode : BinaryTreeNode<TData, TNode>, new()
     {
@@ -24,6 +24,32 @@ namespace Algo.Trees.SearchTrees
         public BinarySearchTree(IComparer<TData> comparer = null)
         {
             _comparer = comparer ?? Comparer<TData>.Default;
+        }
+
+        #endregion
+
+        #region ISearchTree<TData> Members
+
+        public TData Min()
+        {
+            TNode current = Root ?? throw new InvalidOperationException("Search tree is empty");
+            while (current.Left != null)
+            {
+                current = current.Left;
+            }
+
+            return current.Data;
+        }
+
+        public TData Max()
+        {
+            TNode current = Root ?? throw new InvalidOperationException("Search tree is empty");
+            while (current.Right != null)
+            {
+                current = current.Right;
+            }
+
+            return current.Data;
         }
 
         #endregion
