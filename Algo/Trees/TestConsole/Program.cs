@@ -58,8 +58,10 @@ namespace Algo.Trees.TestConsole
         {
             TestTreeBalance(_balancedTree);
             TestTreeBalance(_unbalancedTree);
+
             TestBst();
             TestAvl();
+            TestRedBlack();
         }
 
         private static void TestTreeBalance(BinaryTreeNode<int> tree)
@@ -129,6 +131,26 @@ namespace Algo.Trees.TestConsole
             Debug.Assert(!avl.Remove(6));
 
             Console.WriteLine($"AVL tree after removal: {string.Join(", ", avl)}");
+        }
+
+        private static void TestRedBlack()
+        {
+            RedBlackTree<int> tree = new RedBlackTree<int>();
+
+            tree.Add(5);
+            tree.Add(9);
+            tree.Add(12); // left rotate (case 3)
+            tree.Add(2);  // red uncle (case 1)
+            tree.Add(4);  // left, right rotate (cases 2, 3)
+            tree.Add(1);  // red uncle
+            tree.Add(8);
+            tree.Add(10);
+
+            //       9   
+            //   4       12
+            // 2   5  10
+            //1     8
+            Console.WriteLine($"Initial red-black tree: {string.Join(", ", tree)}");
         }
     }
 }

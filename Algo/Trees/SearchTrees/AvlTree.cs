@@ -173,50 +173,22 @@ namespace Algo.Trees.SearchTrees
             return node;
         }
 
-        private void RotateRight(AvlTreeNode<T> node)
+        protected override void RotateRight(AvlTreeNode<T> node)
         {
-            if (node?.Parent == null)
-            {
-                throw new ArgumentNullException(nameof(node));
-            }
-
-            AvlTreeNode<T> parent = node.Parent;
-            AvlTreeNode<T> grandParent = parent.Parent;
-            
-            BinaryTreeNode<T, AvlTreeNode<T>>.Link(parent, node.Right, true);
-            BinaryTreeNode<T, AvlTreeNode<T>>.Link(node, parent, false);
-            BinaryTreeNode<T, AvlTreeNode<T>>.Link(grandParent, node, grandParent?.Left == parent);
+            AvlTreeNode<T> parent = node?.Parent;
+            base.RotateRight(node);
 
             node.ShiftBalanceRight();
             parent.ShiftBalanceRight();
-
-            if (Root == parent)
-            {
-                Root = node;
-            }
         }
 
-        private void RotateLeft(AvlTreeNode<T> node)
+        protected override void RotateLeft(AvlTreeNode<T> node)
         {
-            if (node?.Parent == null)
-            {
-                throw new ArgumentNullException(nameof(node));
-            }
-
-            AvlTreeNode<T> parent = node.Parent;
-            AvlTreeNode<T> grandParent = parent.Parent;
-
-            BinaryTreeNode<T, AvlTreeNode<T>>.Link(parent, node.Left, false);
-            BinaryTreeNode<T, AvlTreeNode<T>>.Link(node, parent, true);
-            BinaryTreeNode<T, AvlTreeNode<T>>.Link(grandParent, node, grandParent?.Left == parent);
+            AvlTreeNode<T> parent = node?.Parent;
+            base.RotateLeft(node);
 
             node.ShiftBalanceLeft();
             parent.ShiftBalanceLeft();
-
-            if (Root == parent)
-            {
-                Root = node;
-            }
         }
     }
 }

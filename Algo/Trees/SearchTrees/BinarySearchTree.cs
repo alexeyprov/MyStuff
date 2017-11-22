@@ -198,6 +198,46 @@ namespace Algo.Trees.SearchTrees
         protected int Compare(TNode left, TNode right) =>
             _comparer.Compare(left.Data, right.Data);
 
+        protected virtual void RotateRight(TNode node)
+        {
+            if (node?.Parent == null)
+            {
+                throw new ArgumentNullException(nameof(node));
+            }
+
+            TNode parent = node.Parent;
+            TNode grandParent = parent.Parent;
+            
+            BinaryTreeNode<TData, TNode>.Link(parent, node.Right, true);
+            BinaryTreeNode<TData, TNode>.Link(node, parent, false);
+            BinaryTreeNode<TData, TNode>.Link(grandParent, node, grandParent?.Left == parent);
+
+            if (Root == parent)
+            {
+                Root = node;
+            }
+        }
+
+        protected virtual void RotateLeft(TNode node)
+        {
+            if (node?.Parent == null)
+            {
+                throw new ArgumentNullException(nameof(node));
+            }
+
+            TNode parent = node.Parent;
+            TNode grandParent = parent.Parent;
+
+            BinaryTreeNode<TData, TNode>.Link(parent, node.Left, false);
+            BinaryTreeNode<TData, TNode>.Link(node, parent, true);
+            BinaryTreeNode<TData, TNode>.Link(grandParent, node, grandParent?.Left == parent);
+
+            if (Root == parent)
+            {
+                Root = node;
+            }
+        }
+
         #endregion
 
         #region Implementation
