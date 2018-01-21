@@ -151,6 +151,32 @@ namespace Algo.Trees.TestConsole
             // 2   5  10
             //1     8
             Console.WriteLine($"Initial red-black tree: {string.Join(", ", tree)}");
+
+            Debug.Assert(tree.Remove(8));
+            Debug.Assert(tree.Remove(2));
+            Debug.Assert(tree.Remove(4));
+            Debug.Assert(tree.Remove(9));
+            Debug.Assert(!tree.Remove(15));
+
+            Console.WriteLine($"Red-black tree after removal: {string.Join(", ", tree)}");
+
+            tree.Clear();
+            tree.Add(41);
+            tree.Add(38);
+            tree.Add(31);
+            tree.Add(12);
+            tree.Add(19);
+            tree.Add(8);
+            Console.WriteLine($"Ex. 13.4-3 red-black tree: {string.Join(", ", tree)}");
+
+            Debug.Assert(tree.Remove(8));
+            Debug.Assert(tree.Remove(12));
+            Debug.Assert(tree.Remove(19));
+            Debug.Assert(tree.Remove(31));
+            Debug.Assert(tree.Remove(38));
+            Debug.Assert(tree.Remove(41));
+
+            Console.WriteLine($"Ex 13.4-3 red-black tree after removal: {string.Join(", ", tree)}");
         }
     }
 }

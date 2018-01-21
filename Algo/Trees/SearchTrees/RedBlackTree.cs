@@ -88,5 +88,113 @@ namespace Algo.Trees.SearchTrees
             Root.IsRed = false;
             return true;
         }
+
+        protected override RedBlackTreeNode<T> RemoveNode(
+            RedBlackTreeNode<T> node, 
+            RedBlackTreeNode<T> parent)
+        {
+            RedBlackTreeNode<T> deleted = base.RemoveNode(node, parent);
+            parent = deleted.Parent;
+            if (deleted.IsRed)
+            {
+                return deleted;
+            }
+
+            Debug.Assert(deleted.Left == null || deleted.Right == null);
+            RedBlackTreeNode<T> current = deleted.Left ?? deleted.Right;
+
+            while (current?.IsRed != true && current != Root)
+            {
+                Debug.Assert(parent != null);
+
+                if (parent.Left == current)
+                {
+                    RedBlackTreeNode<T> brother = parent.Right;
+                    Debug.Assert(brother != null);
+
+                    if (brother.IsRed)
+                    {
+                        RotateLeft(brother);
+                        parent.IsRed = true;
+                        brother.IsRed = false;
+                        brother = parent.Right;
+                    }
+
+                    if (brother.Right?.IsRed != true && brother.Left?.IsRed != true)
+                    {
+                        brother.IsRed = true;
+                        current = parent;
+                    }
+                    else
+                    {
+                        if (brother.Right?.IsRed != true)
+                        {
+                            Debug.Assert(brother.Left.IsRed);
+                            RotateRight(brother.Left);
+                            brother.IsRed = true;
+                            brother.Parent.IsRed = false;
+                            brother = parent.Right;
+                        }
+
+                        Debug.Assert(brother.Right.IsRed);
+                        RotateLeft(brother);
+                        brother.IsRed = parent.IsRed;
+                        parent.IsRed = false;
+                        brother.Right.IsRed = false;
+
+                        // double black color is pushed to a red node, can exit now
+                        current = Root;
+                    }
+                }
+                else
+                {
+                    RedBlackTreeNode<T> brother = parent.Left;
+                    Debug.Assert(brother != null);
+
+                    if (brother.IsRed)
+                    {
+                        RotateRight(brother);
+                        parent.IsRed = true;
+                        brother.IsRed = false;
+                        brother = parent.Left;
+                    }
+
+                    if (brother.Right?.IsRed != true && brother.Left?.IsRed != true)
+                    {
+                        brother.IsRed = true;
+                        current = parent;
+                    }
+                    else
+                    {
+                        if (brother.Left?.IsRed != true)
+                        {
+                            Debug.Assert(brother.Right.IsRed);
+                            RotateLeft(brother.Right);
+                            brother.IsRed = true;
+                            brother.Parent.IsRed = false;
+                            brother = parent.Left;
+                        }
+
+                        Debug.Assert(brother.Left.IsRed);
+                        RotateRight(brother);
+                        brother.IsRed = parent.IsRed;
+                        parent.IsRed = false;
+                        brother.Left.IsRed = false;
+
+                        // double black color is pushed to a red node, can exit now
+                        current = Root;
+                    }
+                }
+
+                parent = current.Parent;
+            }
+
+            if (current != null)
+            {
+                current.IsRed = false;
+            }
+
+            return deleted;
+        }
     }
 }
