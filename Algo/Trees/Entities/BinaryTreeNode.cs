@@ -1,15 +1,19 @@
 namespace Algo.Trees.Entities
 {
-    public class BinaryTreeNode<TData, TNode> : TreeNode<TData, TNode>
+    public abstract class BinaryTreeNode<TData, TNode> : TreeNode<TData, TNode>
         where TNode : BinaryTreeNode<TData, TNode>
     {
-        public BinaryTreeNode() :
+        protected BinaryTreeNode() :
             base(2)
         {
         }
 
-        public BinaryTreeNode(TData data) :
+        protected BinaryTreeNode(TData data) :
             base(data, 2)
+        {
+        }
+
+        protected BinaryTreeNode(BinaryTreeNode<TData, TNode> node) : base(node)
         {
         }
 
@@ -62,6 +66,23 @@ namespace Algo.Trees.Entities
             return current;
         }
 
+        public TNode GetPredecessor()
+        {
+            TNode current = Left;
+
+            if (current.Right == null)
+            {
+                return null;
+            }
+
+            while (current.Right != null)
+            {
+                current = current.Right;
+            }
+
+            return current;
+        }
+
         public override string ToString() =>
             $"[{Data}]";
     }
@@ -77,5 +98,12 @@ namespace Algo.Trees.Entities
             base(data)
         {
         }
+
+        public BinaryTreeNode(BinaryTreeNode<TData> node) : base(node)
+        {
+        }
+
+        protected override BinaryTreeNode<TData> Clone() =>
+            new BinaryTreeNode<TData>(this);
     }
 }

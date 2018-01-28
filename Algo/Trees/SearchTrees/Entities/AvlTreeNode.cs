@@ -3,15 +3,20 @@ using Algo.Trees.Entities;
 
 namespace Algo.Trees.SearchTrees.Entities
 {
-    public class AvlTreeNode<TData, TNode> : BinaryTreeNode<TData, TNode>
+    public abstract class AvlTreeNode<TData, TNode> : BinaryTreeNode<TData, TNode>
         where TNode : BinaryTreeNode<TData, TNode>
     {
-        public AvlTreeNode()
+        protected AvlTreeNode()
         {
         }
 
-        public AvlTreeNode(TData data) : base(data)
+        protected AvlTreeNode(TData data) : base(data)
         {
+        }
+
+        protected AvlTreeNode(AvlTreeNode<TData, TNode> node) : base(node)
+        {
+            Balance = node.Balance;
         }
 
         public NodeBalance Balance { get; set; }
@@ -65,5 +70,12 @@ namespace Algo.Trees.SearchTrees.Entities
         public AvlTreeNode(TData data) : base(data)
         {
         }
+
+        public AvlTreeNode(AvlTreeNode<TData> node) : base(node)
+        {
+        }
+
+        protected override AvlTreeNode<TData> Clone() =>
+            new AvlTreeNode<TData>(this);
     }
 }

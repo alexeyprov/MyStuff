@@ -145,7 +145,8 @@ namespace Algo.Trees.TestConsole
             tree.Add(1);  // red uncle
             tree.Add(8);
             tree.Add(10);
-
+            tree.Validate();
+            
             //       9   
             //   4       12
             // 2   5  10
@@ -157,26 +158,57 @@ namespace Algo.Trees.TestConsole
             Debug.Assert(tree.Remove(4));
             Debug.Assert(tree.Remove(9));
             Debug.Assert(!tree.Remove(15));
+            tree.Validate();
 
             Console.WriteLine($"Red-black tree after removal: {string.Join(", ", tree)}");
 
-            tree.Clear();
-            tree.Add(41);
-            tree.Add(38);
-            tree.Add(31);
-            tree.Add(12);
-            tree.Add(19);
-            tree.Add(8);
-            Console.WriteLine($"Ex. 13.4-3 red-black tree: {string.Join(", ", tree)}");
+            RedBlackTree<int> exerciseTree = new RedBlackTree<int>();
+            exerciseTree.Add(41);
+            exerciseTree.Add(38);
+            exerciseTree.Add(31);
+            exerciseTree.Add(12);
+            exerciseTree.Add(19);
+            exerciseTree.Add(8);
 
+            exerciseTree.Validate();
+            Console.WriteLine(
+                $"Ex. 13.4-3 red-black tree: {string.Join(", ", exerciseTree)}. Height={exerciseTree.Height}");
+
+            tree = new RedBlackTree<int>(exerciseTree);
             Debug.Assert(tree.Remove(8));
             Debug.Assert(tree.Remove(12));
             Debug.Assert(tree.Remove(19));
             Debug.Assert(tree.Remove(31));
             Debug.Assert(tree.Remove(38));
             Debug.Assert(tree.Remove(41));
+            tree.Validate();
 
-            Console.WriteLine($"Ex 13.4-3 red-black tree after removal: {string.Join(", ", tree)}");
+            Console.WriteLine($"Ex 13.4-3 red-black tree after removal: {string.Join(", ", tree)}. Height={tree.Height}");
+
+            tree.Clear();
+            tree.Add(42);
+            tree.Add(43);
+            tree.Add(44);
+            tree.Validate();
+
+            // right-side union
+            tree = exerciseTree.Union(tree);
+            Debug.Assert(tree.Count == 10);
+            Debug.Assert(tree.Height == 2);
+            tree.Validate();
+
+            RedBlackTree<int> smallTree = new RedBlackTree<int>
+            {
+                1,
+                2
+            };
+            smallTree.Validate();
+
+            // left-side union
+            tree = smallTree.Union(tree, 4);
+            Debug.Assert(tree.Count == 13);
+            Debug.Assert(tree.Height == 3);
+            tree.Validate();
         }
     }
 }

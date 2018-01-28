@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 
+using Algo.Trees.Entities;
 using Algo.Trees.SearchTrees.Entities;
 
 namespace Algo.Trees.SearchTrees
@@ -13,6 +14,28 @@ namespace Algo.Trees.SearchTrees
         {
         }
 
+        public RedBlackTree(RedBlackTree<T> tree) : 
+            this((tree?? throw new ArgumentNullException(nameof(tree))).Comparer)
+        {
+            Count = tree.Count;
+            Height = tree.Height;
+            Root = new RedBlackTreeNode<T>(tree.Root);
+        }
+
+        public int Height { get; private set; }
+
+        public override void Clear()
+        {
+            base.Clear();
+            Height = 0;
+        }
+
+        public RedBlackTree<T> Union(RedBlackTree<T> other) =>
+            UnionWith(other, default(T), false);
+
+        public RedBlackTree<T> Union(RedBlackTree<T> other, T median) =>
+            UnionWith(other, median, true);
+
         protected override bool AddNode(RedBlackTreeNode<T> node)
         {
             if (!base.AddNode(node))
@@ -21,71 +44,7 @@ namespace Algo.Trees.SearchTrees
             }
 
             node.IsRed = true;
-            while (node.Parent?.IsRed == true)
-            {
-                RedBlackTreeNode<T> parent = node.Parent;
-                RedBlackTreeNode<T> grandParent = parent.Parent;
-                Debug.Assert(grandParent != null);
-
-                if (grandParent.Left == parent)
-                {
-                    RedBlackTreeNode<T> uncle = grandParent.Right;
-
-                    if (uncle?.IsRed == true)
-                    {
-                        grandParent.IsRed = true;
-                        parent.IsRed = false;
-                        if (uncle != null)
-                        {
-                            uncle.IsRed = false;
-                        }
-
-                        node = grandParent;
-                    }
-                    else
-                    {
-                        if (parent.Right == node)
-                        {
-                            RotateLeft(node);
-                            node = parent;
-                        }
-
-                        RotateRight(node.Parent);
-                        node.Parent.IsRed = false;
-                        grandParent.IsRed = true;
-                    }
-                }
-                else
-                {
-                    RedBlackTreeNode<T> uncle = grandParent.Left;
-
-                    if (uncle?.IsRed == true)
-                    {
-                        grandParent.IsRed = true;
-                        parent.IsRed = false;
-                        if (uncle != null)
-                        {
-                            uncle.IsRed = false;
-                        }
-                        
-                        node = grandParent;
-                    }
-                    else
-                    {
-                        if (parent.Left == node)
-                        {
-                            RotateRight(node);
-                            node = parent;
-                        }
-
-                        RotateLeft(node.Parent);
-                        node.Parent.IsRed = false;
-                        grandParent.IsRed = true;
-                    }
-                }
-            }
-
-            Root.IsRed = false;
+            InsertFixup(node);
             return true;
         }
 
@@ -189,12 +148,172 @@ namespace Algo.Trees.SearchTrees
                 parent = current.Parent;
             }
 
+            if (current == Root && current?.IsRed != true)
+            {
+                Height--;
+            }
+
             if (current != null)
             {
                 current.IsRed = false;
             }
 
             return deleted;
+        }
+
+        private static RedBlackTree<T> Merge(
+            RedBlackTree<T> source,
+            RedBlackTree<T> destination,
+            T medianValue,
+            bool isLeftSideMerge)
+        {
+            destination = new RedBlackTree<T>(destination);
+            source = new RedBlackTree<T>(source);
+
+            Debug.Assert(destination.Height >= source.Height);
+            int currentHeight = destination.Height;
+            RedBlackTreeNode<T> currentNode = destination.Root;
+            while (currentNode != null && (currentHeight > source.Height || currentNode.IsRed))
+            {
+                if (!currentNode.IsRed)
+                {
+                    currentHeight--;
+                }
+
+                currentNode = isLeftSideMerge ? currentNode.Left : currentNode.Right;
+            }
+
+            if (currentNode != null)
+            {
+                RedBlackTreeNode<T> parent = currentNode.Parent;
+                RedBlackTreeNode<T> medianNode = new RedBlackTreeNode<T>(medianValue)
+                {
+                    IsRed = true
+                };
+
+                BinaryTreeNode<T, RedBlackTreeNode<T>>.Link(parent, medianNode, parent?.Left == currentNode);
+                BinaryTreeNode<T, RedBlackTreeNode<T>>.Link(medianNode, currentNode, !isLeftSideMerge);
+                BinaryTreeNode<T, RedBlackTreeNode<T>>.Link(medianNode, source.Root, isLeftSideMerge);
+
+                destination.Count += source.Count + 1;
+                destination.InsertFixup(medianNode);
+            }
+
+            return destination;
+        }
+
+        private RedBlackTree<T> UnionWith(RedBlackTree<T> other, T median, bool shouldUseMedian)
+        {
+            if (other == null)
+            {
+                throw new ArgumentNullException(nameof(other));
+            }
+            
+            T min = Min(),
+              max = Max(),
+              otherMin = other.Min(),
+              otherMax = other.Max();
+
+            if (Compare(otherMax, min) <= 0)
+            {
+                if (shouldUseMedian && (Compare(otherMax, median) > 0 || Compare(median, min) > 0))
+                {
+                    throw new ArgumentOutOfRangeException(nameof(median));
+                }
+
+                return Height >= other.Height ?
+                    Merge(other, this, shouldUseMedian ? median : otherMax, true) :
+                    Merge(this, other, shouldUseMedian ? median : min, false);
+            }
+            else if (Compare(max, otherMin) <= 0)
+            {
+                if (shouldUseMedian && (Compare(max, median) > 0 || Compare(median, otherMin) > 0))
+                {
+                    throw new ArgumentOutOfRangeException(nameof(median));
+                }
+
+                return Height >= other.Height ?
+                    Merge(other, this, shouldUseMedian ? median : otherMin, false) :
+                    Merge(this, other, shouldUseMedian ? median : max, true);
+            }
+
+            throw new ArgumentException(
+                nameof(other),
+                "Union is supported for trees with non-overlapping ranges only");
+        }
+
+        private void InsertFixup(RedBlackTreeNode<T> node)
+        {
+            while (node.Parent?.IsRed == true)
+            {
+                RedBlackTreeNode<T> parent = node.Parent;
+                RedBlackTreeNode<T> grandParent = parent.Parent;
+                Debug.Assert(grandParent != null);
+
+                if (grandParent.Left == parent)
+                {
+                    RedBlackTreeNode<T> uncle = grandParent.Right;
+
+                    if (uncle?.IsRed == true)
+                    {
+                        grandParent.IsRed = true;
+                        parent.IsRed = false;
+                        if (uncle != null)
+                        {
+                            uncle.IsRed = false;
+                        }
+
+                        node = grandParent;
+                    }
+                    else
+                    {
+                        if (parent.Right == node)
+                        {
+                            RotateLeft(node);
+                            node = parent;
+                        }
+
+                        RotateRight(node.Parent);
+                        node.Parent.IsRed = false;
+                        grandParent.IsRed = true;
+                    }
+                }
+                else
+                {
+                    RedBlackTreeNode<T> uncle = grandParent.Left;
+
+                    if (uncle?.IsRed == true)
+                    {
+                        grandParent.IsRed = true;
+                        parent.IsRed = false;
+                        if (uncle != null)
+                        {
+                            uncle.IsRed = false;
+                        }
+
+                        node = grandParent;
+                    }
+                    else
+                    {
+                        if (parent.Left == node)
+                        {
+                            RotateRight(node);
+                            node = parent;
+                        }
+
+                        RotateLeft(node.Parent);
+                        node.Parent.IsRed = false;
+                        grandParent.IsRed = true;
+                    }
+                }
+            }
+
+            if (Root.IsRed)
+            {
+                Height++;
+            }
+
+            Root.IsRed = false;
         }
     }
 }

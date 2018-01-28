@@ -19,6 +19,12 @@ namespace Algo.Trees.SearchTrees
 
         #endregion
 
+        #region Public Properties
+
+        public TNode Root { get; protected set; }
+
+        #endregion
+
         #region Constructors
 
         public BinarySearchTree(IComparer<TData> comparer = null)
@@ -56,7 +62,11 @@ namespace Algo.Trees.SearchTrees
 
         #region ICollection<TData> Members
 
-        public int Count => _count;
+        public int Count
+        {
+            get => _count;
+            protected set => _count = value;
+        }
 
         public bool IsReadOnly => false;
 
@@ -73,7 +83,7 @@ namespace Algo.Trees.SearchTrees
             }
         }
 
-        public void Clear()
+        public virtual void Clear()
         {
             Root = null;
             _count = 0;
@@ -121,7 +131,7 @@ namespace Algo.Trees.SearchTrees
 
         #region Protected Interface
 
-        protected TNode Root { get; set; }
+        protected IComparer<TData> Comparer => _comparer;
 
         protected virtual bool AddNode(TNode newNode)
         {
@@ -196,7 +206,10 @@ namespace Algo.Trees.SearchTrees
         }
 
         protected int Compare(TNode left, TNode right) =>
-            _comparer.Compare(left.Data, right.Data);
+            Compare(left.Data, right.Data);
+
+        protected int Compare(TData left, TData right) =>
+            _comparer.Compare(left, right);
 
         protected virtual void RotateRight(TNode node)
         {
