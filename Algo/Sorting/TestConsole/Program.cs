@@ -12,6 +12,7 @@ namespace Algo.Sorting.TestConsole
         {
             SortRandomArray(new QuickSortEngine<int>());
             SortRandomArray(new HeapSortEngine<int>());
+            SortRandomArray(new CountingSortEngine());
         }
 
         private static void SortRandomArray(ISortEngine<int> engine)
