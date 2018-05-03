@@ -13,13 +13,17 @@ namespace Algo.Sorting.TestConsole
             SortRandomArray(new QuickSortEngine<int>());
             SortRandomArray(new HeapSortEngine<int>());
             SortRandomArray(new CountingSortEngine());
+            SortRandomArray(new RadixSortEngine(10), 10000);
+            SortRandomArray(new RadixSortEngine(), 10000);
         }
 
-        private static void SortRandomArray(ISortEngine<int> engine)
+        private static void SortRandomArray(
+            ISortEngine<int> engine,
+            int maxValue = 50)
         {
             Random random = new Random();
             IEnumerable<int> data = Enumerable.Range(0, 10)
-                .Select(i => random.Next(50))
+                .Select(i => random.Next(maxValue))
                 .ToArray();
 
             string engineName = engine.GetType().Name;
