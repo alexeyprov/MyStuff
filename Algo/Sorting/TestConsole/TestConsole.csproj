@@ -7,5 +7,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Engines\Engines.csproj" />
+    <ProjectReference Include="..\Median\Median.csproj" />
   </ItemGroup>
 </Project>

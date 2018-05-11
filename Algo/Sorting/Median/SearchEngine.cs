@@ -1,28 +1,35 @@
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 
 namespace Algo.Sorting.Median
 {
-    public sealed class SearchEngine<T>
+    public sealed class SearchEngine<T> : ISelectEngine<T>
         where T : IComparable<T>
     {
-        private readonly IList<T> _source;
         private readonly Random _rnd;
 
-        public SearchEngine(IList<T> source)
+        public SearchEngine()
         {
-            VerifySource(source);
-            _source = source;
             _rnd = new Random();
         }
 
-        public T FindMedian()
+        T ISelectEngine<T>.FindByRank(IEnumerable<T> data, int rank)
         {
-            return FindElement(_source, (_source.Count - 1) / 2);
+            IReadOnlyList<T> list = data as IReadOnlyList<T> ??
+                data?.ToArray() ??
+                throw new ArgumentNullException(nameof(data));
+
+            if (rank < 0 || rank >= list.Count)
+            {
+                throw new ArgumentOutOfRangeException(nameof(rank));
+            }
+
+            return FindElement(list, rank);
         }
 
-        private T FindElement(IList<T> source, int rank)
+        private T FindElement(IReadOnlyList<T> source, int rank)
         {
             VerifySource(source);
 
@@ -34,9 +41,9 @@ namespace Algo.Sorting.Median
 
             T probe = source[_rnd.Next(source.Count)];
 
-            IList<T> left = new List<T>();
-            IList<T> middle = new List<T>();
-            IList<T> right = new List<T>();
+            List<T> left = new List<T>();
+            List<T> middle = new List<T>();
+            List<T> right = new List<T>();
 
             foreach (T element in source)
             {
@@ -68,7 +75,7 @@ namespace Algo.Sorting.Median
                 FindElement(right, rank - leftAndMiddleCount);
         }
 
-        private static void VerifySource(IList<T> source)
+        private static void VerifySource(IReadOnlyList<T> source)
         {
             if (source == null || source.Count == 0)
             {
