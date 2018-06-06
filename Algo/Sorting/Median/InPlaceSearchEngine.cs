@@ -47,151 +47,43 @@ namespace Algo.Sorting.Median
                     return _source[start];
                 }
 
-                T probe = _source[start + _rnd.Next(end - start + 1)];
+                int probeIndex = start + _rnd.Next(end - start + 1);
+                T probe = _source[probeIndex];
+                _source.Swap(probeIndex, end);
 
-                int leftIndex = start,
-                    rightIndex = end;
-                bool isLeftToBeSwapped = false,
-                     isRightToBeSwapped = false;
-
-                // move left and right pointers towards each other,
-                // swapping elements as needed
-                while (leftIndex < rightIndex)
+                // inclusive upper boundaries for the "< x" and "= x" regions
+                int leftIndex = start - 1,
+                    rightIndex = start - 1;
+                for (int current = start; current < end; ++current)
                 {
-                    if (!isLeftToBeSwapped)
+                    int comparison = _source[current].CompareTo(probe);
+                    if (comparison < 0)
                     {
-                        isLeftToBeSwapped = AdvancePointer(probe, ref leftIndex, Direction.Forward);
+                        T temp = _source[current];
+                        _source[current] = _source[++rightIndex];
+                        _source[rightIndex] = _source[++leftIndex];
+                        _source[leftIndex] = temp;
                     }
-
-                    if (!isRightToBeSwapped)
+                    else if (comparison == 0)
                     {
-                        isRightToBeSwapped = AdvancePointer(probe, ref rightIndex, Direction.Backward);
-                    }
-
-                    if (isLeftToBeSwapped && isRightToBeSwapped)
-                    {
-                        _source.Swap(leftIndex++, rightIndex--);
-                        isLeftToBeSwapped = false;
-                        isRightToBeSwapped = false;
+                        _source.Swap(current, ++rightIndex);
                     }
                 }
 
-                int oldLeft = leftIndex, oldRight = rightIndex;
-                AdjustIndexes(ref leftIndex, ref rightIndex, probe);
-                Debug.Assert(rightIndex > leftIndex);
-
-                leftIndex = PushOutProbes(probe, start, leftIndex, Direction.Forward);
-                rightIndex = PushOutProbes(probe, rightIndex, end, Direction.Backward);
-                Debug.Assert(rightIndex > leftIndex);
+                Debug.Assert(rightIndex < end);
+                _source.Swap(++rightIndex, end);
 
                 if (rank <= leftIndex - start)
                 {
                     return FindElement(start, leftIndex, rank);
                 }
-                else if (rank > leftIndex - start && rank < rightIndex - start)
+                else if (rank > leftIndex - start && rank <= rightIndex - start)
                 {
                     return probe;
                 }
 
-                return FindElement(rightIndex, end, rank - rightIndex + start);
+                return FindElement(rightIndex + 1, end, rank - rightIndex - 1 + start);
             }
-
-            private bool AdvancePointer(T probe, ref int index, Direction direction)
-            {
-                int comparison = _source[index].CompareTo(probe);
-
-                // if we are moving right and current is less than probe
-                // or moving left and current is more than probe
-                // or current is equal to probe for any direction
-                if (comparison * (int)direction <= 0)
-                {
-                    index += (int)direction;
-                    return false;
-                }
-
-                // no iteration has been made, current is to be swapped.
-                return true;
-            }
-
-            private int PushOutProbes(T probe, int start, int end, Direction direction)
-            {
-                if (start >= end)
-                {
-                    return direction == Direction.Forward ? end : start;
-                }
-
-                int current, destination;
-
-                if (direction == Direction.Forward)
-                {
-                    current = start;
-                    destination = end;
-                }
-                else
-                {
-                    current = end;
-                    destination = start;
-                }
-
-                while ((destination - current) * (int)direction > 0)
-                {
-                    int comparison = _source[current].CompareTo(probe);
-
-                    if (comparison == 0)
-                    {
-                        _source.Swap(current, destination);
-                        destination -= (int)direction;
-                    }
-                    else
-                    {
-                        // comparison result should be "less" if moving right (1)
-                        // or "more" if moving left (-1)
-                        Debug.Assert((int)direction * comparison < 0);
-                    }
-
-                    current += (int)direction;
-                }
-
-                return destination;
-            }
-
-            private void AdjustIndexes(ref int leftIndex, ref int rightIndex, T probe)
-            {
-                Debug.Assert(leftIndex - rightIndex == 0 || leftIndex - rightIndex == 1);
-                bool rollbackLeft = true;
-                bool rollbackRight = true;
-
-                if (leftIndex == rightIndex)
-                {
-                    int comparison = _source[leftIndex].CompareTo(probe);
-
-                    if (comparison < 0)
-                    {
-                        rollbackLeft = false;
-                    }
-
-                    if (comparison > 0)
-                    {
-                        rollbackRight = false;
-                    }
-                }
-
-                if (rollbackLeft)
-                {
-                    leftIndex--;
-                }
-
-                if (rollbackRight)
-                {
-                    rightIndex++;
-                }
-            }
-        }
-
-        private enum Direction
-        {
-            Forward = 1,
-            Backward = -1
         }
     }
 }
