@@ -42,27 +42,10 @@ namespace Algo.Sorting.Engines
                     return;
                 }
 
-                int q = Partition(p, r);
+                int q = _data.PartitionTwoWay(p, r);
 
                 QuickSort(p, q - 1);
                 QuickSort(q + 1, r);
-            }
-
-            private int Partition(int p, int r)
-            {
-                T x = _data[r];
-                int i = p - 1;
-
-                for (int j = p; j < r; ++j)
-                {
-                    if (_data[j].CompareTo(x) < 0)
-                    {
-                        _data.Swap(++i, j);
-                    }
-                }
-
-                _data.Swap(++i, r);
-                return i;
             }
         }
     }

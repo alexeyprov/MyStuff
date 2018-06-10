@@ -48,30 +48,9 @@ namespace Algo.Sorting.Median
                 }
 
                 int probeIndex = start + _rnd.Next(end - start + 1);
-                T probe = _source[probeIndex];
-                _source.Swap(probeIndex, end);
 
                 // inclusive upper boundaries for the "< x" and "= x" regions
-                int leftIndex = start - 1,
-                    rightIndex = start - 1;
-                for (int current = start; current < end; ++current)
-                {
-                    int comparison = _source[current].CompareTo(probe);
-                    if (comparison < 0)
-                    {
-                        T temp = _source[current];
-                        _source[current] = _source[++rightIndex];
-                        _source[rightIndex] = _source[++leftIndex];
-                        _source[leftIndex] = temp;
-                    }
-                    else if (comparison == 0)
-                    {
-                        _source.Swap(current, ++rightIndex);
-                    }
-                }
-
-                Debug.Assert(rightIndex < end);
-                _source.Swap(++rightIndex, end);
+                (int leftIndex, int rightIndex) = _source.PartitionThreeWay(start, end, probeIndex);
 
                 if (rank <= leftIndex - start)
                 {
@@ -79,7 +58,7 @@ namespace Algo.Sorting.Median
                 }
                 else if (rank > leftIndex - start && rank <= rightIndex - start)
                 {
-                    return probe;
+                    return _source[probeIndex];
                 }
 
                 return FindElement(rightIndex + 1, end, rank - rightIndex - 1 + start);

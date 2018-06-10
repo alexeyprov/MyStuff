@@ -19,6 +19,7 @@ namespace Algo.Sorting.TestConsole
 
             SelectMedian(new SearchEngine<int>());
             SelectMedian(new InPlaceSearchEngine<int>());
+            SelectMedian(new DeterministicSearchEngine<int>());
         }
 
         private static void SortRandomArray(
@@ -56,11 +57,12 @@ namespace Algo.Sorting.TestConsole
             string engineName = engine.GetType().Name;
             PrintData($"{engineName} - unsorted", data);
 
+            int median = engine.FindMedian(data);
+
             ISortEngine<int> sortEngine = new QuickSortEngine<int>();
             data = sortEngine.Sort(data);
             PrintData($"{engineName} - sorted", data);
 
-            int median = engine.FindMedian(data);
             Console.WriteLine($"{engineName}'s median is {median}");
         }
     }
