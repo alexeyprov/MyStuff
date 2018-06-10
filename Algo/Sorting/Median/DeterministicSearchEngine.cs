@@ -84,24 +84,21 @@ namespace Algo.Sorting.Median
 
             private void InsertionSort(Span<int> indexes)
             {
-                for (int targetPos = 0; targetPos < indexes.Length - 1; ++targetPos)
+                for (int currentPos = 1; currentPos < indexes.Length; ++currentPos)
                 {
-                    int minPos = targetPos;
-                    T minValue = _source[indexes[targetPos]];
-                    for (int currentPos = targetPos + 1; currentPos < indexes.Length; ++currentPos)
+                    int currentIndex = indexes[currentPos];
+                    T currentValue = _source[currentIndex];
+
+                    int targetPos = currentPos - 1;
+                    while (targetPos >= 0 &&
+                        _source[indexes[targetPos]].CompareTo(currentValue) > 0)
                     {
-                        T currentValue = _source[indexes[currentPos]];
-                        if (currentValue.CompareTo(minValue) < 0)
-                        {
-                            minPos = currentPos;
-                            minValue = currentValue;
-                        }
+                        indexes[targetPos + 1] = indexes[targetPos];
+                        --targetPos;
                     }
 
-                    if (minPos != targetPos)
-                    {
-                        indexes.Swap(minPos, targetPos);
-                    }
+                    Debug.Assert(targetPos >= -1);
+                    indexes[targetPos + 1] = currentIndex; 
                 }
             }
         }
