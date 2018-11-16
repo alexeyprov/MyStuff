@@ -66,6 +66,9 @@ namespace Algo.Trees.TestConsole
 
         private static void TestTreeBalance(BinaryTreeNode<int> tree)
         {
+            Console.WriteLine("Checking tree balance for:");
+            tree.Print();
+
             BalanceChecker<int, BinaryTreeNode<int>> checker = 
                 new BalanceChecker<int, BinaryTreeNode<int>>(tree);
             BinaryTreeNode<int> unbalancedSubtree = checker.FindUnbalancedSubtree();
