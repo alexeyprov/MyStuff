@@ -15,7 +15,7 @@ namespace Cashier
             _nominations = new int[] { 2, 3, 4 };
 #else
             Random random = new Random();
-            int size = 2 + random.Next(4); // 2 to 5 different nominations
+            int size = random.Next(2, 6); // 2 to 5 different nominations
 
             int[] nominations = new int[size];
             for (int index = 0; index < size; ++index)
@@ -33,7 +33,7 @@ namespace Cashier
                     cap = floor * 2;
                 }
 
-                nominations[index] = floor + random.Next(cap - floor + 1);
+                nominations[index] = random.Next(floor, cap + 1);
             }
 
             _nominations = nominations;
@@ -111,7 +111,7 @@ namespace Cashier
                 solution,
                 (s, q) => new
                 {
-                    Nomination = s.Nomination,
+                    s.Nomination,
                     Allowed = s.Count,
                     Used = q
                 }))

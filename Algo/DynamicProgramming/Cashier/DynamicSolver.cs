@@ -1,7 +1,5 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
 
@@ -130,9 +128,8 @@ namespace Cashier
             {
                 int pathIndex = (goal - 1) * _coins.Count + coinIndex;
                 int nomination = _coins[coinIndex];
-                int count = 0;
 
-                bool isKnownNomination = solution.TryGetValue(nomination, out count);
+                bool isKnownNomination = solution.TryGetValue(nomination, out int count);
 
                 if (pathMatrix[pathIndex])
                 {
