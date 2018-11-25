@@ -16,8 +16,8 @@ namespace Algo.Trees.Entities
             queue.Enqueue((root, 0, 0));
             int lastRow = 0,
                 lastColumn = 0,
-                cellCount = 1,
-                cellWidth = Console.WindowWidth;
+                cellCount = 1;
+            double cellWidth = Console.WindowWidth;
 
             while (queue.Count > 0)
             {
@@ -30,18 +30,18 @@ namespace Algo.Trees.Entities
                     }
 
                     lastRow = row;
-                    lastColumn = 0;
+                    lastColumn = -1;
                     cellCount = 1 << row;
-                    cellWidth = Console.WindowWidth / cellCount;
+                    cellWidth = (double)Console.WindowWidth / cellCount;
                 }
 
                 if (lastColumn < column - 1)
                 {
                     // empty cell(s)
-                    Console.Write($"{{0, {cellWidth * (column - lastColumn - 1)}}}", string.Empty);
+                    Console.Write($"{{0, {(int)(cellWidth * (column - lastColumn - 1))}}}", string.Empty);
                 }
 
-                PrintCenterAligned(node.Data, cellWidth);
+                PrintCenterAligned(node.Data, (int)cellWidth);
                 lastColumn = column;
 
                 if (node.Left != null)
