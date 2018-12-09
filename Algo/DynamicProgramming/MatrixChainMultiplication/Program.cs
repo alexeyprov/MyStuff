@@ -30,7 +30,7 @@ namespace Algo.DynamicProgramming.MatrixChainMultiplication
             Solver solver = new Solver();
             Solution solution = solver.FindSolution(dimensions);
 
-            Console.WriteLine($"Multiplication cost for {matrixChain} is {solution.Cost}. Solution tree is:");
+            Console.WriteLine($"Multiplication cost for {matrixChain} is {solution.Cost}: {solution}. Solution tree is:");
             solution.Structure.Print();
         }
     }
