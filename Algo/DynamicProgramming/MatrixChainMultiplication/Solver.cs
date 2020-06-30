@@ -5,6 +5,11 @@ using System.Linq;
 
 namespace Algo.DynamicProgramming.MatrixChainMultiplication
 {
+    /// <summary>
+    /// For a collection of N matrices dimensions: p[0]...p[N], the optimal multiplication cost
+    /// is given by the following recurrent solution. For any 1 &lt;= i &lt; j &lt;= n, multiplication cost
+    /// m[i, j] = min { m[i, k] + m[k + 1, j] + p[i - 1]*p[k]*p[j]} for any i &lt;= k &lt; j.
+    /// </summary>
     internal sealed class Solver
     {
         public Solution FindSolution(IEnumerable<int> matrixDimensions)

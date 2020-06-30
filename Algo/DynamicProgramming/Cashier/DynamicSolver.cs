@@ -41,11 +41,10 @@ namespace Cashier
 
         public DynamicSolver(IReadOnlyList<Slot> register)
         {
+            _register = register ?? throw new ArgumentNullException(nameof(register));
             _coins = register
                 .SelectMany(s => Enumerable.Repeat(s.Nomination, s.Count))
                 .ToArray();
-
-            _register = register;
         }
 
         IEnumerable<int> ISolver.FindSolution(int goal)

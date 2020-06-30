@@ -3,6 +3,11 @@ using System.Diagnostics;
 
 namespace Algo.DynamicProgramming.AssemblyLineBalancing
 {
+    /// <summary>
+    /// With assembly line i in [0, 1] and stage j in [0, n-1],
+    /// stage costs A[i, j] and &quot;transfer to&quot; costs T[i, j], the recurrent solution is:
+    /// C[i, j] = min { C[i, j - 1], C[1 - i, j - 1] + T[i, j] } + A[i, j]
+    /// </summary>
     internal sealed class Solver
     {
         public Solution FindSolution(Problem problem)
