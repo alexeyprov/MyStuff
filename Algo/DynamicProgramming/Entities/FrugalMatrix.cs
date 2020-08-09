@@ -37,7 +37,7 @@ namespace Algo.DynamicProgramming.Entities
             _negativeOffset = negativeOffset;
         }
 
-        T this[int i, int j]
+        public T this[int i, int j]
         {
             get
             {
