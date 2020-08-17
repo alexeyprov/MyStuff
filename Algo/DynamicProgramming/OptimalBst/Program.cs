@@ -6,16 +6,21 @@ namespace Algo.DynamicProgramming.OptimalBst
     {
         private static void Main()
         {
-            Console.WriteLine("Random problem:");
-            Solve(new Problem());
+            Solve(new Problem(), "Random problem:");
 
-            Console.WriteLine("Well-known problem:");
-            Problem wellKnownProblem = new Problem(null, null);
-            Solve(wellKnownProblem);
+            Console.WriteLine();
+
+            Problem wellKnownProblem = new Problem(
+                new[] { 0.15M, 0.1M, 0.05M, 0.1M, 0.2M }, 
+                new[] { 0.05M, 0.1M, 0.05M, 0.05M, 0.05M, 0.1M });
+            Solve(wellKnownProblem, "Well-known problem:");
         }
 
-        private static void Solve(Problem problem)
+        private static void Solve(Problem problem, string description)
         {
+            Console.WriteLine(description);
+            problem.Print();
+
             Solver solver = new Solver();
             Solution solution = solver.FindSolution(problem);
             solution.Print();

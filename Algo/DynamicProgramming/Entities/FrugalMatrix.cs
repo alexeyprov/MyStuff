@@ -52,6 +52,8 @@ namespace Algo.DynamicProgramming.Entities
             }
         }
 
+        public int Size => _size;
+
         private int TranslateIndex(int i, int j)
         {
             if (i < 1 || i > _size + _negativeOffset)
@@ -64,7 +66,7 @@ namespace Algo.DynamicProgramming.Entities
                 throw new ArgumentOutOfRangeException(nameof(j));
             }
 
-            int blockOffset = (i - 1) * (2 * _size - 2 * (_negativeOffset + 1) - i) / 2;
+            int blockOffset = (i - 1) * (2 * _size + 2 * (_negativeOffset + 1) - i) / 2;
             Debug.Assert(blockOffset >= 0);
             Debug.Assert(blockOffset <= _data.Length);
 
