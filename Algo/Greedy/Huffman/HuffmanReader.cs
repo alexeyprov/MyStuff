@@ -1,13 +1,20 @@
 using System;
 using System.IO;
 
+using Algo.Trees.Entities;
+
 namespace Algo.Greedy.Huffman
 {
     public sealed class HuffmanReader<T> : IDisposable
     {
+        private const byte EOF = 0xFF;
+
         private readonly HuffmanCode<T> _code;
         private readonly bool _isOwnStream;
+
         private Stream _stream;
+        private byte _currentBit;
+        private byte _currentByte;
 
         public HuffmanReader(HuffmanCode<T> code, Stream stream, bool ownStream = false)
         {
@@ -23,7 +30,36 @@ namespace Algo.Greedy.Huffman
 
         public T Read()
         {
-            throw new NotImplementedException();
+            if (_currentBit == EOF)
+            {
+                return default;
+            }
+
+            BinaryTreeNode<T> node = _code.Root;
+            T value = default;
+
+            while (node != null)
+            {
+                if (_currentBit == 0)
+                {
+                    int data = _stream.ReadByte();
+                    if (data == -1)
+                    {
+                        _currentBit = EOF;
+                        return default;
+                    }
+
+                    _currentByte = (byte)data;
+                    _currentBit = 0b1000_0000;
+                }
+
+                value = node.Data;
+                node = (_currentByte & _currentBit) == 0 ? node.Left : node.Right;
+
+                _currentBit >>= 1;
+            }
+
+            return value;
         }
 
         void IDisposable.Dispose()

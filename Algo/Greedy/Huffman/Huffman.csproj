@@ -9,4 +9,7 @@
     <ProjectReference Include="..\..\Trees\Entities\Entities.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\..\Heaps\Entities\Entities.csproj" />
+  </ItemGroup>
 </Project>
