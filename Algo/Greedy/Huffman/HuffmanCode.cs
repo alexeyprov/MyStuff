@@ -9,39 +9,46 @@ namespace Algo.Greedy.Huffman
 {
     public sealed class HuffmanCode<T>
     {
-        private readonly BinaryTreeNode<T> _root;
-
-        public HuffmanCode(IReadOnlyDictionary<T, double> stats)
+        public HuffmanCode(IReadOnlyDictionary<T, double> stats, T eofMarker = default)
         {
             if (stats == null)
             {
                 throw new ArgumentNullException(nameof(stats));
             }
 
-            _root = BuildTree(stats);
+            Root = BuildTree(stats, eofMarker);
+            EofMarker = eofMarker;
         }
 
-        public BinaryTreeNode<T> Root => _root;
+        public BinaryTreeNode<T> Root { get; }
 
-        private static BinaryTreeNode<T> BuildTree(IReadOnlyDictionary<T, double> stats)
+        public T EofMarker { get; }
+
+        private static BinaryTreeNode<T> BuildTree(IReadOnlyDictionary<T, double> stats, T eofMarker)
         {
             IPriorityQueue<double, BinaryTreeNode<T>> priorityQueue = new BinaryHeapPriorityQueue<double, BinaryTreeNode<T>>(
                 stats.Values,
                 stats.Keys.Select(k => new BinaryTreeNode<T>(k)),
                 false);
+            if (eofMarker != null)
+            {
+                priorityQueue.Add(0.0D, new BinaryTreeNode<T>(eofMarker));
+            }
+
             while (priorityQueue.Count > 1)
             {
-                BinaryTreeNode<T> left = priorityQueue.Extract(),
-                                  right = priorityQueue.Extract();
+                (double w1, BinaryTreeNode<T> left) = priorityQueue.Extract();
+                (double w2, BinaryTreeNode<T> right) = priorityQueue.Extract();
                 BinaryTreeNode<T> newNode = new BinaryTreeNode<T>()
                 {
                     Left = left,
                     Right = right
                 };
-                priorityQueue.Add(stats[left.Data] + stats[right.Data], newNode);
+                priorityQueue.Add(w1 + w2, newNode);
             }
 
-            return priorityQueue.Extract();
+            (_, BinaryTreeNode<T> root) = priorityQueue.Extract();
+            return root;
         }
     }
 }

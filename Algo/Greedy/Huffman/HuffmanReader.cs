@@ -32,13 +32,12 @@ namespace Algo.Greedy.Huffman
         {
             if (_currentBit == EOF)
             {
-                return default;
+                return _code.EofMarker;
             }
 
             BinaryTreeNode<T> node = _code.Root;
-            T value = default;
 
-            while (node != null)
+            while (node.Left != null && node.Right != null)
             {
                 if (_currentBit == 0)
                 {
@@ -53,13 +52,17 @@ namespace Algo.Greedy.Huffman
                     _currentBit = 0b1000_0000;
                 }
 
-                value = node.Data;
                 node = (_currentByte & _currentBit) == 0 ? node.Left : node.Right;
 
                 _currentBit >>= 1;
             }
 
-            return value;
+            if (_code.EofMarker != null && node.Data?.Equals(_code.EofMarker) == true)
+            {
+                _currentBit = EOF;
+            }
+
+            return node.Data;
         }
 
         void IDisposable.Dispose()

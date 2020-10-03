@@ -12,6 +12,7 @@ namespace Algo.Greedy.Huffman
 
         private readonly IReadOnlyDictionary<T, ValueBits> _code;
         private readonly bool _isOwnStream;
+        private readonly T _eofMarker;
 
         private Stream _stream;
         private byte _currentByte;
@@ -46,12 +47,18 @@ namespace Algo.Greedy.Huffman
             }
 
             _code = TranslateCode(code);
+            _eofMarker = code.EofMarker;
             _isOwnStream = ownStream;
             _bitsLeft = 8;
         }
 
         public void Write(T value)
         {
+            if (value == null)
+            {
+                throw new ArgumentNullException(nameof(value));
+            }
+
             ValueBits allBits = _code[value];
             byte bitsToWrite = allBits.Count;
             int code = allBits.Bits;
@@ -82,12 +89,18 @@ namespace Algo.Greedy.Huffman
                 {
                     _stream.WriteByte(_currentByte);
                     _bitsLeft = 8;
+                    _currentByte = default;
                 }
             }
         }
 
         void IDisposable.Dispose()
         {
+            if (_eofMarker != null)
+            {
+                Write(_eofMarker);
+            }
+
             if (_bitsLeft != 8)
             {
                 _stream.WriteByte(_currentByte);
@@ -126,12 +139,12 @@ namespace Algo.Greedy.Huffman
             current.Bits >>= 1; 
             current.Count--;
 
-            if (current.Count != 0 && !hasChildren)
+            if (current.Count != 0 && !hasChildren && treeNode.Data != null)
             {
                 dictionary.Add(treeNode.Data, current);
             }
 
-            return hasChildren;
+            return true;
         }
 
         private struct ValueBits
