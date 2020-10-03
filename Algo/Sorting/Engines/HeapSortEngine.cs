@@ -17,7 +17,7 @@ namespace Algo.Sorting.Engines
 
             for (int index = array.Count - 1; index >= 0; --index)
             {
-                T max = heap.Extract();
+                (_, T max) = heap.Extract();
                 array[index] = max;
             }
 

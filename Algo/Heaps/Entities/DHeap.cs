@@ -65,22 +65,22 @@ namespace Algo.Heaps.Entities
 
         public int Count => _size;
 
-        public virtual TValue Peek() =>
+        public virtual (TKey, TValue) Peek() =>
             _size == 0 ?
                 throw new InvalidOperationException() :
-                _heap[0].Value;
+                (_heap[0].Key, _heap[0].Value);
 
-        public virtual TValue Extract()
+        public virtual (TKey, TValue) Extract()
         {
             if (_size == 0)
             {
                 throw new InvalidOperationException();
             }
 
-            TValue top = _heap[0].Value;
+            HeapNode<TKey, TValue> top = _heap[0];
             _heap[0] = _heap[--_size];
             SiftDown(0);
-            return top;
+            return (top.Key, top.Value);
         }
 
         public virtual void Add(TKey key, TValue value)

@@ -6,8 +6,8 @@ namespace Algo.Heaps.Entities
     {
         void Add(TKey key, TValue value);
         
-        TValue Peek();
+        (TKey, TValue) Peek();
 
-        TValue Extract();
+        (TKey, TValue) Extract();
     }
 }

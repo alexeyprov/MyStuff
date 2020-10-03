@@ -37,11 +37,11 @@ namespace Algo.Heaps.Entities
             base.Add(key, value);
         }
 
-        public override TValue Extract()
+        public override (TKey, TValue) Extract()
         {
-            TValue value = base.Extract();
+            (TKey key, TValue value) = base.Extract();
             _itemLocations.Remove(value);
-            return value;
+            return (key, value);
         }
 
         public virtual void UpdateKey(TValue value, TKey key)
