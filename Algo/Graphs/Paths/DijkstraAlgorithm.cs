@@ -25,7 +25,7 @@ namespace Algo.Graphs.Paths
 
             while (queue.Count != 0)
             {
-                int current = queue.Extract();
+                (_, int current) = queue.Extract();
 
                 foreach (WeighedDistance neighbor in _graph.GetDistances(current))
                 {

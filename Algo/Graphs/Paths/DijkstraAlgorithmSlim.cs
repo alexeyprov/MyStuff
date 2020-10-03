@@ -26,7 +26,7 @@ namespace Algo.Graphs.Paths
 
             while (heap.Count != 0)
             {
-                int current = heap.Extract();
+                (_, int current) = heap.Extract();
 
                 if (processedVertices.Contains(current))
                 {
